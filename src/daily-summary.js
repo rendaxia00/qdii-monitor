@@ -51,6 +51,7 @@ export function buildDailyPurchaseSummary(snapshot) {
 
   let totalDist = { count: 0, amount: 0, unlimited: 0 };
   let totalDirect = { count: 0, amount: 0, unlimited: 0 };
+  const sections = [];
 
   for (const [key, label] of TARGETS) {
     const funds = snapshot.funds
@@ -58,6 +59,7 @@ export function buildDailyPurchaseSummary(snapshot) {
       .sort((a, b) => String(a.code).localeCompare(String(b.code)));
     const dist = channelStats(funds, isDistributionBuyable, 'limit_amount');
     const direct = channelStats(funds, isDirectBuyable, 'direct_limit_amount');
+    sections.push({ key, label, distribution: dist, direct });
     totalDist = {
       count: totalDist.count + dist.count,
       amount: totalDist.amount + dist.amount,
@@ -89,6 +91,9 @@ export function buildDailyPurchaseSummary(snapshot) {
     title: `QDII 每日可购｜代销${fmtAmount(totalDist.amount)}｜直销${fmtAmount(totalDirect.amount)}`,
     content: lines.join('\n'),
     totals: { distribution: totalDist, direct: totalDirect },
+    sections,
+    asOf: snapshot.as_of || null,
+    generatedAt: snapshot.generated_at || null,
   };
 }
 

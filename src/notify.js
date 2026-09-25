@@ -4,6 +4,8 @@
  */
 import net from 'node:net';
 import tls from 'node:tls';
+import fs from 'node:fs';
+import path from 'node:path';
 
 async function postJson(url, body, headers = {}) {
   const res = await fetch(url, {
@@ -37,27 +39,40 @@ async function postJson(url, body, headers = {}) {
 /** ntfy 的 HTTP Header 可能包含中文标题，按 RFC 2047 编码以兼容 Node fetch。 */
 const encodeHeaderUtf8 = (value) => `=?UTF-8?B?${Buffer.from(String(value), 'utf8').toString('base64')}?=`;
 
-async function sendNtfy(cfg, title, content) {
+async function sendNtfy(cfg, title, content, options = {}) {
   if (!cfg?.topic) return { ok: false, channel: 'ntfy', error: 'ntfy topic 未配置' };
   const server = String(cfg.server || 'https://ntfy.sh').replace(/\/+$/, '');
   const url = `${server}/${encodeURIComponent(cfg.topic)}`;
   const headers = {
     'content-type': 'text/plain; charset=utf-8',
     title: encodeHeaderUtf8(title),
-    priority: String(cfg.priority || 3),
+    priority: String(cfg.priority || 5),
     tags: cfg.tags || 'chart_with_upwards_trend,moneybag',
   };
   // ntfy 官方 Click 头：用户点按通知时直接打开监控站点。
   if (cfg.click) headers.click = cfg.click;
   if (cfg.token) headers.authorization = `Bearer ${cfg.token}`;
 
-  const res = await fetch(url, { method: 'POST', headers, body: content });
+  let body = content;
+  if (options.attachmentPath) {
+    const filename = options.attachmentName || path.basename(options.attachmentPath);
+    body = fs.readFileSync(options.attachmentPath);
+    headers['content-type'] = options.attachmentType || 'image/png';
+    headers.filename = encodeHeaderUtf8(filename);
+    // 上传附件时正文占用请求体，因此通过 Message 头保留文字摘要。
+    headers.message = encodeHeaderUtf8(content);
+  }
+
+  const res = await fetch(url, { method: 'POST', headers, body });
   const text = await res.text();
+  let response = null;
+  try { response = JSON.parse(text); } catch {}
   return {
     ok: res.ok,
     channel: 'ntfy',
     status: res.status,
     text: text.slice(0, 300),
+    ...(response?.attachment ? { attachment: response.attachment } : {}),
     ...(!res.ok ? { error: `HTTP ${res.status}` } : {}),
   };
 }
@@ -174,7 +189,7 @@ async function sendMail(cfg, subject, text) {
  * @param {string} title
  * @param {string} content
  */
-export async function notify(cfg, title, content) {
+export async function notify(cfg, title, content, options = {}) {
   const results = [];
   for (const ch of cfg.channels) {
     try {
@@ -193,7 +208,7 @@ export async function notify(cfg, title, content) {
       } else if (ch === 'email') {
         results.push(await sendMail(cfg.email, title, content));
       } else if (ch === 'ntfy') {
-        results.push(await sendNtfy(cfg.ntfy, title, content));
+        results.push(await sendNtfy(cfg.ntfy, title, content, options));
       } else {
         results.push({ ok: false, channel: ch, error: '未知通道' });
       }

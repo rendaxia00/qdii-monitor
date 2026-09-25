@@ -43,6 +43,7 @@ jobs:
       QDII_NTFY_TOPIC: ${{ secrets.QDII_NTFY_TOPIC }}
       QDII_NTFY_TOKEN: ${{ secrets.QDII_NTFY_TOKEN }}
       QDII_NTFY_CLICK: ${{ secrets.QDII_NTFY_CLICK }}
+      QDII_NTFY_PRIORITY: ${{ secrets.QDII_NTFY_PRIORITY || '5' }}
       QDII_WEBHOOK_KIND: ${{ secrets.QDII_WEBHOOK_KIND }}
       QDII_WEBHOOK_TOKEN: ${{ secrets.QDII_WEBHOOK_TOKEN }}
       QDII_WEBHOOK_URL: ${{ secrets.QDII_WEBHOOK_URL }}
@@ -63,6 +64,15 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies and CJK font
+        run: |
+          npm ci
+          if ! fc-list | grep -qi 'Noto Sans CJK SC'; then
+            sudo apt-get update -qq
+            sudo apt-get install -y fonts-noto-cjk
+          fi
 
       - name: Test notification channels
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.test_notification }}

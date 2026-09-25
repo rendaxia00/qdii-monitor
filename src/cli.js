@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-import { config } from './config.js';
+import path from 'node:path';
+import { config, ROOT } from './config.js';
 import { runCollect } from './pipeline.js';
 import { readJson } from './store.js';
 import { fmtAmount } from './diff.js';
 import { notify } from './notify.js';
 import { buildDailyPurchaseSummary } from './daily-summary.js';
+import { generateDailyQuotaCard } from './daily-card.js';
 
 const [cmd = 'collect', ...rest] = process.argv.slice(2);
 const has = (f) => rest.includes(f);
@@ -63,8 +65,15 @@ async function main() {
         process.exitCode = 1;
         return;
       }
-      const { title, content } = buildDailyPurchaseSummary(snap);
-      const results = await notify(config.notify, title, content);
+      const summary = buildDailyPurchaseSummary(snap);
+      const cardFile = path.join(ROOT, 'tmp', `qdii-daily-${snap.as_of || 'latest'}.png`);
+      await generateDailyQuotaCard(summary, cardFile);
+      const results = await notify(config.notify, summary.title, summary.content, {
+        attachmentPath: cardFile,
+        attachmentName: `qdii-daily-${snap.as_of || 'latest'}.png`,
+        attachmentType: 'image/png',
+      });
+      console.log('每日额度卡片:', cardFile);
       console.log('每日通知结果:', JSON.stringify(results));
       if (!results.length || results.some((r) => !r.ok)) process.exitCode = 1;
       break;

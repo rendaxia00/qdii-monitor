@@ -14,5 +14,8 @@
     "prefetch:profiles": "node tools/prefetch-profiles.mjs",
     "build:pages": "node tools/build-pages.mjs",
     "check:official": "node tools/check-official-direct.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.35.4"
   }
 }

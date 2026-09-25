@@ -71,7 +71,7 @@ export const config = {
       server: process.env.QDII_NTFY_SERVER || 'https://ntfy.sh',
       topic: process.env.QDII_NTFY_TOPIC || '',
       token: process.env.QDII_NTFY_TOKEN || '',
-      priority: num(process.env.QDII_NTFY_PRIORITY, 3),
+      priority: num(process.env.QDII_NTFY_PRIORITY, 5),
       tags: process.env.QDII_NTFY_TAGS || 'chart_with_upwards_trend,moneybag',
       // 点击手机/桌面通知后打开的站点地址
       click: process.env.QDII_NTFY_CLICK || '',

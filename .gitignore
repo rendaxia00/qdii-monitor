@@ -1,5 +1,6 @@
 dist/
 dist-rendered.html
+tmp/
 node_modules/
 *.log
 .env

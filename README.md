@@ -82,7 +82,7 @@ export QDII_NOTIFY=console,ntfy
 export QDII_NTFY_SERVER=https://ntfy.sh
 export QDII_NTFY_TOPIC=qdii-my-private-topic
 export QDII_NTFY_TOKEN=                    # 私有主题需要时填写
-export QDII_NTFY_PRIORITY=3                # 1-5
+export QDII_NTFY_PRIORITY=5                # 1-5，5为最高优先级
 export QDII_NTFY_TAGS=chart_with_upwards_trend,moneybag
 export QDII_NTFY_CLICK=https://user.github.io/qdii-monitor/
 ```
@@ -132,7 +132,7 @@ git push -u origin main
 | `QDII_NTFY_TOKEN` | 私有主题需要时填写 |
 | `QDII_NTFY_CLICK` | 点击通知后打开的 Pages 地址 |
 
-第一次在 Actions 页面手动运行时保留 `test_notification=true`，工作流会在采集和部署前先发送一条测试通知。定时任务每天 09:30 固定发送可申购清单，其他时次只在检测到真实变化时发送通知；手动运行可勾选 `send_daily_summary` 测试每日清单。若本地 `.env` 设置 `QDII_NOTIFY_STARTUP_TEST=true`，本地 Web 服务每次启动后也会自动测试一次通知。
+第一次在 Actions 页面手动运行时保留 `test_notification=true`，工作流会在采集和部署前先发送一条测试通知。定时任务每天 09:30 固定发送可申购清单和每日额度 PNG 卡片，其他时次只在检测到真实变化时发送通知；手动运行可勾选 `send_daily_summary` 测试每日清单。若本地 `.env` 设置 `QDII_NOTIFY_STARTUP_TEST=true`，本地 Web 服务每次启动后也会自动测试一次通知。
 
 工作流会把 `data/` 的最新快照、历史和基金概况缓存提交回仓库，以便下一次任务继续做变动对比。Pages 版本为只读站点，不展示 GitHub Actions 管理入口；本地 Node 版本仍保留“立即采集”。
 
