@@ -1,7 +1,24 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+// 本地开发自动读取项目根目录 .env；系统环境变量和 GitHub Actions Secrets 优先。
+const envFile = path.join(ROOT, '.env');
+try {
+  for (const raw of fs.readFileSync(envFile, 'utf8').split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line || line.startsWith('#')) continue;
+    const m = line.match(/^(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$/);
+    if (!m || process.env[m[1]] !== undefined) continue;
+    let value = m[2].trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'")))
+      value = value.slice(1, -1);
+    process.env[m[1]] = value;
+  }
+} catch {}
+
 const DATA_DIR = process.env.QDII_DATA_DIR || path.join(ROOT, 'data');
 
 const num = (v, d) => (Number.isFinite(Number(v)) ? Number(v) : d);
@@ -46,6 +63,7 @@ export const config = {
 
   notify: {
     channels: (process.env.QDII_NOTIFY || 'console').split(',').map((s) => s.trim()).filter(Boolean),
+    startupTest: (process.env.QDII_NOTIFY_STARTUP_TEST || 'false') === 'true',
     webhookUrl: process.env.QDII_WEBHOOK_URL || '',
     webhookKind: process.env.QDII_WEBHOOK_KIND || 'generic', // generic|bark|serverchan|dingtalk|feishu|wecom
     webhookToken: process.env.QDII_WEBHOOK_TOKEN || '',

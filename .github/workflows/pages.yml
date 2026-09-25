@@ -2,6 +2,12 @@ name: Collect QDII data and deploy Pages
 
 on:
   workflow_dispatch:
+    inputs:
+      test_notification:
+        description: '部署前发送一次 ntfy/Webhook 测试通知'
+        required: false
+        type: boolean
+        default: true
   schedule:
     - cron: '30 9,14 * * 1-5'
       timezone: 'Asia/Shanghai'
@@ -22,6 +28,14 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      QDII_NOTIFY: ${{ secrets.QDII_NOTIFY || 'console' }}
+      QDII_NTFY_SERVER: ${{ secrets.QDII_NTFY_SERVER || 'https://ntfy.sh' }}
+      QDII_NTFY_TOPIC: ${{ secrets.QDII_NTFY_TOPIC }}
+      QDII_NTFY_TOKEN: ${{ secrets.QDII_NTFY_TOKEN }}
+      QDII_WEBHOOK_KIND: ${{ secrets.QDII_WEBHOOK_KIND }}
+      QDII_WEBHOOK_TOKEN: ${{ secrets.QDII_WEBHOOK_TOKEN }}
+      QDII_WEBHOOK_URL: ${{ secrets.QDII_WEBHOOK_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -33,15 +47,11 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Test notification channels
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.test_notification }}
+        run: node src/cli.js notify-test
+
       - name: Collect latest limits and send notifications
-        env:
-          QDII_NOTIFY: ${{ secrets.QDII_NOTIFY || 'console' }}
-          QDII_NTFY_SERVER: ${{ secrets.QDII_NTFY_SERVER || 'https://ntfy.sh' }}
-          QDII_NTFY_TOPIC: ${{ secrets.QDII_NTFY_TOPIC }}
-          QDII_NTFY_TOKEN: ${{ secrets.QDII_NTFY_TOKEN }}
-          QDII_WEBHOOK_KIND: ${{ secrets.QDII_WEBHOOK_KIND }}
-          QDII_WEBHOOK_TOKEN: ${{ secrets.QDII_WEBHOOK_TOKEN }}
-          QDII_WEBHOOK_URL: ${{ secrets.QDII_WEBHOOK_URL }}
         run: node src/cli.js collect
 
       - name: Refresh fund profiles

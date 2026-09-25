@@ -129,6 +129,8 @@ git push -u origin main
 | `QDII_NTFY_TOPIC` | 自己的私有主题名 |
 | `QDII_NTFY_TOKEN` | 私有主题需要时填写 |
 
+第一次在 Actions 页面手动运行时保留 `test_notification=true`，工作流会在采集和部署前先发送一条测试通知；后续定时任务只在检测到真实变化时发送通知。若本地 `.env` 设置 `QDII_NOTIFY_STARTUP_TEST=true`，本地 Web 服务每次启动后也会自动测试一次通知。
+
 工作流会把 `data/` 的最新快照、历史和基金概况缓存提交回仓库，以便下一次任务继续做变动对比。Pages 版本为只读站点，“由 Actions 更新”按钮会打开仓库 Actions 页面；本地 Node 版本仍保留“立即采集”。
 
 本地预览静态构建：

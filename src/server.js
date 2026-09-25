@@ -5,6 +5,7 @@ import { config, ROOT } from './config.js';
 import { readJson } from './store.js';
 import { runCollect } from './pipeline.js';
 import { getFundProfile } from './fund-profile.js';
+import { notify } from './notify.js';
 
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const PORT = Number(process.env.PORT || 8787);
@@ -207,7 +208,13 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, async () => {
   console.log(`QDII 额度监控台已启动: http://127.0.0.1:${PORT}`);
   console.log(`数据目录: ${config.dataDir}`);
+  if (config.notify.startupTest) {
+    const title = 'QDII 监控服务已启动';
+    const content = `服务地址：http://127.0.0.1:${PORT}\n启动时间：${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}\n通知通道已完成自动测试。`;
+    const results = await notify(config.notify, title, content);
+    console.log('启动通知:', JSON.stringify(results));
+  }
 });

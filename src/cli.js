@@ -3,6 +3,7 @@ import { config } from './config.js';
 import { runCollect } from './pipeline.js';
 import { readJson } from './store.js';
 import { fmtAmount } from './diff.js';
+import { notify } from './notify.js';
 
 const [cmd = 'collect', ...rest] = process.argv.slice(2);
 const has = (f) => rest.includes(f);
@@ -45,12 +46,22 @@ async function main() {
       break;
     }
 
+    case 'notify-test': {
+      const title = 'QDII 监控通知测试';
+      const content = `通知通道配置成功。\n时间：${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}\n后续检测到额度或申购状态变化时会自动推送。`;
+      const results = await notify(config.notify, title, content);
+      console.log('通知测试结果:', JSON.stringify(results));
+      if (!results.length || results.some((r) => !r.ok)) process.exitCode = 1;
+      break;
+    }
+
     default:
       console.log(`用法: node src/cli.js <command>
 
 命令:
   collect [--dry-run] [--force] [--quiet]   采集并比对变动（默认触发通知）
   report                                    打印最近一次快照摘要
+  notify-test                               立即测试全部已配置通知通道
 
 环境变量（全部可选，见 .env.example）:
   QDII_NOTIFY=console,webhook,email
