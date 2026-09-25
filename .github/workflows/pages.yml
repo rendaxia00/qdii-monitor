@@ -29,6 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      TZ: Asia/Shanghai
       QDII_NOTIFY: ${{ secrets.QDII_NOTIFY || 'console' }}
       QDII_NTFY_SERVER: ${{ secrets.QDII_NTFY_SERVER || 'https://ntfy.sh' }}
       QDII_NTFY_TOPIC: ${{ secrets.QDII_NTFY_TOPIC }}
