@@ -1,0 +1,30 @@
+{
+  "code": "513100",
+  "name": "纳指ETF国泰",
+  "performance": {
+    "one_month": 3.39,
+    "three_months": 2.63,
+    "six_months": 22.76,
+    "one_year": 17.27,
+    "three_years": 92.01,
+    "since_inception": 924.35,
+    "as_of": "2026-09-23",
+    "scale_billion": 194.68,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2013-04-25",
+  "inception_size_billion_shares": 2.676,
+  "scale_billion": 194.68,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.6,
+  "custody_fee": 0.2,
+  "sales_service_fee": null,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:51",
+  "fetched_at_ms": 1790317491461,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/513100.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_513100.html"
+  }
+}

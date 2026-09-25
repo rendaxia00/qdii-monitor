@@ -1,0 +1,30 @@
+{
+  "code": "015283",
+  "name": "华安恒生科技ETF发起式联接",
+  "performance": {
+    "one_month": -5.37,
+    "three_months": -3.54,
+    "six_months": -11.29,
+    "one_year": -34.55,
+    "three_years": -1.23,
+    "since_inception": 3.99,
+    "as_of": "2026-09-24",
+    "scale_billion": 20.04,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2022-04-19",
+  "inception_size_billion_shares": 0.164,
+  "scale_billion": 20.04,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.1,
+  "sales_service_fee": 0.2,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:34",
+  "fetched_at_ms": 1790317474179,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/015283.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_015283.html"
+  }
+}

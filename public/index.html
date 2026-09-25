@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QDII 申购限额监控台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div class="brand-text">
+        <h1>QDII 申购限额监控台</h1>
+        <p>跨境额度日报 · 代销与直销双口径 · 每日扫描</p>
+      </div>
+    </div>
+    <div class="masthead-meta">
+      <div class="meta-item">
+        <span class="meta-label">数据日期</span>
+        <strong id="asOf">—</strong>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">采集于</span>
+        <strong id="generatedAt">—</strong>
+      </div>
+      <button id="collectBtn" class="btn-primary" type="button">
+        <span class="btn-dot" aria-hidden="true"></span>
+        <span id="collectLabel">立即采集</span>
+      </button>
+    </div>
+  </div>
+  <div class="ticker" id="ticker" aria-live="polite"></div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="hero-lead">
+      <span class="section-label">今日实际可投额度 · 纳指100与标普500</span>
+      <div class="channel-totals">
+        <button class="channel-total" data-channel="distribution" type="button" aria-haspopup="dialog" aria-label="查看代销渠道可投基金明细">
+          <span class="channel-label">代销渠道</span>
+          <div class="hero-number"><span id="distributionLimit">—</span><span class="unit">元</span></div>
+          <p id="distributionNote">第三方平台实际可购买</p>
+          <span class="channel-action">查看明细 →</span>
+        </button>
+        <button class="channel-total channel-total-direct" data-channel="direct" type="button" aria-haspopup="dialog" aria-label="查看直销渠道可投基金明细">
+          <span class="channel-label">直销渠道</span>
+          <div class="hero-number"><span id="directLimit">—</span><span class="unit">元</span></div>
+          <p id="directNote">基金公司官网 / APP公告口径</p>
+          <span class="channel-action">查看明细 →</span>
+        </button>
+      </div>
+      <p class="hero-note">同一只基金两个渠道可能执行不同限额；代销入口关闭不代表基金公司直销同时关闭。</p>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>全市场申购状态</h2>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="bar-chart" id="barChart"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>基金明细</h2>
+      <div class="toolbar">
+        <input id="search" class="input" type="search" placeholder="搜索代码 / 名称…" autocomplete="off" />
+        <select id="indexFilter" class="input select"></select>
+        <select id="statusFilter" class="input select"></select>
+        <select id="sortBy" class="input select">
+          <option value="limit_desc">按代销额度 ↓</option>
+          <option value="limit_asc">按代销额度 ↑</option>
+          <option value="direct_desc">按直销额度 ↓</option>
+          <option value="ratio_desc">按渠道倍数 ↓</option>
+          <option value="code_asc">按代码 ↑</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-meta" id="tableMeta"></div>
+    <div class="table-scroll">
+      <table class="grid" id="fundTable">
+        <thead>
+          <tr>
+            <th class="col-code">代码</th>
+            <th class="col-name">基金名称</th>
+            <th class="col-topic">方向</th>
+            <th class="col-status">申购状态</th>
+            <th class="col-num">代销限额</th>
+            <th class="col-num">直销限额</th>
+            <th class="col-ratio">倍数</th>
+            <th class="col-redeem">赎回</th>
+          </tr>
+        </thead>
+        <tbody id="fundBody"></tbody>
+      </table>
+    </div>
+    <button id="moreBtn" class="btn-ghost hidden" type="button">加载更多</button>
+  </section>
+
+  <section class="panel" id="changesPanel">
+    <div class="panel-head">
+      <h2>额度变动记录</h2>
+      <span class="count-badge" id="changeCount">0</span>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>数据来源与口径</h2>
+    </div>
+    <div class="sources" id="sources"></div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>本地监控台 · 数据源自公开渠道，仅供个人参考，不构成投资建议</span>
+</footer>
+
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-backdrop" data-close></div>
+  <section class="drawer-panel" role="dialog" aria-modal="true" aria-label="基金详情">
+    <button class="drawer-close" data-close type="button" aria-label="关闭">×</button>
+    <div id="drawerBody"></div>
+  </section>
+</div>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

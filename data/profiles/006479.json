@@ -1,0 +1,30 @@
+{
+  "code": "006479",
+  "name": "广发纳斯达克100ETF联接人民币",
+  "performance": {
+    "one_month": 3.3,
+    "three_months": 2.11,
+    "six_months": 21.85,
+    "one_year": 15.76,
+    "three_years": 84.1,
+    "since_inception": 274.27,
+    "as_of": "2026-09-23",
+    "scale_billion": 64.93,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2018-10-25",
+  "inception_size_billion_shares": null,
+  "scale_billion": 64.93,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.8,
+  "custody_fee": 0.2,
+  "sales_service_fee": 0.2,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:29",
+  "fetched_at_ms": 1790317469721,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/006479.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_006479.html"
+  }
+}

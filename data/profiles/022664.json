@@ -1,0 +1,30 @@
+{
+  "code": "022664",
+  "name": "华泰柏瑞纳斯达克100ETF发起式联接",
+  "performance": {
+    "one_month": 3.22,
+    "three_months": 2.59,
+    "six_months": 21.73,
+    "one_year": 15.5,
+    "three_years": null,
+    "since_inception": 29.43,
+    "as_of": "2026-09-23",
+    "scale_billion": 0.6,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2024-11-26",
+  "inception_size_billion_shares": null,
+  "scale_billion": 0.6,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.15,
+  "sales_service_fee": 0.1,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:42",
+  "fetched_at_ms": 1790317482107,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/022664.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_022664.html"
+  }
+}

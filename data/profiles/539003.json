@@ -1,0 +1,30 @@
+{
+  "code": "539003",
+  "name": "建信富时100指数",
+  "performance": {
+    "one_month": -3.21,
+    "three_months": 2.59,
+    "six_months": 5.95,
+    "one_year": 9.94,
+    "three_years": 44.51,
+    "since_inception": 53.54,
+    "as_of": "2026-09-23",
+    "scale_billion": 6.91,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2012-06-26",
+  "inception_size_billion_shares": 4.982,
+  "scale_billion": 6.91,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.8,
+  "custody_fee": 0.2,
+  "sales_service_fee": 0,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:54",
+  "fetched_at_ms": 1790317494914,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/539003.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_539003.html"
+  }
+}

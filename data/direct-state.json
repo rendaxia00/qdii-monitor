@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "announcements": {
+    "AN202609241829835607": {
+      "parsed_at": "2026-09-25T04:55:56.555Z",
+      "fund_codes": [
+        "018966",
+        "018967",
+        "021773"
+      ],
+      "patch": {
+        "id": "AN202609241829835607",
+        "title": "关于汇添富纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)暂停申购、定期定额投资业务的公告",
+        "publish_date": "2026-09-24",
+        "effective_date": "2026-09-24",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "confidence": "high"
+      }
+    },
+    "AN202609241829831132": {
+      "parsed_at": "2026-09-25T04:55:56.886Z",
+      "fund_codes": [
+        "019736",
+        "019737"
+      ],
+      "patch": {
+        "id": "AN202609241829831132",
+        "title": "宝盈纳斯达克100指数型发起式证券投资基金(QDII)调整大额申购、定期定额投资业务限制金额的公告",
+        "publish_date": "2026-09-24",
+        "effective_date": "2026-09-28",
+        "status": "限大额",
+        "direct_amount": 10,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "confidence": "high"
+      }
+    },
+    "AN202609241829829803": {
+      "parsed_at": "2026-09-25T04:55:56.995Z",
+      "fund_codes": [
+        "021189",
+        "021190"
+      ],
+      "patch": {
+        "id": "AN202609241829829803",
+        "title": "关于调整南方基金南方东英富时亚太精选交易型开放式指数证券投资基金发起式联接基金(QDII)申购和定投业务金额限制的公告",
+        "publish_date": "2026-09-24",
+        "effective_date": "2026-09-24",
+        "status": "限大额",
+        "direct_amount": 20000,
+        "distribution_amount": 20000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "confidence": "high"
+      }
+    },
+    "AN202609241829829746": {
+      "parsed_at": "2026-09-25T04:55:57.263Z",
+      "fund_codes": [
+        "022647"
+      ],
+      "patch": {
+        "id": "AN202609241829829746",
+        "title": "关于华安恒生科技交易型开放式指数证券投资基金发起式联接基金(QDII)基金暂停I类份额大额申购及大额定期定额投资公告",
+        "publish_date": "2026-09-24",
+        "effective_date": "2026-09-30",
+        "status": "限大额",
+        "direct_amount": 5000,
+        "distribution_amount": 5000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "confidence": "high"
+      }
+    }
+  },
+  "baseline_as_of": "2026-09-24",
+  "updated_at": "2026-09-25T05:56:03.543Z",
+  "last_scan": {
+    "as_of": "2026-09-25",
+    "scanned": 120,
+    "parsed": 0,
+    "discovered": 0,
+    "errors": 0
+  },
+  "discovered_funds": []
+}

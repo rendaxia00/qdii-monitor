@@ -1,0 +1,30 @@
+{
+  "code": "021778",
+  "name": "广发纳指100ETF联接",
+  "performance": {
+    "one_month": 3.29,
+    "three_months": 2.11,
+    "six_months": 21.84,
+    "one_year": 15.77,
+    "three_years": null,
+    "since_inception": 45.5,
+    "as_of": "2026-09-23",
+    "scale_billion": 21.47,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2024-08-14",
+  "inception_size_billion_shares": null,
+  "scale_billion": 21.47,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.8,
+  "custody_fee": 0.2,
+  "sales_service_fee": 0.18,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:40",
+  "fetched_at_ms": 1790317480763,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/021778.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_021778.html"
+  }
+}

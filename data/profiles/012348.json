@@ -1,0 +1,30 @@
+{
+  "code": "012348",
+  "name": "天弘恒生科技ETF联接A",
+  "performance": {
+    "one_month": -5.33,
+    "three_months": -3.44,
+    "six_months": -11,
+    "one_year": -34.16,
+    "three_years": 1.66,
+    "since_inception": -40.47,
+    "as_of": "2026-09-24",
+    "scale_billion": 44.01,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2021-07-06",
+  "inception_size_billion_shares": 3.964,
+  "scale_billion": 44.01,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.1,
+  "sales_service_fee": 0,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:30",
+  "fetched_at_ms": 1790317470285,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/012348.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_012348.html"
+  }
+}

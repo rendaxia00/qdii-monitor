@@ -1,0 +1,30 @@
+{
+  "code": "000614",
+  "name": "华安德国",
+  "performance": {
+    "one_month": -4.99,
+    "three_months": 0.83,
+    "six_months": 6.56,
+    "one_year": -3.03,
+    "three_years": 47.91,
+    "since_inception": 94.94,
+    "as_of": "2026-09-23",
+    "scale_billion": 3.81,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2014-08-12",
+  "inception_size_billion_shares": 10.989,
+  "scale_billion": 3.81,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.8,
+  "custody_fee": 0.2,
+  "sales_service_fee": 0,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:29",
+  "fetched_at_ms": 1790317469505,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/000614.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_000614.html"
+  }
+}

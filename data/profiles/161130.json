@@ -1,0 +1,30 @@
+{
+  "code": "161130",
+  "name": "易方达纳斯达克100ETF联接",
+  "performance": {
+    "one_month": 3.33,
+    "three_months": 2.81,
+    "six_months": 22.27,
+    "one_year": 16.39,
+    "three_years": 86.57,
+    "since_inception": 356.66,
+    "as_of": "2026-09-23",
+    "scale_billion": 17.83,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2017-06-23",
+  "inception_size_billion_shares": 3.331,
+  "scale_billion": 17.83,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.1,
+  "sales_service_fee": 0,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:49",
+  "fetched_at_ms": 1790317489176,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/161130.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_161130.html"
+  }
+}

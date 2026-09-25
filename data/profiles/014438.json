@@ -1,0 +1,30 @@
+{
+  "code": "014438",
+  "name": "博时恒生科技ETF发起式联接",
+  "performance": {
+    "one_month": -5.35,
+    "three_months": -3.42,
+    "six_months": -10.96,
+    "one_year": -33.94,
+    "three_years": 0.56,
+    "since_inception": -20.42,
+    "as_of": "2026-09-24",
+    "scale_billion": 8.19,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2021-12-21",
+  "inception_size_billion_shares": 0.195,
+  "scale_billion": 8.19,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.15,
+  "sales_service_fee": 0,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:32",
+  "fetched_at_ms": 1790317472729,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/014438.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_014438.html"
+  }
+}

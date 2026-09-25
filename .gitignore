@@ -1,0 +1,5 @@
+dist/
+dist-rendered.html
+node_modules/
+*.log
+.env

@@ -1,0 +1,30 @@
+{
+  "code": "017641",
+  "name": "摩根标普500指数",
+  "performance": {
+    "one_month": 0.06,
+    "three_months": 3.57,
+    "six_months": 14.3,
+    "one_year": 10.19,
+    "three_years": 60.53,
+    "since_inception": 70.59,
+    "as_of": "2026-09-23",
+    "scale_billion": 53.03,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2023-04-06",
+  "inception_size_billion_shares": 0.227,
+  "scale_billion": 53.03,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.15,
+  "sales_service_fee": 0,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:15:03",
+  "fetched_at_ms": 1790316903086,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/017641.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_017641.html"
+  }
+}

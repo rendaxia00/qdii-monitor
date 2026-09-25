@@ -1,0 +1,30 @@
+{
+  "code": "022680",
+  "name": "华泰柏瑞恒生科技ETF联接",
+  "performance": {
+    "one_month": -5.27,
+    "three_months": -3.79,
+    "six_months": -11.48,
+    "one_year": -34.04,
+    "three_years": null,
+    "since_inception": -5.94,
+    "as_of": "2026-09-24",
+    "scale_billion": 1.72,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2024-11-26",
+  "inception_size_billion_shares": null,
+  "scale_billion": 1.72,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.2,
+  "custody_fee": 0.1,
+  "sales_service_fee": 0.1,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:42",
+  "fetched_at_ms": 1790317482132,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/022680.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_022680.html"
+  }
+}

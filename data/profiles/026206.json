@@ -1,0 +1,30 @@
+{
+  "code": "026206",
+  "name": "宝盈恒生科技指数",
+  "performance": {
+    "one_month": -5.38,
+    "three_months": -3.41,
+    "six_months": -10.94,
+    "one_year": 99.81,
+    "three_years": null,
+    "since_inception": -20.92,
+    "as_of": "2026-09-24",
+    "scale_billion": 4.15,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2026-01-16",
+  "inception_size_billion_shares": 8.7,
+  "scale_billion": 4.15,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.1,
+  "sales_service_fee": 0,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:45",
+  "fetched_at_ms": 1790317485306,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/026206.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_026206.html"
+  }
+}

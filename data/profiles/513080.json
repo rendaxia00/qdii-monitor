@@ -1,0 +1,30 @@
+{
+  "code": "513080",
+  "name": "法国ETF华安",
+  "performance": {
+    "one_month": -6.63,
+    "three_months": -3.6,
+    "six_months": 3,
+    "one_year": -3.8,
+    "three_years": 15.32,
+    "since_inception": 67.48,
+    "as_of": "2026-09-23",
+    "scale_billion": 11.12,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2020-05-29",
+  "inception_size_billion_shares": 2.569,
+  "scale_billion": 11.12,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.5,
+  "custody_fee": 0.15,
+  "sales_service_fee": null,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 14:24:50",
+  "fetched_at_ms": 1790317490177,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/513080.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_513080.html"
+  }
+}
