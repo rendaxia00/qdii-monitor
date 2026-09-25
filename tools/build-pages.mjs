@@ -28,7 +28,9 @@ const indexFile = path.join(DIST, 'index.html');
 const index = fs
   .readFileSync(indexFile, 'utf8')
   .replace('href="/styles.css"', 'href="./styles.css"')
-  .replace('src="/app.js"', 'src="./app.js"');
+  .replace('src="/app.js"', 'src="./app.js"')
+  // GitHub Actions 是管理员运维入口，不在公开站点展示。
+  .replace(/\s*<button id="collectBtn"[\s\S]*?<\/button>/, '');
 fs.writeFileSync(indexFile, index, 'utf8');
 
 let changes = [];
@@ -47,14 +49,9 @@ const dates = fs.existsSync(historyDir)
   ? fs.readdirSync(historyDir).filter((x) => /^\d{4}-\d{2}-\d{2}\.json$/.test(x)).map((x) => x.slice(0, -5)).sort()
   : [];
 const historySnapshots = dates.map((date) => ({ date, snapshot: read(path.join(historyDir, `${date}.json`)) }));
-const repositoryUrl = process.env.GITHUB_REPOSITORY
-  ? `https://github.com/${process.env.GITHUB_REPOSITORY}`
-  : null;
-
 write(path.join(DIST, 'data', 'snapshot.json'), {
   ok: true,
   static_mode: true,
-  repository_url: repositoryUrl,
   snapshot,
   changes,
   dates: dates.slice().reverse(),

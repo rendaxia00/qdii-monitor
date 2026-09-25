@@ -4,7 +4,6 @@ const state = {
   snap: null,
   changes: [],
   staticMode: false,
-  repositoryUrl: null,
   filter: { search: '', index: '', status: '', sort: 'limit_desc' },
   page: 1,
   pageSize: 80,
@@ -743,15 +742,12 @@ function initControls() {
     card.onclick = () => openChannelBreakdown(card.dataset.channel);
   });
 
-  $('#collectBtn').addEventListener('click', runCollect);
+  // Pages 构建会移除管理员采集入口；本地服务仍保留“立即采集”。
+  $('#collectBtn')?.addEventListener('click', runCollect);
 }
 
 /* ---------------- 采集 ---------------- */
 async function runCollect() {
-  if (state.staticMode) {
-    if (state.repositoryUrl) window.open(`${state.repositoryUrl}/actions`, '_blank', 'noopener');
-    return;
-  }
   const btn = $('#collectBtn');
   const label = $('#collectLabel');
   btn.disabled = true;
@@ -796,7 +792,6 @@ async function load() {
   state.snap = data.snapshot;
   state.changes = data.changes || [];
   state.staticMode = Boolean(data.static_mode);
-  state.repositoryUrl = data.repository_url || null;
 
   renderHeader();
   renderHero();
@@ -806,11 +801,6 @@ async function load() {
   renderSources();
   initControls();
 
-  if (state.staticMode) {
-    const btn = $('#collectBtn');
-    $('#collectLabel').textContent = '由 Actions 更新';
-    btn.title = state.repositoryUrl ? '打开 GitHub Actions 手动运行' : '静态站点由 GitHub Actions 定时更新';
-  }
 }
 
 load().catch((e) => {
