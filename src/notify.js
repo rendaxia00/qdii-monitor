@@ -47,6 +47,8 @@ async function sendNtfy(cfg, title, content) {
     priority: String(cfg.priority || 3),
     tags: cfg.tags || 'chart_with_upwards_trend,moneybag',
   };
+  // ntfy 官方 Click 头：用户点按通知时直接打开监控站点。
+  if (cfg.click) headers.click = cfg.click;
   if (cfg.token) headers.authorization = `Bearer ${cfg.token}`;
 
   const res = await fetch(url, { method: 'POST', headers, body: content });

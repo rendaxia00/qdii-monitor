@@ -73,6 +73,8 @@ export const config = {
       token: process.env.QDII_NTFY_TOKEN || '',
       priority: num(process.env.QDII_NTFY_PRIORITY, 3),
       tags: process.env.QDII_NTFY_TAGS || 'chart_with_upwards_trend,moneybag',
+      // 点击手机/桌面通知后打开的站点地址
+      click: process.env.QDII_NTFY_CLICK || '',
     },
     email: {
       host: process.env.QDII_SMTP_HOST || '',
