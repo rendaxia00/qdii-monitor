@@ -1,0 +1,30 @@
+{
+  "code": "513260",
+  "name": "恒生科技ETF汇添富",
+  "performance": {
+    "one_month": -5.59,
+    "three_months": -3.6,
+    "six_months": -11.37,
+    "one_year": -34.89,
+    "three_years": 3.19,
+    "since_inception": 6.07,
+    "as_of": "2026-09-24",
+    "scale_billion": 58.52,
+    "scale_as_of": "2026-06-30"
+  },
+  "inception_date": "2022-08-31",
+  "inception_size_billion_shares": 2.432,
+  "scale_billion": 58.52,
+  "scale_as_of": "2026-06-30",
+  "management_fee": 0.15,
+  "custody_fee": 0.05,
+  "sales_service_fee": null,
+  "fund_type": "指数型-海外股票",
+  "purchase_fee": null,
+  "fetched_at": "2026-09-25 06:33:52",
+  "fetched_at_ms": 1790318032811,
+  "sources": {
+    "performance": "https://fund.eastmoney.com/513260.html",
+    "overview": "https://fundf10.eastmoney.com/jbgk_513260.html"
+  }
+}
