@@ -330,49 +330,6 @@ function renderChanges() {
   wrap.append(frag);
 }
 
-/* ---------------- 渲染：来源 ---------------- */
-function renderSources() {
-  const s = state.snap;
-  const d = s.declared || {};
-  const wrap = $('#sources');
-  wrap.innerHTML = '';
-
-  const cards = [
-    {
-      title: '直销口径 · 基金销售公告',
-      desc: '从东方财富基金销售公告列表及公告正文提取直销/代销渠道额度；基金范围和主题由本地目录维护。无法高置信解析时沿用最近一次已核验值。',
-      url: s.sources?.direct?.url,
-      meta: `数据日期 ${s.sources?.direct?.as_of || '—'}`,
-    },
-    {
-      title: '代销口径 · 天天基金',
-      desc: '基金档案页的实时“交易状态 / 单日累计购买上限”，代表第三方平台（支付宝等）可申购额度。',
-      url: s.sources?.distribution?.url,
-      meta: `采集于 ${s.generated_at || '—'}`,
-    },
-    {
-      title: '采集统计',
-      desc: `成功解析 ${s.stats.total} 只基金份额，其中 ${s.stats.on_exchange || 0} 只为场内交易份额（不占用场外申购额度）。直销与代销渠道不一致 ${d.channel_mismatch ?? '—'} 只。`,
-      url: null,
-      meta: s.collect_errors?.length ? `采集失败 ${s.collect_errors.length} 只` : '全部解析成功',
-    },
-  ];
-
-  for (const c of cards) {
-    const card = el('div', 'src-card');
-    card.append(el('h3', null, c.title), el('p', null, c.desc));
-    if (c.url) {
-      const a = el('a', null, c.url);
-      a.href = c.url;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      card.append(a);
-    }
-    card.append(el('span', 'src-meta', c.meta));
-    wrap.append(card);
-  }
-}
-
 /* ---------------- 抽屉详情 ---------------- */
 function renderPerformanceSection(section, f, profile) {
   section.innerHTML = '';
@@ -798,7 +755,6 @@ async function load() {
   renderBars();
   renderTable();
   renderChanges();
-  renderSources();
   initControls();
 
 }
