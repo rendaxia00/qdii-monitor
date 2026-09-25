@@ -42,6 +42,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      # 排队中的 workflow_dispatch 可能仍指向旧 SHA；先同步上一次采集提交的数据。
+      - name: Sync latest main branch
+        run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
