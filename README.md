@@ -40,6 +40,7 @@ node src/cli.js collect            # 采集 + 比对变动 + 按需通知
 node src/cli.js collect --dry-run  # 只采集打印，不发通知、不写基线
 node src/cli.js collect --force    # 采集并覆盖基线，跳过比对
 node src/cli.js report             # 打印最近快照摘要
+node src/cli.js daily-summary      # 推送纳指/标普双渠道每日可申购清单
 node src/server.js                 # Web UI + API
 node src/scheduler.js              # 常驻调度（交易日 09:30 / 14:30）
 node src/scheduler.js 09:35 14:55  # 自定义时刻
@@ -83,6 +84,7 @@ export QDII_NTFY_TOPIC=qdii-my-private-topic
 export QDII_NTFY_TOKEN=                    # 私有主题需要时填写
 export QDII_NTFY_PRIORITY=3                # 1-5
 export QDII_NTFY_TAGS=chart_with_upwards_trend,moneybag
+export QDII_NTFY_CLICK=https://user.github.io/qdii-monitor/
 ```
 
 只关心纳指和标普方向：
@@ -103,7 +105,7 @@ schtasks /create /tn "QDII监控" /tr "D:\path\to\qdii-monitor\tools\collect.bat
 
 ## GitHub Actions + GitHub Pages 部署
 
-仓库内已包含 `.github/workflows/pages.yml`。工作流会在工作日北京时间 09:30、14:30 自动采集，发送已配置的通知，生成静态站点并部署到 GitHub Pages；也可在 Actions 页面手动运行。
+仓库内已包含 `.github/workflows/pages.yml`。工作流每天北京时间 09:30 自动采集并固定推送纳指100、标普500可申购基金及代销/直销额度；工作日 14:30 再采集一次，有额度变化时即时通知。每次运行都会生成静态站点并部署到 GitHub Pages；也可在 Actions 页面手动运行。
 
 首次部署：
 
@@ -128,8 +130,9 @@ git push -u origin main
 | `QDII_NTFY_SERVER` | `https://ntfy.sh` |
 | `QDII_NTFY_TOPIC` | 自己的私有主题名 |
 | `QDII_NTFY_TOKEN` | 私有主题需要时填写 |
+| `QDII_NTFY_CLICK` | 点击通知后打开的 Pages 地址 |
 
-第一次在 Actions 页面手动运行时保留 `test_notification=true`，工作流会在采集和部署前先发送一条测试通知；后续定时任务只在检测到真实变化时发送通知。若本地 `.env` 设置 `QDII_NOTIFY_STARTUP_TEST=true`，本地 Web 服务每次启动后也会自动测试一次通知。
+第一次在 Actions 页面手动运行时保留 `test_notification=true`，工作流会在采集和部署前先发送一条测试通知。定时任务每天 09:30 固定发送可申购清单，其他时次只在检测到真实变化时发送通知；手动运行可勾选 `send_daily_summary` 测试每日清单。若本地 `.env` 设置 `QDII_NOTIFY_STARTUP_TEST=true`，本地 Web 服务每次启动后也会自动测试一次通知。
 
 工作流会把 `data/` 的最新快照、历史和基金概况缓存提交回仓库，以便下一次任务继续做变动对比。Pages 版本为只读站点，“由 Actions 更新”按钮会打开仓库 Actions 页面；本地 Node 版本仍保留“立即采集”。
 

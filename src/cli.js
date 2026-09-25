@@ -4,6 +4,7 @@ import { runCollect } from './pipeline.js';
 import { readJson } from './store.js';
 import { fmtAmount } from './diff.js';
 import { notify } from './notify.js';
+import { buildDailyPurchaseSummary } from './daily-summary.js';
 
 const [cmd = 'collect', ...rest] = process.argv.slice(2);
 const has = (f) => rest.includes(f);
@@ -55,6 +56,20 @@ async function main() {
       break;
     }
 
+    case 'daily-summary': {
+      const snap = readJson(config.latestFile, null);
+      if (!snap) {
+        console.error('无快照，请先运行 collect');
+        process.exitCode = 1;
+        return;
+      }
+      const { title, content } = buildDailyPurchaseSummary(snap);
+      const results = await notify(config.notify, title, content);
+      console.log('每日通知结果:', JSON.stringify(results));
+      if (!results.length || results.some((r) => !r.ok)) process.exitCode = 1;
+      break;
+    }
+
     default:
       console.log(`用法: node src/cli.js <command>
 
@@ -62,6 +77,7 @@ async function main() {
   collect [--dry-run] [--force] [--quiet]   采集并比对变动（默认触发通知）
   report                                    打印最近一次快照摘要
   notify-test                               立即测试全部已配置通知通道
+  daily-summary                             推送纳指/标普双渠道每日可申购清单
 
 环境变量（全部可选，见 .env.example）:
   QDII_NOTIFY=console,webhook,email
