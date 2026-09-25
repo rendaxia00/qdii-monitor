@@ -46,9 +46,6 @@ const fundQuota = (f, channel) => {
 export function buildDailyPurchaseSummary(snapshot) {
   if (!snapshot?.funds?.length) throw new Error('无基金快照，无法生成每日通知');
 
-  const lines = [`QDII 每日可申购清单 · ${snapshot.as_of || '未知日期'}`];
-  if (snapshot.generated_at) lines.push(`数据生成：${snapshot.generated_at}`);
-
   let totalDist = { count: 0, amount: 0, unlimited: 0 };
   let totalDirect = { count: 0, amount: 0, unlimited: 0 };
   const sections = [];
@@ -59,7 +56,6 @@ export function buildDailyPurchaseSummary(snapshot) {
       .sort((a, b) => String(a.code).localeCompare(String(b.code)));
     const dist = channelStats(funds, isDistributionBuyable, 'limit_amount');
     const direct = channelStats(funds, isDirectBuyable, 'direct_limit_amount');
-    sections.push({ key, label, distribution: dist, direct });
     totalDist = {
       count: totalDist.count + dist.count,
       amount: totalDist.amount + dist.amount,
@@ -71,21 +67,27 @@ export function buildDailyPurchaseSummary(snapshot) {
       unlimited: totalDirect.unlimited + direct.unlimited,
     };
 
-    lines.push('', `【${label}】`, `代销 ${quotaText(dist)}｜直销 ${quotaText(direct)}`);
     const available = funds.filter((f) => isDistributionBuyable(f) || isDirectBuyable(f));
-    for (const f of available) {
-      lines.push(
-        `· ${f.code} ${shortName(f.name)}｜代销${fundQuota(f, 'distribution')}｜直销${fundQuota(f, 'direct')}`
-      );
-    }
-    if (!available.length) lines.push('· 当前无可申购基金');
+    sections.push({
+      key,
+      label,
+      distribution: dist,
+      direct,
+      funds: available.map((f) => ({
+        code: f.code,
+        name: f.name,
+        distributionText: fundQuota(f, 'distribution'),
+        directText: fundQuota(f, 'direct'),
+      })),
+    });
   }
 
-  lines.push(
-    '',
-    `合计：代销 ${quotaText(totalDist)}｜直销 ${quotaText(totalDirect)}`,
-    '点击通知打开完整监控站。'
-  );
+  const lines = [
+    `QDII 每日额度 · ${snapshot.as_of || '未知日期'}`,
+    `代销：${quotaText(totalDist)}`,
+    `直销：${quotaText(totalDirect)}`,
+    '具体可申购基金与双渠道额度见长图；点击通知打开完整监控站。',
+  ];
 
   return {
     title: `QDII 每日可购｜代销${fmtAmount(totalDist.amount)}｜直销${fmtAmount(totalDirect.amount)}`,

@@ -10,6 +10,11 @@ const esc = (value) => String(value ?? '')
 
 const money = (value) => Number(value || 0).toLocaleString('zh-CN');
 
+const shortName = (name, max = 25) => {
+  const value = String(name || '未命名基金');
+  return value.length > max ? `${value.slice(0, max - 1)}…` : value;
+};
+
 const channelLine = (stats) => {
   const extra = stats.unlimited ? ` · 另有 ${stats.unlimited} 只额度未标明` : '';
   return `${stats.count} 只 · ${money(stats.amount)} 元${extra}`;
@@ -23,8 +28,58 @@ export async function generateDailyQuotaCard(summary, outputFile) {
 
   const totalDist = summary.totals.distribution;
   const totalDirect = summary.totals.direct;
+  const width = 1200;
+  const topHeight = 445;
+  const sectionHeadHeight = 110;
+  const columnHeadHeight = 52;
+  const rowHeight = 66;
+  const sectionGap = 30;
+  const footerHeight = 105;
+  const tableHeight = summary.sections.reduce(
+    (sum, section) => sum + sectionHeadHeight + columnHeadHeight + section.funds.length * rowHeight + sectionGap,
+    0
+  );
+  const height = topHeight + tableHeight + footerHeight;
+
+  let cursorY = topHeight;
+  const sectionMarkup = summary.sections.map((section, sectionIndex) => {
+    const sectionY = cursorY;
+    const headY = sectionY;
+    const columnsY = headY + sectionHeadHeight;
+    const rowsY = columnsY + columnHeadHeight;
+    const accent = sectionIndex === 0 ? '#55a7df' : '#edc958';
+    const rows = section.funds.map((fund, index) => {
+      const y = rowsY + index * rowHeight;
+      const fill = index % 2 === 0 ? '#142941' : '#10243a';
+      const distColor = fund.distributionText === '关闭' ? '#687e94' : '#c1d4e6';
+      const directColor = fund.directText === '关闭' ? '#687e94' : '#e0c987';
+      return `
+        <rect x="70" y="${y}" width="1060" height="${rowHeight}" fill="${fill}"/>
+        <line x1="70" y1="${y + rowHeight}" x2="1130" y2="${y + rowHeight}" stroke="#29435d"/>
+        <text x="100" y="${y + 42}" fill="#8ea3b8" font-size="20" font-family="IBM Plex Mono, Consolas, monospace">${esc(fund.code)}</text>
+        <text x="235" y="${y + 42}" fill="#eef4f9" font-size="21">${esc(shortName(fund.name))}</text>
+        <text x="825" y="${y + 42}" fill="${distColor}" font-size="21">${esc(fund.distributionText)}</text>
+        <text x="1000" y="${y + 42}" fill="${directColor}" font-size="21">${esc(fund.directText)}</text>`;
+    }).join('');
+    cursorY = rowsY + section.funds.length * rowHeight + sectionGap;
+    return `
+      <rect x="70" y="${headY}" width="1060" height="${sectionHeadHeight}" rx="20" fill="#172d46" stroke="#36516c"/>
+      <rect x="70" y="${headY}" width="10" height="${sectionHeadHeight}" rx="5" fill="${accent}"/>
+      <text x="105" y="${headY + 46}" fill="#ffffff" font-size="30" font-weight="700">${esc(section.label)}</text>
+      <text x="105" y="${headY + 82}" fill="#8fa4b8" font-size="19">共 ${section.funds.length} 只可申购份额</text>
+      <text x="1130" y="${headY + 46}" text-anchor="end" fill="#b9cad9" font-size="20">代销 ${esc(channelLine(section.distribution))}</text>
+      <text x="1130" y="${headY + 80}" text-anchor="end" fill="#d8c58d" font-size="20">直销 ${esc(channelLine(section.direct))}</text>
+      <rect x="70" y="${columnsY}" width="1060" height="${columnHeadHeight}" fill="#0d2034"/>
+      <text x="100" y="${columnsY + 34}" fill="#667e96" font-size="17">代码</text>
+      <text x="235" y="${columnsY + 34}" fill="#667e96" font-size="17">基金名称</text>
+      <text x="825" y="${columnsY + 34}" fill="#667e96" font-size="17">代销额度/日</text>
+      <text x="1000" y="${columnsY + 34}" fill="#8d805f" font-size="17">直销额度/日</text>
+      ${rows}`;
+  }).join('');
+
+  const footerY = height - footerHeight;
   const svg = `
-  <svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stop-color="#0b182a"/>
@@ -38,7 +93,7 @@ export async function generateDailyQuotaCard(summary, outputFile) {
         <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#020812" flood-opacity="0.35"/>
       </filter>
     </defs>
-    <rect width="1200" height="900" rx="44" fill="url(#bg)"/>
+    <rect width="${width}" height="${height}" rx="44" fill="url(#bg)"/>
     <circle cx="1080" cy="85" r="230" fill="#d6ad4a" opacity="0.045"/>
     <circle cx="75" cy="820" r="190" fill="#4d91c8" opacity="0.055"/>
 
@@ -62,21 +117,11 @@ export async function generateDailyQuotaCard(summary, outputFile) {
       <text x="965" y="332" fill="#c8bd9f" font-size="27">元/日</text>
       <text x="660" y="375" fill="#9e9378" font-size="22">实际可购 ${totalDirect.count} 只${totalDirect.unlimited ? ` · ${totalDirect.unlimited} 只额度未标明` : ''}</text>
 
-      <rect x="70" y="450" width="1060" height="145" rx="22" fill="#13263d" stroke="#2c4765"/>
-      <rect x="70" y="450" width="10" height="145" rx="5" fill="#4d91c8"/>
-      <text x="110" y="500" fill="#ffffff" font-size="29" font-weight="700">纳斯达克100</text>
-      <text x="110" y="550" fill="#aebdce" font-size="23">代销  ${esc(channelLine(nasdaq.distribution))}</text>
-      <text x="655" y="550" fill="#d6c69c" font-size="23">直销  ${esc(channelLine(nasdaq.direct))}</text>
+      ${sectionMarkup}
 
-      <rect x="70" y="625" width="1060" height="145" rx="22" fill="#13263d" stroke="#2c4765"/>
-      <rect x="70" y="625" width="10" height="145" rx="5" fill="url(#gold)"/>
-      <text x="110" y="675" fill="#ffffff" font-size="29" font-weight="700">标普500</text>
-      <text x="110" y="725" fill="#aebdce" font-size="23">代销  ${esc(channelLine(sp500.distribution))}</text>
-      <text x="655" y="725" fill="#d6c69c" font-size="23">直销  ${esc(channelLine(sp500.direct))}</text>
-
-      <line x1="70" y1="815" x2="1130" y2="815" stroke="#34506b"/>
-      <text x="70" y="858" fill="#71869c" font-size="19">每日 09:30 自动更新 · 金额按当前可申购基金份额加总</text>
-      <text x="1130" y="858" text-anchor="end" fill="#d8b85a" font-size="19">rendaxia00.github.io/qdii-monitor</text>
+      <line x1="70" y1="${footerY + 22}" x2="1130" y2="${footerY + 22}" stroke="#34506b"/>
+      <text x="70" y="${footerY + 67}" fill="#71869c" font-size="19">每日 09:30 自动更新 · “关闭”表示该渠道当前不可申购</text>
+      <text x="1130" y="${footerY + 67}" text-anchor="end" fill="#d8b85a" font-size="19">点击通知查看完整监控站</text>
     </g>
   </svg>`;
 
