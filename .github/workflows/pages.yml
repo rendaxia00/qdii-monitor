@@ -42,7 +42,7 @@ jobs:
       QDII_NTFY_TOPIC: ${{ secrets.QDII_NTFY_TOPIC }}
       QDII_NTFY_TOKEN: ${{ secrets.QDII_NTFY_TOKEN }}
       QDII_NTFY_CLICK: ${{ secrets.QDII_NTFY_CLICK }}
-      QDII_NTFY_PRIORITY: ${{ secrets.QDII_NTFY_PRIORITY || '5' }}
+      QDII_NTFY_PRIORITY: '5'
       QDII_WEBHOOK_KIND: ${{ secrets.QDII_WEBHOOK_KIND }}
       QDII_WEBHOOK_TOKEN: ${{ secrets.QDII_WEBHOOK_TOKEN }}
       QDII_WEBHOOK_URL: ${{ secrets.QDII_WEBHOOK_URL }}
