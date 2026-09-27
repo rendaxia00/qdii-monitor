@@ -1,6 +1,7 @@
 // The free Cloudflare plan counts cron expressions, so one expression covers
-// both times. The handler ignores the afternoon occurrence on weekends.
-const SCHEDULE_CRON = '37 1,6 * * *';
+// both times. It also creates two cross-product occurrences, which the handler
+// ignores. All values are UTC: 03:15 = 11:15 CST, 07:30 = 15:30 CST.
+const SCHEDULE_CRON = '15,30 3,7 * * *';
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data, null, 2), {
@@ -81,17 +82,20 @@ export default {
   async scheduled(controller, env, ctx) {
     const scheduledAt = new Date(controller.scheduledTime);
     const utcHour = scheduledAt.getUTCHours();
+    const utcMinute = scheduledAt.getUTCMinutes();
     const utcDay = scheduledAt.getUTCDay();
-    const dailySummary = utcHour === 1;
+    const isDaily = utcHour === 3 && utcMinute === 15;
+    const isAfternoon = utcHour === 7 && utcMinute === 30;
 
-    // 06:37 UTC is the weekday afternoon refresh. Skip Saturday and Sunday.
-    if (utcHour === 6 && (utcDay === 0 || utcDay === 6)) {
-      console.log(JSON.stringify({ ok: true, skipped: 'weekend-afternoon', scheduledAt }));
+    // Ignore the cross-product times (03:30/07:15 UTC), and skip the
+    // afternoon refresh on Saturday and Sunday.
+    if ((!isDaily && !isAfternoon) || (isAfternoon && (utcDay === 0 || utcDay === 6))) {
+      console.log(JSON.stringify({ ok: true, skipped: 'non-target-occurrence', scheduledAt }));
       return;
     }
 
     ctx.waitUntil(runAndAlert(env, {
-      dailySummary,
+      dailySummary: isDaily,
       source: `cron:${controller.cron}`,
     }));
   },
@@ -107,8 +111,8 @@ export default {
         workflow: env.GITHUB_WORKFLOW,
         schedules: {
           cron: `${SCHEDULE_CRON} (UTC)`,
-          daily: '北京时间每天 09:37',
-          afternoon: '北京时间工作日 14:37（周末由代码跳过）',
+          daily: '北京时间每天 11:15',
+          afternoon: '北京时间工作日 15:30（周末由代码跳过）',
         },
       });
     }
