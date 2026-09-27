@@ -4,7 +4,7 @@ const state = {
   snap: null,
   changes: [],
   staticMode: false,
-  filter: { search: '', index: '', status: '', sort: 'limit_desc', quick: 'all' },
+  filter: { search: '', index: '', status: '', sort: 'limit_desc', quick: [] },
   page: 1,
   pageSize: 80,
   controlsReady: false,
@@ -187,7 +187,7 @@ function renderFocusMarkets() {
     action.append(el('b', null, '→'));
     row.append(identity, channelA, channelB, action);
     row.addEventListener('click', () => {
-      state.filter.quick = indexKey;
+      state.filter.quick = [indexKey];
       state.filter.index = '';
       state.page = 1;
       syncFilterControls();
@@ -240,7 +240,8 @@ function renderBars() {
 
 /* ---------------- 过滤与排序 ---------------- */
 function currentRows() {
-  const { search, index, status, sort, quick } = state.filter;
+  const { search, index, status, sort } = state.filter;
+  const quick = new Set(state.filter.quick || []);
   let rows = (state.snap.funds || []).slice();
 
   if (search) {
@@ -251,12 +252,13 @@ function currentRows() {
   }
   if (index) rows = rows.filter((f) => f.index_key === index);
   if (status) rows = rows.filter((f) => f.status === status);
-  if (quick === 'buyable')
+  const quickDirections = ['nasdaq100', 'sp500'].filter((key) => quick.has(key));
+  if (quickDirections.length) rows = rows.filter((f) => quickDirections.includes(f.index_key));
+  if (quick.has('buyable'))
     rows = rows.filter((f) => !f.on_exchange && f.status !== '暂停申购' && f.purchasable !== false && typeof f.limit_amount === 'number');
-  if (quick === 'nasdaq100' || quick === 'sp500') rows = rows.filter((f) => f.index_key === quick);
-  if (quick === 'channel_split')
+  if (quick.has('channel_split'))
     rows = rows.filter((f) => typeof f.direct_limit_amount === 'number' && typeof f.limit_amount === 'number' && f.direct_limit_amount > f.limit_amount);
-  if (quick === 'low_drag') rows = rows.filter((f) => f.fee_drag?.first_year_annual_rate <= 0.6);
+  if (quick.has('low_drag')) rows = rows.filter((f) => f.fee_drag?.first_year_annual_rate <= 0.6);
 
   const numOr = (v) => (typeof v === 'number' ? v : -1);
   const cmp = {
@@ -284,7 +286,7 @@ function renderTable() {
   const rows = currentRows();
   const shown = rows.slice(0, state.page * state.pageSize);
   const hasFilters = Boolean(
-    state.filter.search || state.filter.index || state.filter.status || state.filter.quick !== 'all'
+    state.filter.search || state.filter.index || state.filter.status || (state.filter.quick || []).length
   );
 
   $('#tableMeta').textContent = hasFilters
@@ -991,8 +993,9 @@ function syncFilterControls() {
   $('#indexFilter').value = state.filter.index;
   $('#statusFilter').value = state.filter.status;
   $('#sortBy').value = state.filter.sort;
+  const selected = new Set(state.filter.quick || []);
   document.querySelectorAll('[data-quick]').forEach((chip) => {
-    const active = chip.dataset.quick === state.filter.quick;
+    const active = chip.dataset.quick === 'all' ? selected.size === 0 : selected.has(chip.dataset.quick);
     chip.classList.toggle('is-active', active);
     chip.setAttribute('aria-pressed', String(active));
   });
@@ -1041,6 +1044,12 @@ function initControls() {
   });
   idxSel.addEventListener('change', (e) => {
     state.filter.index = e.target.value;
+    if (e.target.value) {
+      state.filter.quick = (state.filter.quick || []).filter(
+        (key) => !['nasdaq100', 'sp500'].includes(key)
+      );
+      syncFilterControls();
+    }
     state.page = 1;
     renderTable();
   });
@@ -1056,15 +1065,23 @@ function initControls() {
   });
   document.querySelectorAll('[data-quick]').forEach((chip) => {
     chip.addEventListener('click', () => {
-      state.filter.quick = chip.dataset.quick;
-      state.filter.index = '';
+      const key = chip.dataset.quick;
+      if (key === 'all') {
+        state.filter.quick = [];
+      } else {
+        const selected = new Set(state.filter.quick || []);
+        if (selected.has(key)) selected.delete(key);
+        else selected.add(key);
+        state.filter.quick = [...selected];
+        if (['nasdaq100', 'sp500'].includes(key)) state.filter.index = '';
+      }
       state.page = 1;
       syncFilterControls();
       renderTable();
     });
   });
   $('#clearFilters').addEventListener('click', () => {
-    state.filter = { search: '', index: '', status: '', sort: 'limit_desc', quick: 'all' };
+    state.filter = { search: '', index: '', status: '', sort: 'limit_desc', quick: [] };
     state.page = 1;
     syncFilterControls();
     renderTable();
