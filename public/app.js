@@ -190,6 +190,11 @@ function currentRows() {
     limit_asc: (a, b) => numOr(a.limit_amount) - numOr(b.limit_amount),
     direct_desc: (a, b) => numOr(b.direct_limit_amount) - numOr(a.direct_limit_amount),
     ratio_desc: (a, b) => numOr(b.channel_ratio) - numOr(a.channel_ratio),
+    tracking_asc: (a, b) => {
+      const av = typeof a.tracking_error === 'number' ? a.tracking_error : Number.POSITIVE_INFINITY;
+      const bv = typeof b.tracking_error === 'number' ? b.tracking_error : Number.POSITIVE_INFINITY;
+      return av - bv || String(a.code).localeCompare(String(b.code));
+    },
     code_asc: (a, b) => String(a.code).localeCompare(String(b.code)),
   }[sort];
   return rows.sort(cmp);
@@ -208,7 +213,7 @@ function renderTable() {
   if (!shown.length) {
     const tr = el('tr');
     const td = el('td', 'empty', '没有匹配的基金，试试调整筛选条件');
-    td.colSpan = 8;
+    td.colSpan = 9;
     tr.append(td);
     body.append(tr);
     $('#moreBtn').classList.add('hidden');
@@ -234,6 +239,20 @@ function renderTable() {
 
     // 方向
     tr.append(el('td', 'col-topic', INDEX_LABEL[f.index_key] || '—'));
+
+    // 年化跟踪偏差：数值越低，通常表示基金走势越贴近跟踪标的。
+    const tdTrack = el('td', 'col-track');
+    if (typeof f.tracking_error === 'number' && Number.isFinite(f.tracking_error)) {
+      const tone = f.tracking_error <= 1.5 ? 'is-low' : f.tracking_error <= 3 ? 'is-mid' : 'is-high';
+      const badge = el('span', `tracking-badge ${tone}`, `${f.tracking_error.toFixed(2)}%`);
+      badge.title = `年化跟踪误差 ${f.tracking_error.toFixed(2)}%；数值越低通常表示越贴近跟踪标的`;
+      tdTrack.append(badge);
+    } else {
+      const empty = el('span', 'tracking-none', '—');
+      empty.title = '暂无年化跟踪误差数据';
+      tdTrack.append(empty);
+    }
+    tr.append(tdTrack);
 
     // 状态
     const tdSt = el('td', 'col-status');
