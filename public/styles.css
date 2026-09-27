@@ -197,6 +197,24 @@ body {
 .btn-primary:hover:not(:disabled) { transform: translateY(-1px); }
 .btn-primary:disabled { opacity: 0.5; cursor: progress; }
 
+.btn-install {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 13px;
+  border: 1px solid var(--gold-2);
+  border-radius: var(--r-sm);
+  background: var(--gold-soft);
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.16s, background-color 0.16s;
+}
+.btn-install:hover { transform: translateY(-1px); background: var(--paper-3); }
+.btn-install[hidden] { display: none; }
+
 .btn-dot {
   width: 6px;
   height: 6px;

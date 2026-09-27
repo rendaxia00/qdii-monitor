@@ -883,7 +883,7 @@ async function load() {
     $('#timeline').innerHTML = '';
     const tr = el('tr');
     const td = el('td', 'empty', `${data.error || '尚无数据'}。点击右上角“立即采集”开始首次扫描。`);
-    td.colSpan = 8;
+    td.colSpan = 10;
     tr.append(td);
     $('#fundBody').append(tr);
     return;
@@ -901,6 +901,46 @@ async function load() {
   initControls();
 
 }
+
+/* ---------------- 安装为桌面应用（PWA） ---------------- */
+let deferredInstallPrompt = null;
+
+function initPwa() {
+  const installBtn = $('#pwaInstallBtn');
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register(new URL('./service-worker.js', document.baseURI))
+        .catch((error) => console.warn('Service worker 注册失败：', error));
+    });
+  }
+
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    if (installBtn) installBtn.hidden = false;
+  });
+
+  installBtn?.addEventListener('click', async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    installBtn.hidden = true;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    if (installBtn) installBtn.hidden = true;
+  });
+
+  if (window.matchMedia('(display-mode: standalone)').matches && installBtn) {
+    installBtn.hidden = true;
+  }
+}
+
+initPwa();
 
 load().catch((e) => {
   console.error(e);

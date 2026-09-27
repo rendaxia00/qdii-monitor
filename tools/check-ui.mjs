@@ -14,6 +14,9 @@ const pub = path.join(ROOT, 'public');
 const html = fs.readFileSync(path.join(pub, 'index.html'), 'utf8');
 const js = fs.readFileSync(path.join(pub, 'app.js'), 'utf8');
 const css = fs.readFileSync(path.join(pub, 'styles.css'), 'utf8');
+const manifestPath = path.join(pub, 'manifest.webmanifest');
+const serviceWorkerPath = path.join(pub, 'service-worker.js');
+const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 
 let fail = 0;
 const ids = new Set([...html.matchAll(/id="([^"]+)"/g)].map((m) => m[1]));
@@ -58,6 +61,13 @@ const checks = [
   ['viewport meta', /name="viewport"/.test(html)],
   ['stylesheet 引入', /styles\.css/.test(html)],
   ['script module 引入', /app\.js/.test(html)],
+  ['manifest 引入', /rel="manifest"[^>]+manifest\.webmanifest/.test(html)],
+  ['安装按钮', ids.has('pwaInstallBtn')],
+  ['service worker 文件', fs.existsSync(serviceWorkerPath)],
+  ['service worker 注册', /serviceWorker\s*\.register/.test(js)],
+  ['manifest standalone', manifest.display === 'standalone'],
+  ['manifest 192 图标', manifest.icons?.some((icon) => icon.sizes === '192x192')],
+  ['manifest 512 图标', manifest.icons?.some((icon) => icon.sizes === '512x512')],
   ['表格 10 列', (html.match(/<th class="col-/g) || []).length === 10],
 ];
 for (const [n, ok] of checks) {
