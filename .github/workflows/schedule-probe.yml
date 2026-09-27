@@ -1,0 +1,13 @@
+name: Schedule registration probe
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record scheduler event
+        run: echo "schedule probe fired at $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
