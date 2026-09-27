@@ -4,9 +4,13 @@ const state = {
   snap: null,
   changes: [],
   staticMode: false,
-  filter: { search: '', index: '', status: '', sort: 'limit_desc' },
+  filter: { search: '', index: '', status: '', sort: 'limit_desc', quick: 'all' },
   page: 1,
   pageSize: 80,
+  controlsReady: false,
+  returnChannel: null,
+  lastFocus: null,
+  cachedOffline: false,
 };
 
 /** 本地服务优先；GitHub Pages 上回退到构建时生成的静态 JSON。 */
@@ -15,12 +19,18 @@ async function fetchJson(primaryUrl, staticPath, options) {
     try {
       const res = await fetch(primaryUrl, options);
       const type = res.headers.get('content-type') || '';
-      if (res.ok && type.includes('application/json')) return await res.json();
+      if (res.ok && type.includes('application/json')) {
+        state.cachedOffline = res.headers.get('x-qdii-offline') === '1';
+        updateNetworkStatus();
+        return await res.json();
+      }
     } catch {}
   }
   const fallback = new URL(staticPath, document.baseURI);
   const res = await fetch(fallback);
   if (!res.ok) throw new Error(`静态数据加载失败：${res.status}`);
+  state.cachedOffline = res.headers.get('x-qdii-offline') === '1';
+  updateNetworkStatus();
   return res.json();
 }
 
@@ -33,12 +43,20 @@ const el = (tag, cls, txt) => {
 };
 
 /* ---------------- 主题 ---------------- */
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = theme === 'dark' ? '#101416' : '#f5f7f8';
+  const toggle = $('#themeToggle');
+  if (toggle) toggle.setAttribute('aria-label', theme === 'dark' ? '切换为浅色' : '切换为深色');
+}
+
 (function initTheme() {
   try {
     const saved = localStorage.getItem('qdii-theme');
-    if (saved) document.documentElement.setAttribute('data-theme', saved);
+    if (saved) applyTheme(saved);
     else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-      document.documentElement.setAttribute('data-theme', 'dark');
+      applyTheme('dark');
   } catch {}
 })();
 
@@ -83,16 +101,15 @@ function fmtPercent(v) {
 function renderHeader() {
   const s = state.snap;
   $('#asOf').textContent = s.as_of || '—';
-  $('#generatedAt').textContent = (s.generated_at || '').slice(5) || '—';
+  $('#generatedAt').textContent = (s.generated_at || '').slice(5, 16).replace('T', ' ') || '—';
 
   const d = s.declared || {};
   const st = s.stats;
   const parts = [
-    `收录 <strong>${st.total}</strong> 只`,
-    `开放申购 <strong>${st.open}</strong>`,
-    `限大额 <strong>${st.limited}</strong>`,
-    `暂停申购 <strong>${st.suspended}</strong>`,
-    `场内份额 <strong>${st.on_exchange || 0}</strong>`,
+    `监控 <strong>${st.total}</strong> 只`,
+    `可申购 <strong>${(st.open || 0) + (st.limited || 0)}</strong>`,
+    `暂停 <strong>${st.suspended}</strong>`,
+    `场内 <strong>${st.on_exchange || 0}</strong>`,
   ];
   if (d.total_daily_limit != null)
     parts.push(`源站声明今日可购合计 <strong>${d.total_daily_limit} 元</strong>`);
@@ -115,10 +132,10 @@ function renderHero() {
   $('#directNote').textContent = `${directN ?? 0} 只 · 按已生效基金公司公告统计`;
 
   const stats = [
-    { num: st.total, label: '收录基金份额', tone: '' },
-    { num: st.open, label: '开放申购', tone: 'open' },
-    { num: st.limited, label: '限大额', tone: 'limited' },
-    { num: st.suspended, label: '暂停申购', tone: 'suspended' },
+    { num: st.open, label: '开放', tone: 'open' },
+    { num: st.limited, label: '限额', tone: 'limited' },
+    { num: st.suspended, label: '暂停', tone: 'suspended' },
+    { num: st.total, label: '全部', tone: '' },
   ];
   const wrap = $('#heroStats');
   wrap.innerHTML = '';
@@ -127,6 +144,55 @@ function renderHero() {
     if (s.tone) d.dataset.tone = s.tone;
     d.append(el('span', 'stat-num', String(s.num ?? '—')), el('span', 'stat-label', s.label));
     wrap.append(d);
+  }
+}
+
+function renderFocusMarkets() {
+  const wrap = $('#focusMarkets');
+  wrap.innerHTML = '';
+  const source = state.snap.funds || [];
+
+  for (const indexKey of ['nasdaq100', 'sp500']) {
+    const funds = source.filter((fund) => fund.index_key === indexKey && !fund.on_exchange);
+    const distribution = funds.filter(
+      (fund) =>
+        typeof fund.limit_amount === 'number' &&
+        fund.status !== '暂停申购' &&
+        fund.purchasable !== false
+    );
+    const direct = funds.filter(
+      (fund) => typeof fund.direct_limit_amount === 'number' && fund.direct_status !== '暂停申购'
+    );
+    const distributionTotal = distribution.reduce((sum, fund) => sum + fund.limit_amount, 0);
+    const directTotal = direct.reduce((sum, fund) => sum + fund.direct_limit_amount, 0);
+
+    const row = el('button', 'focus-market');
+    row.type = 'button';
+    row.dataset.index = indexKey;
+    row.setAttribute('aria-label', `筛选${INDEX_LABEL[indexKey]}基金`);
+
+    const identity = el('span', 'focus-identity');
+    identity.append(el('span', `focus-glyph is-${indexKey}`, indexKey === 'nasdaq100' ? 'N' : 'S'));
+    const name = el('span', 'focus-name');
+    name.append(el('strong', null, INDEX_LABEL[indexKey]), el('small', null, `${funds.length} 只场外份额`));
+    identity.append(name);
+
+    const channelA = el('span', 'focus-channel');
+    channelA.append(el('small', null, `代销 · ${distribution.length} 只可买`), el('strong', null, `${distributionTotal.toLocaleString('zh-CN')} 元`));
+    const channelB = el('span', 'focus-channel');
+    channelB.append(el('small', null, `直销 · ${direct.length} 只可买`), el('strong', null, `${directTotal.toLocaleString('zh-CN')} 元`));
+    const action = el('span', 'focus-action', '查看基金');
+    action.append(el('b', null, '→'));
+    row.append(identity, channelA, channelB, action);
+    row.addEventListener('click', () => {
+      state.filter.quick = indexKey;
+      state.filter.index = '';
+      state.page = 1;
+      syncFilterControls();
+      renderTable();
+      $('#funds').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    wrap.append(row);
   }
 }
 
@@ -172,7 +238,7 @@ function renderBars() {
 
 /* ---------------- 过滤与排序 ---------------- */
 function currentRows() {
-  const { search, index, status, sort } = state.filter;
+  const { search, index, status, sort, quick } = state.filter;
   let rows = (state.snap.funds || []).slice();
 
   if (search) {
@@ -183,6 +249,12 @@ function currentRows() {
   }
   if (index) rows = rows.filter((f) => f.index_key === index);
   if (status) rows = rows.filter((f) => f.status === status);
+  if (quick === 'buyable')
+    rows = rows.filter((f) => !f.on_exchange && f.status !== '暂停申购' && f.purchasable !== false && typeof f.limit_amount === 'number');
+  if (quick === 'nasdaq100' || quick === 'sp500') rows = rows.filter((f) => f.index_key === quick);
+  if (quick === 'channel_split')
+    rows = rows.filter((f) => typeof f.direct_limit_amount === 'number' && typeof f.limit_amount === 'number' && f.direct_limit_amount > f.limit_amount);
+  if (quick === 'low_drag') rows = rows.filter((f) => f.fee_drag?.first_year_annual_rate <= 0.6);
 
   const numOr = (v) => (typeof v === 'number' ? v : -1);
   const cmp = {
@@ -209,18 +281,30 @@ function currentRows() {
 function renderTable() {
   const rows = currentRows();
   const shown = rows.slice(0, state.page * state.pageSize);
+  const hasFilters = Boolean(
+    state.filter.search || state.filter.index || state.filter.status || state.filter.quick !== 'all'
+  );
 
-  $('#tableMeta').textContent = `共 ${rows.length} 条匹配 · 显示前 ${shown.length} 条 · 共收录 ${state.snap.funds.length} 只`;
+  $('#tableMeta').textContent = hasFilters
+    ? `找到 ${rows.length} 只基金${shown.length < rows.length ? ` · 当前显示 ${shown.length} 只` : ''}`
+    : `共收录 ${state.snap.funds.length} 只基金份额`;
+  $('#clearFilters').hidden = !hasFilters;
 
   const body = $('#fundBody');
+  const mobile = $('#fundListMobile');
   body.innerHTML = '';
+  mobile.innerHTML = '';
 
   if (!shown.length) {
     const tr = el('tr');
-    const td = el('td', 'empty', '没有匹配的基金，试试调整筛选条件');
+    const td = el('td', 'empty-state');
+    td.append(el('span', 'empty-icon', '⌕'), el('strong', null, '没有找到匹配的基金'), el('p', null, '换一个名称、代码或筛选条件试试。'));
     td.colSpan = 10;
     tr.append(td);
     body.append(tr);
+    const mobileEmpty = el('div', 'empty-state');
+    mobileEmpty.append(el('span', 'empty-icon', '⌕'), el('strong', null, '没有找到匹配的基金'), el('p', null, '换一个名称、代码或筛选条件试试。'));
+    mobile.append(mobileEmpty);
     $('#moreBtn').classList.add('hidden');
     return;
   }
@@ -229,6 +313,9 @@ function renderTable() {
   for (const f of shown) {
     const tr = el('tr', 'is-clickable');
     if (f.status === '暂停申购') tr.classList.add('row-suspended');
+    tr.tabIndex = 0;
+    tr.setAttribute('role', 'button');
+    tr.setAttribute('aria-label', `查看 ${f.name} 详情`);
 
     // 代码
     tr.append(el('td', 'col-code', f.code));
@@ -314,7 +401,36 @@ function renderTable() {
     tr.append(el('td', 'col-redeem', f.redeem || '—'));
 
     tr.addEventListener('click', () => openDrawer(f));
+    tr.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openDrawer(f);
+      }
+    });
     frag.append(tr);
+
+    const item = el('button', 'fund-list-item');
+    item.type = 'button';
+    item.setAttribute('aria-label', `查看 ${f.name} 详情`);
+    const head = el('span', 'fund-list-head');
+    const identity = el('span', 'fund-list-identity');
+    identity.append(el('code', null, f.code), el('strong', null, f.name));
+    const status = el('span', 'pill', f.status || '—');
+    status.dataset.s = f.status || '';
+    head.append(identity, status);
+    const meta = el('span', 'fund-list-meta');
+    meta.append(el('span', null, INDEX_LABEL[f.index_key] || '—'));
+    if (typeof f.tracking_error === 'number') meta.append(el('span', null, `偏差 ${f.tracking_error.toFixed(2)}%`));
+    if (f.fee_drag) meta.append(el('span', null, `磨损 ${f.fee_drag.first_year_annual_rate.toFixed(2)}%`));
+    const limits = el('span', 'fund-list-limits');
+    const dist = el('span');
+    dist.append(el('small', null, '代销'), el('strong', null, fmtAmount(f.limit_amount).text));
+    const direct = el('span');
+    direct.append(el('small', null, '直销'), el('strong', null, fmtAmount(f.direct_limit_amount).text));
+    limits.append(dist, direct, el('b', null, '›'));
+    item.append(head, meta, limits);
+    item.addEventListener('click', () => openDrawer(f));
+    mobile.append(item);
   }
   body.append(frag);
 
@@ -578,18 +694,90 @@ async function loadFundExtras(code, f, costSection, performanceSection, historyS
   }
 }
 
-function openDrawer(f) {
+function activateDrawerTab(name, focus = false) {
+  const drawer = $('#drawer');
+  drawer.querySelectorAll('[role="tab"]').forEach((tab) => {
+    const active = tab.dataset.tab === name;
+    tab.classList.toggle('is-active', active);
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+    if (active && focus) tab.focus();
+  });
+  drawer.querySelectorAll('.drawer-tab-panel').forEach((panel) => {
+    panel.hidden = panel.dataset.panel !== name;
+  });
+}
+
+function createDrawerTabs(items) {
+  const tabs = el('div', 'drawer-tabs');
+  tabs.setAttribute('role', 'tablist');
+  items.forEach(([key, label], index) => {
+    const tab = el('button', `drawer-tab${index === 0 ? ' is-active' : ''}`, label);
+    tab.type = 'button';
+    tab.dataset.tab = key;
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('aria-selected', String(index === 0));
+    tab.tabIndex = index === 0 ? 0 : -1;
+    tab.addEventListener('click', () => activateDrawerTab(key));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const next = (index + (event.key === 'ArrowRight' ? 1 : items.length - 1)) % items.length;
+      activateDrawerTab(items[next][0], true);
+    });
+    tabs.append(tab);
+  });
+  return tabs;
+}
+
+function openDrawer(f, options = {}) {
   const drawer = $('#drawer');
   const body = $('#drawerBody');
+  if (drawer.hidden) state.lastFocus = document.activeElement;
   body.innerHTML = '';
   drawer.dataset.fundCode = f.code;
+  state.returnChannel = options.returnChannel || null;
+  const back = $('#drawerBack');
+  back.hidden = !state.returnChannel;
+  back.onclick = state.returnChannel ? () => openChannelBreakdown(state.returnChannel) : null;
+  $('.drawer-context').textContent = '基金详情';
 
-  body.append(el('h3', 'dw-title', f.name));
-  body.append(el('p', 'dw-sub', `${f.code} · ${INDEX_LABEL[f.index_key] || '未分类'}`));
+  const head = el('header', 'drawer-hero');
+  const titleRow = el('div', 'drawer-title-row');
+  titleRow.append(el('h3', 'dw-title', f.name));
+  const statusPill = el('span', 'pill', f.status || '—');
+  statusPill.dataset.s = f.status || '';
+  titleRow.append(statusPill);
+  head.append(titleRow, el('p', 'dw-sub', `${f.code} · ${INDEX_LABEL[f.index_key] || '未分类'}${f.track_target ? ` · ${f.track_target}` : ''}`));
+  body.append(head);
+
+  body.append(
+    createDrawerTabs([
+      ['overview', '申购概览'],
+      ['cost', '费用磨损'],
+      ['performance', '阶段表现'],
+      ['history', '额度历史'],
+    ])
+  );
+
+  const panels = el('div', 'drawer-panels');
+  const overviewPanel = el('div', 'drawer-tab-panel');
+  overviewPanel.dataset.panel = 'overview';
+  const costPanel = el('div', 'drawer-tab-panel');
+  costPanel.dataset.panel = 'cost';
+  costPanel.hidden = true;
+  const performancePanel = el('div', 'drawer-tab-panel');
+  performancePanel.dataset.panel = 'performance';
+  performancePanel.hidden = true;
+  const historyPanel = el('div', 'drawer-tab-panel');
+  historyPanel.dataset.panel = 'history';
+  historyPanel.hidden = true;
+  panels.append(overviewPanel, costPanel, performancePanel, historyPanel);
+  body.append(panels);
 
   // 双口径额度对比
   const sec1 = el('div', 'dw-section');
-  sec1.append(el('h4', null, '单日申购限额 · 双口径对照'));
+  sec1.append(el('h4', null, '今天可以买多少'));
   const isHigherDirect =
     typeof f.limit_amount === 'number' &&
     typeof f.direct_limit_amount === 'number' &&
@@ -624,7 +812,7 @@ function openDrawer(f) {
     warn.style.color = 'var(--suspended)';
     sec1.append(warn);
   }
-  body.append(sec1);
+  overviewPanel.append(sec1);
 
   // 长期定投显性费用磨损。
   const costSec = el('div', 'dw-section');
@@ -633,7 +821,7 @@ function openDrawer(f) {
     costSec.append(el('h4', null, '长期定投磨损 · 显性费用拆解'));
     costSec.append(el('p', 'dw-note loading-line', '正在读取管理费、托管费和销售服务费…'));
   }
-  body.append(costSec);
+  costPanel.append(costSec);
 
   // 阶段收益及费率资料：先展示快照里已有的值，再按需刷新完整概况。
   const perfSec = el('div', 'dw-section');
@@ -642,11 +830,11 @@ function openDrawer(f) {
     perfSec.append(el('h4', null, '阶段表现 · 最新净值口径'));
     perfSec.append(el('p', 'dw-note loading-line', '正在加载近1月、近1年、近3年和成立以来表现…'));
   }
-  body.append(perfSec);
+  performancePanel.append(perfSec);
 
   // 基础信息
   const sec2 = el('div', 'dw-section');
-  sec2.append(el('h4', null, '基础信息'));
+  sec2.append(el('h4', null, '基金与额度信息'));
   const grid = el('dl', 'dw-grid');
   const cells = [
     ['代销申购状态', f.status || '—', f.status === '限大额' || f.status === '开放申购'],
@@ -664,16 +852,16 @@ function openDrawer(f) {
     grid.append(box);
   }
   sec2.append(grid);
-  body.append(sec2);
+  overviewPanel.append(sec2);
 
   const historySec = el('div', 'dw-section');
   historySec.append(el('h4', null, '额度变化历史 · 双渠道'));
   historySec.append(el('p', 'dw-note loading-line', '正在读取本站留存的每日额度快照…'));
-  body.append(historySec);
+  historyPanel.append(historySec);
 
   // 链接
   const sec3 = el('div', 'dw-section');
-  sec3.append(el('h4', null, '原始数据'));
+  sec3.append(el('h4', null, '继续核对'));
   const links = el('div', 'dw-links');
   const addLink = (label, url) => {
     if (!url) return;
@@ -691,18 +879,23 @@ function openDrawer(f) {
   if (f.verified_by_announcement) {
     sec3.append(el('p', 'dw-note', '该条限额已由源站对照基金公司公告原文核验（公告直核）。'));
   }
-  body.append(sec3);
+  overviewPanel.append(sec3);
 
   drawer.hidden = false;
   drawer.querySelector('.drawer-panel').scrollTop = 0;
   document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => drawer.classList.add('is-open'));
   loadFundExtras(f.code, f, costSec, perfSec, historySec).catch(console.error);
 }
 
 function closeDrawer() {
-  $('#drawer').hidden = true;
-  $('#drawer').dataset.fundCode = '';
+  const drawer = $('#drawer');
+  drawer.classList.remove('is-open');
+  drawer.hidden = true;
+  drawer.dataset.fundCode = '';
   document.body.style.overflow = '';
+  state.returnChannel = null;
+  if (state.lastFocus?.focus) state.lastFocus.focus();
 }
 
 /** 展示纳指100与标普500方向某一渠道的逐只可投明细。 */
@@ -726,18 +919,24 @@ function openChannelBreakdown(channel) {
 
   const total = funds.reduce((sum, f) => sum + f[amountKey], 0);
   const drawer = $('#drawer');
+  if (drawer.hidden) state.lastFocus = document.activeElement;
   drawer.dataset.fundCode = '';
+  state.returnChannel = null;
+  $('#drawerBack').hidden = true;
+  $('.drawer-context').textContent = isDirect ? '直销清单' : '代销清单';
   const body = $('#drawerBody');
   body.innerHTML = '';
 
-  body.append(el('h3', 'dw-title', isDirect ? '直销渠道可投基金' : '代销渠道可投基金'));
-  body.append(
+  const head = el('header', 'drawer-hero');
+  head.append(el('h3', 'dw-title', isDirect ? '直销渠道可投基金' : '代销渠道可投基金'));
+  head.append(
     el(
       'p',
       'dw-sub',
       `纳指100 + 标普500 · ${funds.length} 只 · 单日合计 ${total.toLocaleString('zh-CN')} 元`
     )
   );
+  body.append(head);
 
   const summary = el('div', `quota-summary${isDirect ? ' is-direct' : ''}`);
   summary.append(el('span', 'quota-summary-label', isDirect ? '基金公司官网 / APP' : '第三方代销平台'));
@@ -770,7 +969,7 @@ function openChannelBreakdown(channel) {
       identity.append(el('code', null, f.code), el('span', null, f.name));
       const amount = el('strong', 'quota-amount', `${f[amountKey].toLocaleString('zh-CN')} 元`);
       row.append(identity, amount);
-      row.addEventListener('click', () => openDrawer(f));
+      row.addEventListener('click', () => openDrawer(f, { returnChannel: channel }));
       list.append(row);
     }
     sec.append(list);
@@ -781,9 +980,31 @@ function openChannelBreakdown(channel) {
   drawer.hidden = false;
   drawer.querySelector('.drawer-panel').scrollTop = 0;
   document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => drawer.classList.add('is-open'));
 }
 
 /* ---------------- 筛选控件 ---------------- */
+function syncFilterControls() {
+  $('#search').value = state.filter.search;
+  $('#indexFilter').value = state.filter.index;
+  $('#statusFilter').value = state.filter.status;
+  $('#sortBy').value = state.filter.sort;
+  document.querySelectorAll('[data-quick]').forEach((chip) => {
+    const active = chip.dataset.quick === state.filter.quick;
+    chip.classList.toggle('is-active', active);
+    chip.setAttribute('aria-pressed', String(active));
+  });
+}
+
+function updateNetworkStatus() {
+  const status = $('#networkStatus');
+  if (!status) return;
+  const offline = !navigator.onLine || state.cachedOffline;
+  status.classList.toggle('is-offline', offline);
+  const label = status.querySelector('b');
+  if (label) label.textContent = offline ? '离线浏览' : '已同步';
+}
+
 function initControls() {
   const idxSel = $('#indexFilter');
   const counts = state.snap.stats.by_index || {};
@@ -807,6 +1028,10 @@ function initControls() {
     stSel.append(o);
   }
 
+  syncFilterControls();
+  if (state.controlsReady) return;
+  state.controlsReady = true;
+
   $('#search').addEventListener('input', (e) => {
     state.filter.search = e.target.value;
     state.page = 1;
@@ -827,15 +1052,50 @@ function initControls() {
     state.page = 1;
     renderTable();
   });
+  document.querySelectorAll('[data-quick]').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      state.filter.quick = chip.dataset.quick;
+      state.filter.index = '';
+      state.page = 1;
+      syncFilterControls();
+      renderTable();
+    });
+  });
+  $('#clearFilters').addEventListener('click', () => {
+    state.filter = { search: '', index: '', status: '', sort: 'limit_desc', quick: 'all' };
+    state.page = 1;
+    syncFilterControls();
+    renderTable();
+    $('#search').focus();
+  });
   $('#moreBtn').addEventListener('click', () => {
     state.page += 1;
     renderTable();
   });
   $('#drawer').addEventListener('click', (e) => {
-    if (e.target.hasAttribute('data-close')) closeDrawer();
+    if (e.target.closest('[data-close]')) closeDrawer();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeDrawer();
+    const drawer = $('#drawer');
+    if (e.key === '/' && drawer.hidden && !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) {
+      e.preventDefault();
+      $('#search').focus();
+    }
+    if (e.key === 'Escape' && !drawer.hidden) closeDrawer();
+    if (e.key === 'Tab' && !drawer.hidden) {
+      const focusable = [...drawer.querySelectorAll('button:not([hidden]), a[href], [tabindex]:not([tabindex="-1"])')]
+        .filter((node) => !node.disabled && node.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   document.querySelectorAll('.channel-total').forEach((card) => {
@@ -844,6 +1104,31 @@ function initControls() {
 
   // Pages 构建会移除管理员采集入口；本地服务仍保留“立即采集”。
   $('#collectBtn')?.addEventListener('click', runCollect);
+
+  $('#themeToggle').addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('qdii-theme', next); } catch {}
+  });
+
+  window.addEventListener('online', () => {
+    state.cachedOffline = false;
+    updateNetworkStatus();
+  });
+  window.addEventListener('offline', updateNetworkStatus);
+  updateNetworkStatus();
+
+  const navLinks = [...document.querySelectorAll('.nav-link')];
+  const sections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${visible.target.id}`));
+    },
+    { rootMargin: '-25% 0px -65% 0px', threshold: [0, 0.1, 0.4] }
+  );
+  sections.forEach((section) => observer.observe(section));
 }
 
 /* ---------------- 采集 ---------------- */
@@ -873,10 +1158,27 @@ async function runCollect() {
 }
 
 /* ---------------- 加载 ---------------- */
+function showAppError(message) {
+  const status = $('#appStatus');
+  status.hidden = false;
+  status.className = 'app-status is-error';
+  status.innerHTML = '';
+  status.append(el('strong', null, '数据暂时没有加载出来'), el('span', null, message || '请检查网络后重试。'));
+  const retry = el('button', 'button button-secondary', '重新加载');
+  retry.type = 'button';
+  retry.addEventListener('click', () => {
+    status.className = 'app-status is-loading';
+    status.innerHTML = '<span class="status-loader" aria-hidden="true"></span><span>正在重新读取数据</span>';
+    load().catch((error) => showAppError(error.message));
+  });
+  status.append(retry);
+}
+
 async function load() {
   const data = await fetchJson('/api/snapshot', 'data/snapshot.json');
 
   if (!data.ok) {
+    showAppError(data.error || '尚无可用数据');
     $('#ticker').textContent = data.error || '尚无数据';
     $('#heroStats').innerHTML = '';
     $('#fundBody').innerHTML = '';
@@ -895,10 +1197,12 @@ async function load() {
 
   renderHeader();
   renderHero();
+  renderFocusMarkets();
   renderBars();
   renderTable();
   renderChanges();
   initControls();
+  $('#appStatus').hidden = true;
 
 }
 
@@ -945,4 +1249,5 @@ initPwa();
 load().catch((e) => {
   console.error(e);
   $('#ticker').textContent = '加载失败：' + e.message;
+  showAppError(navigator.onLine ? e.message : '当前处于离线状态，且尚未缓存可用数据。');
 });

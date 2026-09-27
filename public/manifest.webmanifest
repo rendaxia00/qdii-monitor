@@ -8,8 +8,8 @@
   "scope": "./",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone"],
-  "background_color": "#fbfcfe",
-  "theme_color": "#0d1a2b",
+  "background_color": "#f5f7f8",
+  "theme_color": "#f5f7f8",
   "categories": ["finance", "utilities"],
   "icons": [
     {

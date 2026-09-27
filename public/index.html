@@ -3,141 +3,140 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0d1a2b" />
+<meta name="theme-color" content="#f5f7f8" />
 <meta name="application-name" content="QDII 监控" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <title>QDII 申购限额监控台</title>
 <link rel="manifest" href="./manifest.webmanifest" />
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
+<a class="skip-link" href="#funds">跳到基金列表</a>
+<div class="ambient" aria-hidden="true"><i></i><i></i></div>
 
-<header class="masthead">
-  <div class="masthead-inner">
-    <div class="brand">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <div class="brand-text">
-        <h1>QDII 申购限额监控台</h1>
-        <p>跨境额度日报 · 代销与直销双口径 · 每日扫描</p>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#overview" aria-label="返回今日概览">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M8 25V18m7 7V12m7 13V16m-12-3 6-5 5 3 7-7" /></svg></span>
+      <span class="brand-copy"><strong>QDII 限额</strong><small>跨境基金工作台</small></span>
+    </a>
+    <nav class="primary-nav" aria-label="页面导航">
+      <a class="nav-link is-active" href="#overview">今日概览</a>
+      <a class="nav-link" href="#funds">基金库</a>
+      <a class="nav-link" href="#changesPanel">额度变化</a>
+    </nav>
+    <div class="top-actions">
+      <div id="networkStatus" class="sync-status" role="status">
+        <span class="sync-dot" aria-hidden="true"></span>
+        <span><b>已同步</b><small id="generatedAt">—</small></span>
       </div>
-    </div>
-    <div class="masthead-meta">
-      <button id="pwaInstallBtn" class="btn-install" type="button" hidden>安装应用</button>
-      <div class="meta-item">
-        <span class="meta-label">数据日期</span>
-        <strong id="asOf">—</strong>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">采集于</span>
-        <strong id="generatedAt">—</strong>
-      </div>
-      <button id="collectBtn" class="btn-primary" type="button">
-        <span class="btn-dot" aria-hidden="true"></span>
-        <span id="collectLabel">立即采集</span>
+      <button id="themeToggle" class="icon-button" type="button" aria-label="切换深浅色" title="切换深浅色">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"/></svg>
       </button>
+      <button id="pwaInstallBtn" class="button button-secondary install-button" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg>安装</button>
+      <button id="collectBtn" class="button button-primary" type="button"><span class="button-spinner" aria-hidden="true"></span><span id="collectLabel">刷新数据</span></button>
     </div>
   </div>
-  <div class="ticker" id="ticker" aria-live="polite"></div>
+  <div class="ticker-wrap"><div class="ticker" id="ticker" aria-live="polite">正在读取最新数据…</div></div>
 </header>
 
-<main class="wrap">
+<div id="appStatus" class="app-status is-loading" role="status" aria-live="polite"><span class="status-loader" aria-hidden="true"></span><span>正在读取最新额度</span></div>
 
-  <section class="hero">
-    <div class="hero-lead">
-      <span class="section-label">今日实际可投额度 · 纳指100与标普500</span>
-      <div class="channel-totals">
-        <button class="channel-total" data-channel="distribution" type="button" aria-haspopup="dialog" aria-label="查看代销渠道可投基金明细">
-          <span class="channel-label">代销渠道</span>
-          <div class="hero-number"><span id="distributionLimit">—</span><span class="unit">元</span></div>
-          <p id="distributionNote">第三方平台实际可购买</p>
-          <span class="channel-action">查看明细 →</span>
-        </button>
-        <button class="channel-total channel-total-direct" data-channel="direct" type="button" aria-haspopup="dialog" aria-label="查看直销渠道可投基金明细">
-          <span class="channel-label">直销渠道</span>
-          <div class="hero-number"><span id="directLimit">—</span><span class="unit">元</span></div>
-          <p id="directNote">基金公司官网 / APP公告口径</p>
-          <span class="channel-action">查看明细 →</span>
-        </button>
-      </div>
-      <p class="hero-note">同一只基金两个渠道可能执行不同限额；代销入口关闭不代表基金公司直销同时关闭。</p>
+<main class="workspace">
+  <section class="decision-board" id="overview" aria-labelledby="overviewTitle">
+    <div class="decision-intro">
+      <div class="eyebrow"><span class="live-pulse"></span> 今日额度 · <time id="asOf">—</time></div>
+      <h1 id="overviewTitle">今天还能买什么？</h1>
+      <p>先确认渠道额度，再从可申购基金中比较跟踪偏差与长期磨损。</p>
+      <a class="text-action" href="#funds">直接找基金 <span aria-hidden="true">↓</span></a>
     </div>
-    <div class="hero-stats" id="heroStats"></div>
+    <div class="channel-ledger" aria-label="纳指100与标普500今日可投额度">
+      <button class="channel-total" data-channel="distribution" type="button" aria-haspopup="dialog" aria-label="查看代销渠道可投基金明细">
+        <span class="channel-icon is-distribution" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10h16M6 10V6h12v4M6 10v8m6-8v8m6-8v8M4 18h16"/></svg></span>
+        <span class="channel-copy"><span class="channel-label">代销渠道 <em>第三方平台</em></span><span id="distributionNote" class="channel-note">正在统计可购买基金</span></span>
+        <span class="channel-amount"><strong id="distributionLimit">—</strong><small>元 / 日</small></span>
+        <span class="channel-open" aria-hidden="true">查看清单 <b>↗</b></span>
+      </button>
+      <button class="channel-total is-direct" data-channel="direct" type="button" aria-haspopup="dialog" aria-label="查看直销渠道可投基金明细">
+        <span class="channel-icon is-direct" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19V8l7-4 7 4v11M9 19v-5h6v5M3 19h18"/></svg></span>
+        <span class="channel-copy"><span class="channel-label">直销渠道 <em>基金公司</em></span><span id="directNote" class="channel-note">正在核对公司公告</span></span>
+        <span class="channel-amount"><strong id="directLimit">—</strong><small>元 / 日</small></span>
+        <span class="channel-open" aria-hidden="true">查看清单 <b>↗</b></span>
+      </button>
+      <p class="ledger-note">渠道额度可能不同。代销入口关闭，并不代表基金公司直销同步关闭。</p>
+    </div>
+    <div class="market-pulse" aria-label="全市场申购状态摘要">
+      <div class="pulse-head"><span>市场脉搏</span><small>全部份额</small></div>
+      <div class="hero-stats" id="heroStats"><span class="skeleton-line"></span><span class="skeleton-line"></span><span class="skeleton-line"></span></div>
+    </div>
   </section>
 
-  <section class="panel">
-    <div class="panel-head">
-      <h2>全市场申购状态</h2>
-      <div class="legend" id="legend"></div>
-    </div>
-    <div class="bar-chart" id="barChart"></div>
+  <section class="focus-section" aria-labelledby="focusTitle">
+    <header class="section-heading"><div><span class="section-index">01</span><h2 id="focusTitle">重点方向</h2></div><p>纳指100与标普500：先看今天能否买，再决定从哪个渠道进入。</p></header>
+    <div class="focus-market-list" id="focusMarkets" aria-live="polite"><div class="focus-market skeleton-block"></div><div class="focus-market skeleton-block"></div></div>
   </section>
 
-  <section class="panel">
-    <div class="panel-head">
-      <h2>基金明细</h2>
-      <div class="toolbar">
-        <input id="search" class="input" type="search" placeholder="搜索代码 / 名称…" autocomplete="off" />
-        <select id="indexFilter" class="input select"></select>
-        <select id="statusFilter" class="input select"></select>
-        <select id="sortBy" class="input select">
-          <option value="limit_desc">按代销额度 ↓</option>
-          <option value="limit_asc">按代销额度 ↑</option>
-          <option value="direct_desc">按直销额度 ↓</option>
-          <option value="ratio_desc">按渠道倍数 ↓</option>
-          <option value="tracking_asc">按跟踪偏差 ↑</option>
-          <option value="fee_asc">按长期磨损 ↑</option>
-          <option value="code_asc">按代码 ↑</option>
+  <section class="market-section" aria-labelledby="marketTitle">
+    <header class="section-heading compact"><div><span class="section-index">02</span><h2 id="marketTitle">全市场状态</h2></div><div class="legend" id="legend"></div></header>
+    <div class="bar-chart" id="barChart" aria-label="各申购状态基金数量"></div>
+  </section>
+
+  <section class="fund-workbench" id="funds" aria-labelledby="fundTitle">
+    <header class="section-heading fund-heading"><div><span class="section-index">03</span><h2 id="fundTitle">找到适合的基金</h2></div><p>点击任意基金，查看双渠道额度、费用磨损、阶段表现和历史变化。</p></header>
+    <div class="finder" role="search">
+      <label class="search-field" for="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="search" type="search" placeholder="搜索基金代码或名称" autocomplete="off" /><kbd>/</kbd></label>
+      <div class="filter-fields">
+        <select id="indexFilter" class="select" aria-label="按方向筛选"></select>
+        <select id="statusFilter" class="select" aria-label="按申购状态筛选"></select>
+        <select id="sortBy" class="select" aria-label="排序方式">
+          <option value="limit_desc">代销额度从高到低</option><option value="limit_asc">代销额度从低到高</option><option value="direct_desc">直销额度从高到低</option><option value="ratio_desc">渠道差异从高到低</option><option value="tracking_asc">跟踪偏差从低到高</option><option value="fee_asc">长期磨损从低到高</option><option value="code_asc">基金代码</option>
         </select>
       </div>
     </div>
-    <div class="table-meta" id="tableMeta"></div>
-    <div class="table-scroll">
-      <table class="grid" id="fundTable">
-        <thead>
-          <tr>
-            <th class="col-code">代码</th>
-            <th class="col-name">基金名称</th>
-            <th class="col-topic">方向</th>
-            <th class="col-track"><span class="track-head">跟踪偏差<small>年化</small></span></th>
-            <th class="col-fee"><span class="fee-head">长期磨损<small>首年</small></span></th>
-            <th class="col-status">申购状态</th>
-            <th class="col-num">代销限额</th>
-            <th class="col-num">直销限额</th>
-            <th class="col-ratio">倍数</th>
-            <th class="col-redeem">赎回</th>
-          </tr>
-        </thead>
-        <tbody id="fundBody"></tbody>
-      </table>
+    <div class="quick-filters" id="quickFilters" aria-label="快捷筛选">
+      <button class="filter-chip is-active" type="button" data-quick="all" aria-pressed="true">全部</button>
+      <button class="filter-chip" type="button" data-quick="buyable" aria-pressed="false"><span class="chip-dot is-open"></span>仅看可买</button>
+      <button class="filter-chip" type="button" data-quick="nasdaq100" aria-pressed="false">纳指100</button>
+      <button class="filter-chip" type="button" data-quick="sp500" aria-pressed="false">标普500</button>
+      <button class="filter-chip" type="button" data-quick="channel_split" aria-pressed="false">直销更高</button>
+      <button class="filter-chip" type="button" data-quick="low_drag" aria-pressed="false">低磨损</button>
     </div>
-    <button id="moreBtn" class="btn-ghost hidden" type="button">加载更多</button>
+    <div class="result-bar"><div class="table-meta" id="tableMeta">正在整理基金列表…</div><button id="clearFilters" class="text-button" type="button" hidden>清除筛选</button></div>
+    <div class="table-shell">
+      <div class="table-scroll">
+        <table class="grid" id="fundTable">
+          <thead><tr><th class="col-code">代码</th><th class="col-name">基金名称</th><th class="col-topic">方向</th><th class="col-track"><span class="metric-head">跟踪偏差<small>越低越稳</small></span></th><th class="col-fee"><span class="metric-head">长期磨损<small>首年费率</small></span></th><th class="col-status">申购状态</th><th class="col-num">代销限额</th><th class="col-num">直销限额</th><th class="col-ratio">渠道差</th><th class="col-redeem">赎回</th></tr></thead>
+          <tbody id="fundBody"></tbody>
+        </table>
+      </div>
+      <div id="fundListMobile" class="fund-list-mobile" aria-label="基金列表"></div>
+    </div>
+    <button id="moreBtn" class="load-more hidden" type="button">加载更多基金</button>
   </section>
 
-  <section class="panel" id="changesPanel">
-    <div class="panel-head">
-      <h2>额度变动记录</h2>
-      <span class="count-badge" id="changeCount">0</span>
-    </div>
+  <section class="change-section" id="changesPanel" aria-labelledby="changeTitle">
+    <header class="section-heading compact"><div><span class="section-index">04</span><h2 id="changeTitle">最近发生了什么</h2><span class="count-badge" id="changeCount">0</span></div><p>只记录额度或申购状态真正发生变化的节点。</p></header>
     <div class="timeline" id="timeline"></div>
   </section>
-
 </main>
 
-<footer class="foot">
-  <span>本地监控台 · 仅供个人参考，不构成投资建议</span>
-</footer>
+<footer class="foot"><span>数据用于额度观察，不构成投资建议</span><a href="#overview">回到顶部 ↑</a></footer>
 
 <div class="drawer" id="drawer" hidden>
   <div class="drawer-backdrop" data-close></div>
   <section class="drawer-panel" role="dialog" aria-modal="true" aria-label="基金详情">
-    <button class="drawer-close" data-close type="button" aria-label="关闭">×</button>
+    <div class="drawer-toolbar">
+      <button id="drawerBack" class="drawer-back" type="button" hidden aria-label="返回基金清单"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span>返回清单</span></button>
+      <span class="drawer-context">基金详情</span>
+      <button class="drawer-close" data-close type="button" aria-label="关闭详情"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
     <div id="drawerBody"></div>
   </section>
 </div>
