@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "qdii-github-scheduler",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-27",
+  "observability": {
+    "enabled": true
+  },
+  "triggers": {
+    "crons": [
+      "37 1,6 * * *"
+    ]
+  },
+  "vars": {
+    "GITHUB_OWNER": "rendaxia00",
+    "GITHUB_REPO": "qdii-monitor",
+    "GITHUB_WORKFLOW": "pages.yml"
+  }
+}
