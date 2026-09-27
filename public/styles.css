@@ -500,7 +500,7 @@ table.grid {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  min-width: 1040px;
+  min-width: 1160px;
 }
 
 table.grid thead th {
@@ -521,6 +521,7 @@ table.grid thead th {
 table.grid th.col-num, table.grid td.col-num,
 table.grid th.col-ratio, table.grid td.col-ratio { text-align: right; }
 table.grid th.col-track, table.grid td.col-track { text-align: center; }
+table.grid th.col-fee, table.grid td.col-fee { text-align: center; }
 
 table.grid tbody tr {
   border-bottom: 1px solid var(--line-2);
@@ -610,6 +611,48 @@ table.grid td {
 .tracking-badge.is-mid { color: var(--limited); background: var(--limited-soft); }
 .tracking-badge.is-high { color: var(--suspended); background: var(--suspended-soft); }
 .tracking-none { color: var(--mute-2); font-family: var(--mono); }
+
+.fee-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--ink-2);
+  font-weight: 700;
+}
+.fee-head small {
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: var(--paper-3);
+  color: var(--mute);
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.col-fee { white-space: nowrap; }
+.fee-drag-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  padding: 4px 9px;
+  border-radius: 7px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+.fee-drag-badge.is-low { color: var(--open); background: var(--open-soft); }
+.fee-drag-badge.is-mid { color: var(--limited); background: var(--limited-soft); }
+.fee-drag-badge.is-high { color: var(--suspended); background: var(--suspended-soft); }
+.fee-long-rate {
+  display: block;
+  margin-top: 4px;
+  color: var(--mute);
+  font-family: var(--mono);
+  font-size: 9px;
+  line-height: 1;
+}
+.fee-drag-none { color: var(--mute-2); font-size: 10.5px; }
 
 .pill {
   display: inline-block;
@@ -920,6 +963,67 @@ table.grid td {
 .loading-line { animation: soft-pulse 1.3s ease-in-out infinite; }
 @keyframes soft-pulse { 50% { opacity: 0.48; } }
 
+/* 长期定投显性费用磨损 */
+.fee-overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.fee-overview-card {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--paper-2);
+}
+.fee-overview-card.is-primary { border-color: var(--gold-2); background: var(--gold-soft); }
+.fee-overview-card span { display: block; color: var(--mute); font-size: 10.5px; }
+.fee-overview-card strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 20px;
+}
+.fee-overview-card.is-primary strong { color: var(--gold); }
+.fee-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r);
+  background: var(--line-2);
+}
+.fee-breakdown-item { padding: 11px 13px; background: var(--paper); }
+.fee-breakdown-item span { display: block; color: var(--mute); font-size: 10px; }
+.fee-breakdown-item strong { font-family: var(--mono); font-size: 14px; }
+.fee-breakdown-item small { display: block; color: var(--mute-2); font-size: 9.5px; }
+.fee-sim-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 15px 0 7px;
+}
+.fee-sim-title strong { font-size: 11.5px; }
+.fee-sim-title span { color: var(--mute); font-size: 10px; }
+.fee-sim-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.fee-sim-card {
+  padding: 10px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+.fee-sim-card > span { display: block; color: var(--mute); font-size: 10px; }
+.fee-sim-card strong { display: block; font-family: var(--mono); font-size: 13px; }
+.fee-sim-card small { display: block; color: var(--mute); font-size: 9.5px; }
+.fee-method-note { padding-left: 10px; border-left: 2px solid var(--gold-2); }
+
 /* 单只基金额度变化节点 */
 .fund-history { margin-top: 2px; }
 .fund-history-item {
@@ -1097,6 +1201,9 @@ table.grid td {
   .dw-grid { grid-template-columns: 1fr; }
   .dw-limits { grid-template-columns: 1fr; }
   .perf-grid { grid-template-columns: repeat(2, 1fr); }
+  .fee-overview { grid-template-columns: 1fr; }
+  .fee-breakdown { grid-template-columns: 1fr; }
+  .fee-sim-grid { grid-template-columns: repeat(2, 1fr); }
   .profile-facts { grid-template-columns: 1fr; }
   .drawer { padding: 12px; }
   .drawer-panel {

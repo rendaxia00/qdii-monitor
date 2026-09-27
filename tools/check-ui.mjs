@@ -58,7 +58,7 @@ const checks = [
   ['viewport meta', /name="viewport"/.test(html)],
   ['stylesheet 引入', /styles\.css/.test(html)],
   ['script module 引入', /app\.js/.test(html)],
-  ['表格 9 列', (html.match(/<th class="col-/g) || []).length === 9],
+  ['表格 10 列', (html.match(/<th class="col-/g) || []).length === 10],
 ];
 for (const [n, ok] of checks) {
   if (!ok) fail++;

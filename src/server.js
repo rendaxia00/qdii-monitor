@@ -6,6 +6,7 @@ import { readJson } from './store.js';
 import { runCollect } from './pipeline.js';
 import { getFundProfile } from './fund-profile.js';
 import { notify } from './notify.js';
+import { calculateCostDrag } from './cost-drag.js';
 
 const PUBLIC_DIR = path.join(ROOT, 'public');
 const PORT = Number(process.env.PORT || 8787);
@@ -58,6 +59,17 @@ function listHistory() {
   } catch {
     return [];
   }
+}
+
+function withCostDrag(snapshot) {
+  if (!snapshot?.funds) return snapshot;
+  return {
+    ...snapshot,
+    funds: snapshot.funds.map((fund) => {
+      const profile = readJson(path.join(config.profileDir, `${fund.code}.json`), {});
+      return { ...fund, fee_drag: calculateCostDrag(profile) };
+    }),
+  };
 }
 
 /** 按日期取历史快照，并算出与前一日的变动（用于回溯某天的变化） */
@@ -117,7 +129,7 @@ const server = http.createServer(async (req, res) => {
       if (!snap) return json(res, { ok: false, error: '尚无数据，请先执行一次采集' }, 404);
       return json(res, {
         ok: true,
-        snapshot: snap,
+        snapshot: withCostDrag(snap),
         changes: readChanges(80),
         dates: listHistory(),
         collecting: Boolean(collecting),
@@ -154,7 +166,7 @@ const server = http.createServer(async (req, res) => {
       if (!snap?.funds?.some((f) => String(f.code) === code))
         return json(res, { ok: false, error: '该基金不在当前监控范围内' }, 404);
       const profile = await getFundProfile(code, { force: url.searchParams.get('force') === '1' });
-      return json(res, { ok: true, profile });
+      return json(res, { ok: true, profile: { ...profile, fee_drag: calculateCostDrag(profile) } });
     }
 
     if (p === '/api/collect' && req.method === 'POST') {

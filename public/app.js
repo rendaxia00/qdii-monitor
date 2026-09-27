@@ -195,6 +195,11 @@ function currentRows() {
       const bv = typeof b.tracking_error === 'number' ? b.tracking_error : Number.POSITIVE_INFINITY;
       return av - bv || String(a.code).localeCompare(String(b.code));
     },
+    fee_asc: (a, b) => {
+      const av = a.fee_drag?.first_year_annual_rate ?? Number.POSITIVE_INFINITY;
+      const bv = b.fee_drag?.first_year_annual_rate ?? Number.POSITIVE_INFINITY;
+      return av - bv || String(a.code).localeCompare(String(b.code));
+    },
     code_asc: (a, b) => String(a.code).localeCompare(String(b.code)),
   }[sort];
   return rows.sort(cmp);
@@ -213,7 +218,7 @@ function renderTable() {
   if (!shown.length) {
     const tr = el('tr');
     const td = el('td', 'empty', '没有匹配的基金，试试调整筛选条件');
-    td.colSpan = 9;
+    td.colSpan = 10;
     tr.append(td);
     body.append(tr);
     $('#moreBtn').classList.add('hidden');
@@ -253,6 +258,22 @@ function renderTable() {
       tdTrack.append(empty);
     }
     tr.append(tdTrack);
+
+    // 长期持有显性年费：管理费 + 托管费 + 首年销售服务费。
+    const tdFee = el('td', 'col-fee');
+    if (f.fee_drag) {
+      const rate = f.fee_drag.first_year_annual_rate;
+      const tone = rate <= 0.6 ? 'is-low' : rate <= 1 ? 'is-mid' : 'is-high';
+      const badge = el('span', `fee-drag-badge ${tone}`, `${rate.toFixed(2)}%`);
+      badge.title = `首年：管理 ${f.fee_drag.management_fee.toFixed(2)}% + 托管 ${f.fee_drag.custody_fee.toFixed(2)}% + 销售服务 ${f.fee_drag.sales_service_fee.toFixed(2)}%`;
+      tdFee.append(badge);
+      if (f.fee_drag.sales_service_fee > 0) {
+        tdFee.append(el('small', 'fee-long-rate', `1年后 ${f.fee_drag.long_term_annual_rate.toFixed(2)}%`));
+      }
+    } else {
+      tdFee.append(el('span', 'fee-drag-none', '待补充'));
+    }
+    tr.append(tdFee);
 
     // 状态
     const tdSt = el('td', 'col-status');
@@ -393,6 +414,98 @@ function renderPerformanceSection(section, f, profile) {
   section.append(el('p', 'dw-note', `${asOf}${scaleAsOf ? ` · 规模截至 ${scaleAsOf}` : ''}。过往业绩不预示未来表现。`));
 }
 
+function calculateFeeDrag(profile) {
+  const management = profile?.management_fee == null ? Number.NaN : Number(profile.management_fee);
+  const custody = profile?.custody_fee == null ? Number.NaN : Number(profile.custody_fee);
+  if (!Number.isFinite(management) || !Number.isFinite(custody)) return null;
+  const rawSales = profile?.sales_service_fee == null ? Number.NaN : Number(profile.sales_service_fee);
+  const sales = Number.isFinite(rawSales) ? rawSales : 0;
+  const baseAnnual = management + custody;
+  const firstYearAnnual = baseAnnual + sales;
+  const monthlyContribution = 1000;
+  const simulations = [1, 3, 5, 10].map((years) => {
+    const months = years * 12;
+    let estimatedValue = 0;
+    for (let month = 0; month < months; month += 1) {
+      const holdingMonths = months - month;
+      const baseFactor = (1 - baseAnnual / 100) ** (holdingMonths / 12);
+      const salesFactor = (1 - sales / 100) ** (Math.min(holdingMonths, 12) / 12);
+      estimatedValue += monthlyContribution * baseFactor * salesFactor;
+    }
+    const contributed = monthlyContribution * months;
+    const estimatedCost = contributed - estimatedValue;
+    return {
+      years,
+      contributed,
+      estimated_cost: Math.round(estimatedCost),
+      estimated_cost_rate: +((estimatedCost / contributed) * 100).toFixed(2),
+    };
+  });
+  return {
+    management_fee: management,
+    custody_fee: custody,
+    sales_service_fee: sales,
+    first_year_annual_rate: firstYearAnnual,
+    long_term_annual_rate: baseAnnual,
+    monthly_contribution: monthlyContribution,
+    simulations,
+  };
+}
+
+function renderCostDragSection(section, f, profile) {
+  section.innerHTML = '';
+  section.append(el('h4', null, '长期定投磨损 · 显性费用拆解'));
+  const drag = profile?.fee_drag || f.fee_drag || calculateFeeDrag(profile);
+  if (!drag) {
+    section.append(el('p', 'dw-note', '该基金费率资料尚未补齐，暂时无法估算长期磨损。'));
+    return;
+  }
+
+  const overview = el('div', 'fee-overview');
+  const first = el('div', 'fee-overview-card is-primary');
+  first.append(el('span', null, '首年持续费率'), el('strong', null, `${drag.first_year_annual_rate.toFixed(2)}%`));
+  const ongoing = el('div', 'fee-overview-card');
+  ongoing.append(el('span', null, '单笔持有满1年后'), el('strong', null, `${drag.long_term_annual_rate.toFixed(2)}% / 年`));
+  overview.append(first, ongoing);
+  section.append(overview);
+
+  const breakdown = el('div', 'fee-breakdown');
+  for (const [label, value, note] of [
+    ['管理费', drag.management_fee, '持续计提'],
+    ['托管费', drag.custody_fee, '持续计提'],
+    ['销售服务费', drag.sales_service_fee, drag.sales_service_fee > 0 ? '每笔前1年' : '不收取'],
+  ]) {
+    const item = el('div', 'fee-breakdown-item');
+    item.append(el('span', null, label), el('strong', null, `${value.toFixed(2)}%`), el('small', null, note));
+    breakdown.append(item);
+  }
+  section.append(breakdown);
+
+  const simTitle = el('div', 'fee-sim-title');
+  simTitle.append(el('strong', null, '每月定投 1,000 元的累计费用估算'), el('span', null, '假设市场收益为 0'));
+  section.append(simTitle);
+  const simGrid = el('div', 'fee-sim-grid');
+  for (const row of drag.simulations || []) {
+    const card = el('div', 'fee-sim-card');
+    card.append(
+      el('span', null, `${row.years} 年`),
+      el('strong', null, `约 ${row.estimated_cost.toLocaleString('zh-CN')} 元`),
+      el('small', null, `占累计投入 ${row.estimated_cost_rate.toFixed(2)}%`)
+    );
+    simGrid.append(card);
+  }
+  section.append(simGrid);
+
+  const tracking = f.tracking_error != null ? `跟踪误差 ${Number(f.tracking_error).toFixed(2)}% 仅作为稳定性指标，未直接计入费用。` : '';
+  section.append(
+    el(
+      'p',
+      'dw-note fee-method-note',
+      `估算已计管理费、托管费，并按每笔份额前 1 年计销售服务费；不含申购/赎回费、渠道折扣、基金交易成本、税费及汇率影响。${tracking}`
+    )
+  );
+}
+
 function renderFundHistory(section, history) {
   section.innerHTML = '';
   section.append(el('h4', null, '额度变化历史 · 双渠道'));
@@ -433,7 +546,7 @@ function renderFundHistory(section, history) {
   );
 }
 
-async function loadFundExtras(code, f, performanceSection, historySection) {
+async function loadFundExtras(code, f, costSection, performanceSection, historySection) {
   const [profileResult, historyResult] = await Promise.allSettled([
     fetchJson(
       `/api/fund-profile?code=${encodeURIComponent(code)}`,
@@ -447,7 +560,9 @@ async function loadFundExtras(code, f, performanceSection, historySection) {
   if ($('#drawer').dataset.fundCode !== code) return;
 
   if (profileResult.status === 'fulfilled' && profileResult.value.ok) {
-    renderPerformanceSection(performanceSection, f, profileResult.value.profile);
+    const profile = profileResult.value.profile;
+    renderCostDragSection(costSection, f, profile);
+    renderPerformanceSection(performanceSection, f, profile);
   } else if (!f.performance) {
     performanceSection.innerHTML = '';
     performanceSection.append(el('h4', null, '阶段表现'));
@@ -511,6 +626,15 @@ function openDrawer(f) {
   }
   body.append(sec1);
 
+  // 长期定投显性费用磨损。
+  const costSec = el('div', 'dw-section');
+  if (f.fee_drag) renderCostDragSection(costSec, f, null);
+  else {
+    costSec.append(el('h4', null, '长期定投磨损 · 显性费用拆解'));
+    costSec.append(el('p', 'dw-note loading-line', '正在读取管理费、托管费和销售服务费…'));
+  }
+  body.append(costSec);
+
   // 阶段收益及费率资料：先展示快照里已有的值，再按需刷新完整概况。
   const perfSec = el('div', 'dw-section');
   if (f.performance) renderPerformanceSection(perfSec, f, null);
@@ -572,7 +696,7 @@ function openDrawer(f) {
   drawer.hidden = false;
   drawer.querySelector('.drawer-panel').scrollTop = 0;
   document.body.style.overflow = 'hidden';
-  loadFundExtras(f.code, f, perfSec, historySec).catch(console.error);
+  loadFundExtras(f.code, f, costSec, perfSec, historySec).catch(console.error);
 }
 
 function closeDrawer() {

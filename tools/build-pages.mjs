@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { calculateCostDrag } from '../src/cost-drag.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC = path.join(ROOT, 'public');
@@ -18,6 +19,20 @@ const write = (file, value) => {
 
 const snapshot = read(path.join(DATA, 'latest.json'));
 if (!snapshot?.funds?.length) throw new Error('缺少 data/latest.json，请先执行 node src/cli.js collect');
+
+const profiles = new Map(
+  snapshot.funds.map((fund) => {
+    const code = String(fund.code);
+    return [code, read(path.join(DATA, 'profiles', `${code}.json`), {})];
+  })
+);
+const publicSnapshot = {
+  ...snapshot,
+  funds: snapshot.funds.map((fund) => ({
+    ...fund,
+    fee_drag: calculateCostDrag(profiles.get(String(fund.code))),
+  })),
+};
 
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.cpSync(PUBLIC, DIST, { recursive: true });
@@ -52,14 +67,14 @@ const historySnapshots = dates.map((date) => ({ date, snapshot: read(path.join(h
 write(path.join(DIST, 'data', 'snapshot.json'), {
   ok: true,
   static_mode: true,
-  snapshot,
+  snapshot: publicSnapshot,
   changes,
   dates: dates.slice().reverse(),
   collecting: false,
   last_collect: null,
 });
 
-for (const fund of snapshot.funds) {
+for (const fund of publicSnapshot.funds) {
   const code = String(fund.code);
   const points = [];
   let previous = null;
@@ -97,7 +112,7 @@ for (const fund of snapshot.funds) {
     },
   });
 
-  const cached = read(path.join(DATA, 'profiles', `${code}.json`), {});
+  const cached = profiles.get(code) || {};
   const profile = {
     code,
     name: cached.name || fund.name,
@@ -106,6 +121,7 @@ for (const fund of snapshot.funds) {
     performance: fund.performance || cached.performance || null,
     scale_billion: fund.scale_billion ?? cached.scale_billion ?? null,
     scale_as_of: fund.scale_as_of || cached.scale_as_of || null,
+    fee_drag: fund.fee_drag || calculateCostDrag(cached),
   };
   write(path.join(DIST, 'data', 'profiles', `${code}.json`), { ok: true, profile });
 }
