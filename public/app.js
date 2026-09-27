@@ -101,11 +101,13 @@ function fmtPercent(v) {
 function renderHeader() {
   const s = state.snap;
   $('#asOf').textContent = s.as_of || '—';
-  $('#generatedAt').textContent = (s.generated_at || '').slice(5, 16).replace('T', ' ') || '—';
+  const updatedAt = (s.generated_at || '').slice(5, 16).replace('T', ' ') || '—';
+  $('#generatedAt').textContent = updatedAt;
 
   const d = s.declared || {};
   const st = s.stats;
   const parts = [
+    `最近更新 <strong>${updatedAt}</strong>`,
     `监控 <strong>${st.total}</strong> 只`,
     `可申购 <strong>${(st.open || 0) + (st.limited || 0)}</strong>`,
     `暂停 <strong>${st.suspended}</strong>`,
@@ -1002,7 +1004,7 @@ function updateNetworkStatus() {
   const offline = !navigator.onLine || state.cachedOffline;
   status.classList.toggle('is-offline', offline);
   const label = status.querySelector('b');
-  if (label) label.textContent = offline ? '离线浏览' : '已同步';
+  if (label) label.textContent = offline ? '离线浏览' : '最近更新';
 }
 
 function initControls() {
