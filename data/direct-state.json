@@ -91,13 +91,13 @@
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-09-27T12:06:39.295Z",
+  "updated_at": "2026-09-27T12:17:38.145Z",
   "last_scan": {
     "as_of": "2026-09-27",
-    "scanned": 120,
+    "scanned": 119,
     "parsed": 0,
     "discovered": 0,
-    "errors": 0
+    "errors": 1
   },
   "discovered_funds": []
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27 20:07:36",
+  "generated_at": "2026-09-27 20:18:18",
   "as_of": "2026-09-27",
   "sources": {
     "direct": {
@@ -6063,5 +6063,11 @@
       "fund_url": "https://fund.eastmoney.com/539003.html"
     }
   ],
-  "collect_errors": []
+  "collect_errors": [
+    {
+      "stage": "announcement-list",
+      "code": "006075",
+      "error": "fetch failed"
+    }
+  ]
 }
