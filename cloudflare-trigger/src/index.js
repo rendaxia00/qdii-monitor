@@ -1,7 +1,7 @@
-// The free Cloudflare plan counts cron expressions, so one expression covers
-// both times. It also creates two cross-product occurrences, which the handler
-// ignores. All values are UTC: 03:15 = 11:15 CST, 07:30 = 15:30 CST.
-const SCHEDULE_CRON = '15,30 3,7 * * *';
+// Use one frequent heartbeat because this free Cloudflare account has only one
+// available Cron Trigger slot. The handler performs the exact time filtering.
+// All values are UTC: 03:15 = 11:15 CST, 07:30 = 15:30 CST.
+const SCHEDULE_CRON = '*/15 * * * *';
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data, null, 2), {
@@ -87,7 +87,7 @@ export default {
     const isDaily = utcHour === 3 && utcMinute === 15;
     const isAfternoon = utcHour === 7 && utcMinute === 30;
 
-    // Ignore the cross-product times (03:30/07:15 UTC), and skip the
+    // Ignore heartbeat occurrences outside the two target times, and skip the
     // afternoon refresh on Saturday and Sunday.
     if ((!isDaily && !isAfternoon) || (isAfternoon && (utcDay === 0 || utcDay === 6))) {
       console.log(JSON.stringify({ ok: true, skipped: 'non-target-occurrence', scheduledAt }));
