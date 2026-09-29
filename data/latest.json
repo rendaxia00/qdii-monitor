@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29 11:16:27",
+  "generated_at": "2026-09-29 15:31:26",
   "as_of": "2026-09-29",
   "sources": {
     "direct": {
@@ -32,11 +32,11 @@
     "suspended": 32,
     "closed": 42,
     "on_exchange": 42,
-    "sum_distribution_limit": 93747945,
+    "sum_distribution_limit": 83752945,
     "sum_direct_limit": 82758005,
     "n_distribution_limited": 54,
     "n_direct_limited": 54,
-    "sum_distribution_limit_actual": 93746645,
+    "sum_distribution_limit_actual": 83751645,
     "sum_direct_limit_actual": 82755705,
     "n_distribution_limited_actual": 51,
     "n_direct_limited_actual": 51,
@@ -3258,7 +3258,7 @@
       "status": "限大额",
       "direct_status": "限大额",
       "redeem": "开放赎回",
-      "limit_amount": 10000000,
+      "limit_amount": 5000,
       "limit_source": "eastmoney",
       "purchasable": true,
       "direct_limit_amount": 5000,
