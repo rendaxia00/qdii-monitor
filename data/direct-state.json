@@ -91,13 +91,46 @@
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-01T07:31:00.712Z",
+  "updated_at": "2026-10-02T03:15:57.530Z",
   "last_scan": {
-    "as_of": "2026-10-01",
-    "scanned": 120,
+    "as_of": "2026-10-02",
+    "scanned": 122,
     "parsed": 0,
-    "discovered": 0,
+    "discovered": 2,
     "errors": 0
   },
-  "discovered_funds": []
+  "discovered_funds": [
+    {
+      "code": "027395",
+      "name": "鹏华恒生科技ETF发起式联接A",
+      "topic": "恒生科技",
+      "on_exchange": false,
+      "status": null,
+      "distribution_limit_amount": null,
+      "direct_limit_amount": null,
+      "channel_split": false,
+      "channel_ratio": null,
+      "channel_note": null,
+      "announcement_url": null,
+      "announcement_date": null,
+      "verified_by_announcement": false,
+      "discovered_at": "2026-10-02"
+    },
+    {
+      "code": "027396",
+      "name": "鹏华恒生科技ETF发起式联接C",
+      "topic": "恒生科技",
+      "on_exchange": false,
+      "status": null,
+      "distribution_limit_amount": null,
+      "direct_limit_amount": null,
+      "channel_split": false,
+      "channel_ratio": null,
+      "channel_note": null,
+      "announcement_url": null,
+      "announcement_date": null,
+      "verified_by_announcement": false,
+      "discovered_at": "2026-10-02"
+    }
+  ]
 }
