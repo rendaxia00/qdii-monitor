@@ -5,10 +5,10 @@
     "one_month": null,
     "three_months": null,
     "six_months": null,
-    "one_year": 99.81,
+    "one_year": 92.81,
     "three_years": null,
-    "since_inception": -0.15,
-    "as_of": "2026-09-24",
+    "since_inception": -2.86,
+    "as_of": "2026-09-30",
     "scale_billion": 2.17,
     "scale_as_of": "2026-09-17"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:46",
-  "fetched_at_ms": 1790317486824,
+  "fetched_at": "2026-10-02 15:32:42",
+  "fetched_at_ms": 1790926362493,
   "sources": {
     "performance": "https://fund.eastmoney.com/158042.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_158042.html"

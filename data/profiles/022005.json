@@ -2,13 +2,13 @@
   "code": "022005",
   "name": "广发恒生科技ETF联接",
   "performance": {
-    "one_month": -5.58,
-    "three_months": -3.66,
-    "six_months": -11.41,
-    "one_year": -34.2,
+    "one_month": -8.28,
+    "three_months": -5.84,
+    "six_months": -10.67,
+    "one_year": -37.12,
     "three_years": null,
-    "since_inception": 13.89,
-    "as_of": "2026-09-24",
+    "since_inception": 11,
+    "as_of": "2026-09-30",
     "scale_billion": 2.38,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.01,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:41",
-  "fetched_at_ms": 1790317481617,
+  "fetched_at": "2026-10-02 15:32:41",
+  "fetched_at_ms": 1790926361413,
   "sources": {
     "performance": "https://fund.eastmoney.com/022005.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_022005.html"

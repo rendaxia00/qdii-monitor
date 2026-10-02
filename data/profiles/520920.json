@@ -2,13 +2,13 @@
   "code": "520920",
   "name": "天弘恒生科技ETF",
   "performance": {
-    "one_month": -5.63,
-    "three_months": -3.6,
-    "six_months": -11.48,
-    "one_year": -35.52,
+    "one_month": -8.69,
+    "three_months": -5.98,
+    "six_months": -10.78,
+    "one_year": -38.26,
     "three_years": null,
-    "since_inception": -35.52,
-    "as_of": "2026-09-24",
+    "since_inception": -37.27,
+    "as_of": "2026-09-30",
     "scale_billion": 128,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:53",
-  "fetched_at_ms": 1790317493883,
+  "fetched_at": "2026-10-02 15:32:59",
+  "fetched_at_ms": 1790926379890,
   "sources": {
     "performance": "https://fund.eastmoney.com/520920.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_520920.html"

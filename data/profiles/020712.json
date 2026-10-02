@@ -2,13 +2,13 @@
   "code": "020712",
   "name": "华安三菱日联日经225ETF发起式联接",
   "performance": {
-    "one_month": -0.13,
-    "three_months": -4.85,
-    "six_months": 21.86,
-    "one_year": 27.03,
+    "one_month": 1.98,
+    "three_months": -2.85,
+    "six_months": 27.47,
+    "one_year": 31.97,
     "three_years": null,
-    "since_inception": 39.08,
-    "as_of": "2026-09-24",
+    "since_inception": 42.54,
+    "as_of": "2026-09-30",
     "scale_billion": 2.87,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:39",
-  "fetched_at_ms": 1790317479238,
+  "fetched_at": "2026-10-02 15:32:26",
+  "fetched_at_ms": 1790926346318,
   "sources": {
     "performance": "https://fund.eastmoney.com/020712.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_020712.html"

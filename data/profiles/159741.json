@@ -2,13 +2,13 @@
   "code": "159741",
   "name": "恒生科技ETF嘉实",
   "performance": {
-    "one_month": -5.56,
-    "three_months": -3.48,
-    "six_months": -11.18,
-    "one_year": -34.72,
-    "three_years": 1.77,
-    "since_inception": -45.33,
-    "as_of": "2026-09-24",
+    "one_month": -8.58,
+    "three_months": -5.86,
+    "six_months": -10.48,
+    "one_year": -37.78,
+    "three_years": 4.6,
+    "since_inception": -46.8,
+    "as_of": "2026-09-30",
     "scale_billion": 9.41,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:48",
-  "fetched_at_ms": 1790317488619,
+  "fetched_at": "2026-10-02 15:32:47",
+  "fetched_at_ms": 1790926367549,
   "sources": {
     "performance": "https://fund.eastmoney.com/159741.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159741.html"

@@ -2,13 +2,13 @@
   "code": "015016",
   "name": "华安德国",
   "performance": {
-    "one_month": -5,
-    "three_months": 0.78,
-    "six_months": 6.45,
-    "one_year": -3.22,
-    "three_years": 47.07,
-    "since_inception": 54.85,
-    "as_of": "2026-09-23",
+    "one_month": -6.78,
+    "three_months": 1.35,
+    "six_months": 7.36,
+    "one_year": -3.71,
+    "three_years": 50.16,
+    "since_inception": 53.89,
+    "as_of": "2026-09-29",
     "scale_billion": 2.64,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:32",
-  "fetched_at_ms": 1790317472869,
+  "fetched_at": "2026-10-02 15:32:12",
+  "fetched_at_ms": 1790926332492,
   "sources": {
     "performance": "https://fund.eastmoney.com/015016.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_015016.html"

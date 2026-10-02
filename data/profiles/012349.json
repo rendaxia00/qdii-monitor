@@ -2,13 +2,13 @@
   "code": "012349",
   "name": "天弘恒生科技ETF联接C",
   "performance": {
-    "one_month": -5.35,
-    "three_months": -3.49,
-    "six_months": -11.09,
-    "one_year": -34.3,
-    "three_years": 0.67,
-    "since_inception": -41.31,
-    "as_of": "2026-09-24",
+    "one_month": -8.26,
+    "three_months": -5.72,
+    "six_months": -10.42,
+    "one_year": -37.23,
+    "three_years": 3.32,
+    "since_inception": -42.82,
+    "as_of": "2026-09-30",
     "scale_billion": 80.67,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:31",
-  "fetched_at_ms": 1790317471222,
+  "fetched_at": "2026-10-02 15:32:05",
+  "fetched_at_ms": 1790926325862,
   "sources": {
     "performance": "https://fund.eastmoney.com/012349.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012349.html"

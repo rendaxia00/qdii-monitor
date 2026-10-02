@@ -2,13 +2,13 @@
   "code": "024148",
   "name": "长城恒生科技指数",
   "performance": {
-    "one_month": -8.21,
-    "three_months": -1.2,
-    "six_months": -8.24,
-    "one_year": -31.16,
+    "one_month": -7.94,
+    "three_months": -4.07,
+    "six_months": -12.27,
+    "one_year": -34.66,
     "three_years": null,
-    "since_inception": -22.78,
-    "as_of": "2026-09-23",
+    "since_inception": -25.02,
+    "as_of": "2026-09-29",
     "scale_billion": 0.73,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:43",
-  "fetched_at_ms": 1790317483724,
+  "fetched_at": "2026-10-02 15:32:34",
+  "fetched_at_ms": 1790926354775,
   "sources": {
     "performance": "https://fund.eastmoney.com/024148.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_024148.html"

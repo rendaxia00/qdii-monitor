@@ -2,13 +2,13 @@
   "code": "019710",
   "name": "广发道琼斯石油指数",
   "performance": {
-    "one_month": -2.75,
-    "three_months": 17.7,
-    "six_months": 5.57,
-    "one_year": 31.34,
+    "one_month": -2.5,
+    "three_months": 16.45,
+    "six_months": -1.86,
+    "one_year": 27.73,
     "three_years": null,
-    "since_inception": 28.54,
-    "as_of": "2026-09-23",
+    "since_inception": 26.88,
+    "as_of": "2026-09-29",
     "scale_billion": 0.34,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.4,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 06:33:52",
-  "fetched_at_ms": 1790318032466,
+  "fetched_at": "2026-10-02 15:32:25",
+  "fetched_at_ms": 1790926345293,
   "sources": {
     "performance": "https://fund.eastmoney.com/019710.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019710.html"

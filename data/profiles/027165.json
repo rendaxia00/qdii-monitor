@@ -2,13 +2,13 @@
   "code": "027165",
   "name": "富国恒生科技指数",
   "performance": {
-    "one_month": -5.5,
-    "three_months": -6.02,
+    "one_month": -8.35,
+    "three_months": -7.74,
     "six_months": null,
-    "one_year": 99.81,
+    "one_year": 92.81,
     "three_years": null,
-    "since_inception": -6.84,
-    "as_of": "2026-09-24",
+    "since_inception": -9.21,
+    "as_of": "2026-09-30",
     "scale_billion": 3.4,
     "scale_as_of": "2026-06-02"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:45",
-  "fetched_at_ms": 1790317485181,
+  "fetched_at": "2026-10-02 15:32:39",
+  "fetched_at_ms": 1790926359506,
   "sources": {
     "performance": "https://fund.eastmoney.com/027165.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_027165.html"

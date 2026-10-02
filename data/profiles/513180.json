@@ -2,13 +2,13 @@
   "code": "513180",
   "name": "恒生科技ETF华夏",
   "performance": {
-    "one_month": -5.65,
-    "three_months": -3.67,
-    "six_months": -11.85,
-    "one_year": -35.45,
-    "three_years": 1.75,
-    "since_inception": -44.86,
-    "as_of": "2026-09-24",
+    "one_month": -8.67,
+    "three_months": -6.04,
+    "six_months": -11.06,
+    "one_year": -38.49,
+    "three_years": 4.58,
+    "since_inception": -46.35,
+    "as_of": "2026-09-30",
     "scale_billion": 415.96,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-09-25 14:24:51",
-  "fetched_at_ms": 1790317491556,
+  "fetched_at": "2026-10-02 15:33:04",
+  "fetched_at_ms": 1790926384269,
   "sources": {
     "performance": "https://fund.eastmoney.com/513180.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513180.html"
