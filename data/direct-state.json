@@ -343,7 +343,8 @@
       "parsed_at": "2026-10-03T03:23:45.207Z",
       "parser_version": 2,
       "fund_codes": [
-        "008971"
+        "008971",
+        "000834"
       ],
       "patch": {
         "id": "AN202606031823188725",
@@ -1073,13 +1074,13 @@
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-03T03:24:00.618Z",
+  "updated_at": "2026-10-03T03:29:52.137Z",
   "last_scan": {
     "as_of": "2026-10-03",
-    "scanned": 121,
-    "parsed": 42,
+    "scanned": 122,
+    "parsed": 0,
     "discovered": 0,
-    "errors": 1
+    "errors": 0
   },
   "discovered_funds": [
     {

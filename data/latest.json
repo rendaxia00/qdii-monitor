@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03 11:24:41",
+  "generated_at": "2026-10-03 11:30:34",
   "as_of": "2026-10-03",
   "sources": {
     "direct": {
@@ -16,9 +16,9 @@
   "declared": {
     "tracked": 164,
     "buyable": 122,
-    "open": 33,
+    "open": 34,
     "limited": 55,
-    "suspended": 32,
+    "suspended": 31,
     "on_exchange": 42,
     "channel_mismatch": 13,
     "total_daily_limit": null,
@@ -33,11 +33,11 @@
     "closed": 44,
     "on_exchange": 42,
     "sum_distribution_limit": 93747925,
-    "sum_direct_limit": 82818075,
+    "sum_direct_limit": 83818075,
     "n_distribution_limited": 54,
     "n_direct_limited": 54,
     "sum_distribution_limit_actual": 93746625,
-    "sum_direct_limit_actual": 82815775,
+    "sum_direct_limit_actual": 83815775,
     "n_distribution_limited_actual": 51,
     "n_direct_limited_actual": 51,
     "sum_us_daily_limit": 675,
@@ -3836,7 +3836,7 @@
       "topic": "印度",
       "index_key": "india",
       "status": "暂停申购",
-      "direct_status": "暂停申购",
+      "direct_status": "开放申购",
       "redeem": "开放赎回",
       "limit_amount": 0,
       "limit_source": "eastmoney",
@@ -3845,7 +3845,7 @@
       "direct_limit_source": null,
       "channel_split": false,
       "channel_ratio": null,
-      "channel_note": null,
+      "channel_note": "公告原文：2026-09-23起恢复大额申购",
       "limit_group": null,
       "on_exchange": false,
       "tracking_error": null,
@@ -3879,11 +3879,11 @@
       "limit_amount": 1000000,
       "limit_source": "eastmoney",
       "purchasable": true,
-      "direct_limit_amount": 500000,
+      "direct_limit_amount": 1000000,
       "direct_limit_source": "eastmoney-announcement",
       "channel_split": false,
       "channel_ratio": null,
-      "channel_note": null,
+      "channel_note": "公告原文：每类份额单日限额100万元",
       "limit_group": null,
       "on_exchange": false,
       "tracking_error": null,
@@ -3917,11 +3917,11 @@
       "limit_amount": 1000000,
       "limit_source": "eastmoney",
       "purchasable": true,
-      "direct_limit_amount": 500000,
+      "direct_limit_amount": 1000000,
       "direct_limit_source": "eastmoney-announcement",
       "channel_split": false,
       "channel_ratio": null,
-      "channel_note": null,
+      "channel_note": "公告原文：每类份额单日限额100万元",
       "limit_group": null,
       "on_exchange": false,
       "tracking_error": null,
@@ -6301,11 +6301,5 @@
       "fund_url": "https://fund.eastmoney.com/539003.html"
     }
   ],
-  "collect_errors": [
-    {
-      "stage": "announcement-list",
-      "code": "000834",
-      "error": "fetch failed"
-    }
-  ]
+  "collect_errors": []
 }
