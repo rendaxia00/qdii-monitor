@@ -74,16 +74,24 @@ function amountNearChannel(text, channelRe, otherChannelRe) {
     const window = text.slice(start, start + 420);
     for (const c of moneyCandidates(window, start)) {
       const local = text.slice(Math.max(start, c.index - 150), c.index + c.raw.length + 20);
+      const amountContext = text.slice(Math.max(start, c.index - 120), c.index + c.raw.length);
       const beforeAmount = text.slice(start, c.index);
+      // 渠道限额之后常紧跟“基金总规模上限”。后者不是申购额度，
+      // 即使同一段里仍出现“累计/上限”等词也必须排除。
+      if (/总规模|规模上限|基金资产净值|基金规模/.test(amountContext)) continue;
+      // 已跨入另一个渠道的描述时，不再把后面的金额归到当前渠道。
+      if (new RegExp(otherChannelRe.source).test(beforeAmount)) continue;
       let score = 4;
-      if (/单日|每日/.test(local)) score += 4;
+      if (/单\s*日|每日/.test(local)) score += 4;
       if (/累计/.test(local)) score += 4;
-      if (/不超过|不得超过|上限|限制金额|超过/.test(local)) score += 5;
+      if (/不超过|不得超过|上限|限制金额|金额限制|限制(?:仍)?为|调整为|超过/.test(local)) score += 5;
       if (/个人投资者/.test(local)) score += 2;
       if (/机构投资者/.test(local) && !/个人投资者/.test(local)) score -= 1;
       if (/单笔/.test(local) && !/累计/.test(local)) score -= 2;
       if (/美元|美金/.test(local)) score -= 8;
-      if (new RegExp(otherChannelRe.source).test(beforeAmount)) score -= 7;
+      // 同一公告可能还写有规模控制金额；同等语义下优先离渠道名称
+      // 最近的数字（例如“直销渠道……100元”）。
+      score -= Math.min(6, (c.index - start) / 60);
       if (!best || score > best.score || (score === best.score && c.index < best.index)) {
         best = { ...c, score };
       }
@@ -113,7 +121,9 @@ export function parseSalesAnnouncement({ title = '', content = '', publishDate =
   const text = htmlText(`${title} ${content}`);
   if (!text || !/申购/.test(text)) return null;
 
-  const isFullSuspend = /暂停(?:办理)?(?:本基金(?:的)?|基金)?申购/.test(text) && !/暂停大额申购/.test(title);
+  // 以公告标题判断“暂停全部申购”。正文经常在风险提示里写
+  // “后续可能暂停本基金申购”，不能因此把限大额公告误判为暂停申购。
+  const isFullSuspend = /暂停(?:办理)?(?:本基金(?:的)?|基金)?申购/.test(title) && !/暂停大额申购/.test(title);
   const isUnlimited = /恢复(?:办理)?大额申购|取消(?:大额)?申购限制|恢复正常办理大额申购/.test(title);
   const isLimited = /大额申购|限制大额申购|限制申购金额|限额申购/.test(text);
 
@@ -151,6 +161,7 @@ export function parseSalesAnnouncement({ title = '', content = '', publishDate =
 
   const effectiveDate = extractEffectiveDate(text, publishDate);
   const channelSplit = directSpecified && distributionSpecified && directAmount !== distributionAmount;
+  const combinedShareLimit = /(?:各类|A类[^。；]{0,30}C类|不同类别)[^。；]{0,40}(?:份额)?合并计算/.test(text);
   return {
     id,
     title,
@@ -167,6 +178,7 @@ export function parseSalesAnnouncement({ title = '', content = '', publishDate =
       channelSplit && typeof directAmount === 'number' && typeof distributionAmount === 'number' && distributionAmount !== 0
         ? +(directAmount / distributionAmount).toFixed(4)
         : null,
+    combined_share_limit: combinedShareLimit,
     confidence: 'high',
   };
 }
@@ -262,6 +274,10 @@ function applyPatch(fund, patch) {
     next.channel_note = patch.channel_split
       ? `公告原文：代销 ${patch.distribution_amount}元；直销 ${patch.direct_amount}元`
       : null;
+  }
+  if (patch.combined_share_limit) {
+    // 同一公告覆盖的 A/C 等份额共享一份账户日限额；聚合时按公告 ID 去重。
+    next.limit_group = patch.id;
   }
   next.announcement_url = `https://fund.eastmoney.com/gonggao/${fund.code},${patch.id}.html`;
   next.announcement_date = patch.publish_date;

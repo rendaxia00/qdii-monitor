@@ -97,6 +97,16 @@ function fmtPercent(v) {
   return `${n > 0 ? '+' : ''}${n.toFixed(2)}%`;
 }
 
+function sumDistinctQuota(funds, amountKey) {
+  const seen = new Set();
+  return funds.reduce((sum, fund) => {
+    const key = fund.limit_group ? `${amountKey}:${fund.limit_group}` : `${amountKey}:${fund.code}`;
+    if (seen.has(key)) return sum;
+    seen.add(key);
+    return sum + fund[amountKey];
+  }, 0);
+}
+
 /* ---------------- 渲染：顶栏 ---------------- */
 function renderHeader() {
   const s = state.snap;
@@ -165,8 +175,8 @@ function renderFocusMarkets() {
     const direct = funds.filter(
       (fund) => typeof fund.direct_limit_amount === 'number' && fund.direct_status !== '暂停申购'
     );
-    const distributionTotal = distribution.reduce((sum, fund) => sum + fund.limit_amount, 0);
-    const directTotal = direct.reduce((sum, fund) => sum + fund.direct_limit_amount, 0);
+    const distributionTotal = sumDistinctQuota(distribution, 'limit_amount');
+    const directTotal = sumDistinctQuota(direct, 'direct_limit_amount');
 
     const row = el('button', 'focus-market');
     row.type = 'button';
@@ -921,7 +931,7 @@ function openChannelBreakdown(channel) {
       return topicOrder[a.index_key] - topicOrder[b.index_key] || b[amountKey] - a[amountKey] || a.code.localeCompare(b.code);
     });
 
-  const total = funds.reduce((sum, f) => sum + f[amountKey], 0);
+  const total = sumDistinctQuota(funds, amountKey);
   const drawer = $('#drawer');
   if (drawer.hidden) state.lastFocus = document.activeElement;
   drawer.dataset.fundCode = '';
@@ -962,7 +972,7 @@ function openChannelBreakdown(channel) {
     const group = funds.filter((f) => f.index_key === indexKey);
     if (!group.length) continue;
     const sec = el('div', 'dw-section quota-section');
-    const groupTotal = group.reduce((sum, f) => sum + f[amountKey], 0);
+    const groupTotal = sumDistinctQuota(group, amountKey);
     sec.append(el('h4', null, `${INDEX_LABEL[indexKey]} · ${group.length} 只 · ${groupTotal.toLocaleString('zh-CN')} 元`));
     const list = el('div', 'quota-list');
     for (const f of group) {
@@ -971,7 +981,11 @@ function openChannelBreakdown(channel) {
       row.title = '查看该基金双渠道详情';
       const identity = el('span', 'quota-identity');
       identity.append(el('code', null, f.code), el('span', null, f.name));
-      const amount = el('strong', 'quota-amount', `${f[amountKey].toLocaleString('zh-CN')} 元`);
+      const amount = el(
+        'strong',
+        'quota-amount',
+        `${f[amountKey].toLocaleString('zh-CN')} 元${f.limit_group ? ' · 同类份额合并' : ''}`
+      );
       row.append(identity, amount);
       row.addEventListener('click', () => openDrawer(f, { returnChannel: channel }));
       list.append(row);

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
 import { extractEffectiveDate, inferTopicFromName, parseSalesAnnouncement } from '../src/official-direct.js';
+import { mergeSnapshot } from '../src/pipeline.js';
 
 const split = parseSalesAnnouncement({
   id: 'AN_TEST_SPLIT',
@@ -40,6 +41,53 @@ const generic = parseSalesAnnouncement({
 assert.equal(generic.direct_amount, 10);
 assert.equal(generic.distribution_amount, 10);
 assert.equal(generic.channel_split, false);
+
+// 回归：万家公告同时包含代销 10 元、直销 100 元、24 亿元总规模，
+// 以及“后续可能暂停申购”的说明。总规模不能误识别为直销额度，
+// 风险提示也不能把当前状态误判为暂停申购。
+const wanjia = parseSalesAnnouncement({
+  id: 'AN202609231829774454',
+  title: '关于万家纳斯达克100指数型发起式证券投资基金(QDII)调整大额申购业务金额限制并调整总规模上限的公告',
+  publishDate: '2026-09-23',
+  content: `
+    暂停大额申购起始日 2026年9月23日。
+    A类份额和C类份额代销渠道单日单个基金账户累计金额限制调整为10元
+    （A类、C类份额合并计算）；直销渠道单日单个基金账户累计金额限制仍为100元
+    （A类、C类份额合并计算）。基金总规模上限调整为人民币24亿元。
+    后续可调整申购金额或暂停本基金的申购业务。
+  `,
+});
+assert.equal(wanjia.status, '限大额');
+assert.equal(wanjia.distribution_amount, 10);
+assert.equal(wanjia.direct_amount, 100);
+assert.equal(wanjia.channel_ratio, 10);
+assert.equal(wanjia.combined_share_limit, true);
+
+const sharedQuotaFunds = ['019441', '019442'].map((code) => ({
+  code,
+  name: `万家纳斯达克100 ${code}`,
+  topic: '纳斯达克100',
+  status: '限大额',
+  distribution_limit_amount: 10,
+  direct_limit_amount: 100,
+  limit_group: 'AN202609231829774454',
+  on_exchange: false,
+}));
+const groupedSnapshot = mergeSnapshot(
+  {
+    as_of: '2026-09-23',
+    funds: sharedQuotaFunds,
+  },
+  sharedQuotaFunds.map((f) => ({
+    code: f.code,
+    name: f.name,
+    status: '限大额',
+    limit_amount: 10,
+    purchasable: true,
+  }))
+);
+assert.equal(groupedSnapshot.stats.sum_us_distribution_limit_actual, 10);
+assert.equal(groupedSnapshot.stats.sum_us_direct_limit_actual, 100);
 
 const suspended = parseSalesAnnouncement({
   id: 'AN_TEST_SUSPEND',

@@ -988,13 +988,14 @@
       "on_exchange": false,
       "status": "限大额",
       "distribution_limit_amount": 10,
-      "direct_limit_amount": 10,
-      "channel_split": false,
-      "channel_ratio": null,
-      "channel_note": "代销（第三方平台）10元",
+      "direct_limit_amount": 100,
+      "channel_split": true,
+      "channel_ratio": 10,
+      "channel_note": "公告原文：代销 10元；直销 100元；A/C类份额合并计算",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019441,AN202609231829774454.html",
       "announcement_date": "2026-09-23",
-      "verified_by_announcement": true
+      "verified_by_announcement": true,
+      "limit_group": "AN202609231829774454"
     },
     {
       "code": "019442",
@@ -1004,13 +1005,14 @@
       "on_exchange": false,
       "status": "限大额",
       "distribution_limit_amount": 10,
-      "direct_limit_amount": 10,
-      "channel_split": false,
-      "channel_ratio": null,
-      "channel_note": "代销（第三方平台）10元",
+      "direct_limit_amount": 100,
+      "channel_split": true,
+      "channel_ratio": 10,
+      "channel_note": "公告原文：代销 10元；直销 100元；A/C类份额合并计算",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019442,AN202609231829774454.html",
       "announcement_date": "2026-09-23",
-      "verified_by_announcement": true
+      "verified_by_announcement": true,
+      "limit_group": "AN202609231829774454"
     },
     {
       "code": "019524",

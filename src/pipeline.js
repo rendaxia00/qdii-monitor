@@ -63,6 +63,7 @@ export function mergeSnapshot(direct, distribution) {
       channel_split: f.channel_split,
       channel_ratio: f.channel_ratio,
       channel_note: f.channel_note,
+      limit_group: f.limit_group ?? null,
       on_exchange: f.on_exchange,
       tracking_error: d?.tracking_error ?? null,
       track_target: d?.track_target ?? null,
@@ -95,6 +96,7 @@ export function mergeSnapshot(direct, distribution) {
       channel_split: false,
       channel_ratio: null,
       channel_note: null,
+      limit_group: null,
       on_exchange: false,
       tracking_error: d.tracking_error,
       track_target: d.track_target,
@@ -123,13 +125,30 @@ export function mergeSnapshot(direct, distribution) {
   const isOffExchangeLimited = (f) => f.status === '限大额' && !f.on_exchange;
   const pick = (f, actualOnly) => isOffExchangeLimited(f) && (!actualOnly || f.purchasable !== false);
 
-  const agg = (list) => {
-    let sumDist = 0, sumDirect = 0, nDist = 0, nDirect = 0;
+  // 部分公告明确 A/C 等份额“合并计算”账户日限额。列表仍逐份额展示，
+  // 但合计只能计一次，否则会把一份可用额度重复相加。
+  const sumDistinct = (list, field) => {
+    const seen = new Set();
+    let sum = 0;
     for (const f of list) {
-      if (typeof f.limit_amount === 'number') { sumDist += f.limit_amount; nDist++; }
-      if (typeof f.direct_limit_amount === 'number') { sumDirect += f.direct_limit_amount; nDirect++; }
+      if (typeof f[field] !== 'number') continue;
+      const key = f.limit_group ? `${field}:${f.limit_group}` : `${field}:${f.code}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      sum += f[field];
     }
-    return { sum_dist: sumDist, sum_direct: sumDirect, n_dist: nDist, n_direct: nDirect };
+    return sum;
+  };
+
+  const agg = (list) => {
+    const dist = list.filter((f) => typeof f.limit_amount === 'number');
+    const direct = list.filter((f) => typeof f.direct_limit_amount === 'number');
+    return {
+      sum_dist: sumDistinct(dist, 'limit_amount'),
+      sum_direct: sumDistinct(direct, 'direct_limit_amount'),
+      n_dist: dist.length,
+      n_direct: direct.length,
+    };
   };
 
   const nominal = agg(funds.filter((f) => pick(f, false)));
@@ -194,18 +213,18 @@ export function mergeSnapshot(direct, distribution) {
       n_distribution_limited_actual: actual.n_dist,
       n_direct_limited_actual: actual.n_direct,
       // 美股方向（与官方口径对齐）
-      sum_us_daily_limit: usNominalList.reduce((a, f) => a + f.limit_amount, 0),
+      sum_us_daily_limit: sumDistinct(usNominalList, 'limit_amount'),
       n_us_buyable: usNominalList.length,
-      sum_us_daily_limit_actual: usActualList.reduce((a, f) => a + f.limit_amount, 0),
+      sum_us_daily_limit_actual: sumDistinct(usActualList, 'limit_amount'),
       n_us_buyable_actual: usActualList.length,
       // 明确命名的双渠道口径；旧字段继续作为代销别名，兼容历史前端/API。
-      sum_us_distribution_limit: usNominalList.reduce((a, f) => a + f.limit_amount, 0),
+      sum_us_distribution_limit: sumDistinct(usNominalList, 'limit_amount'),
       n_us_distribution_buyable: usNominalList.length,
-      sum_us_distribution_limit_actual: usActualList.reduce((a, f) => a + f.limit_amount, 0),
+      sum_us_distribution_limit_actual: sumDistinct(usActualList, 'limit_amount'),
       n_us_distribution_buyable_actual: usActualList.length,
-      sum_us_direct_limit: usDirectList.reduce((a, f) => a + f.direct_limit_amount, 0),
+      sum_us_direct_limit: sumDistinct(usDirectList, 'direct_limit_amount'),
       n_us_direct_buyable: usDirectList.length,
-      sum_us_direct_limit_actual: usDirectList.reduce((a, f) => a + f.direct_limit_amount, 0),
+      sum_us_direct_limit_actual: sumDistinct(usDirectList, 'direct_limit_amount'),
       n_us_direct_buyable_actual: usDirectList.length,
       by_index: byIndex,
     },

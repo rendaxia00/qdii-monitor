@@ -18,12 +18,22 @@ const shortName = (name, max = 24) => {
   return value.length > max ? `${value.slice(0, max - 1)}…` : value;
 };
 
+const sumDistinctQuota = (funds, amountField) => {
+  const seen = new Set();
+  return funds.reduce((sum, f) => {
+    const key = f.limit_group ? `${amountField}:${f.limit_group}` : `${amountField}:${f.code}`;
+    if (seen.has(key)) return sum;
+    seen.add(key);
+    return sum + f[amountField];
+  }, 0);
+};
+
 const channelStats = (funds, isBuyable, amountField) => {
   const available = funds.filter(isBuyable);
   const numeric = available.filter((f) => typeof f[amountField] === 'number');
   return {
     count: available.length,
-    amount: numeric.reduce((sum, f) => sum + f[amountField], 0),
+    amount: sumDistinctQuota(numeric, amountField),
     unlimited: available.length - numeric.length,
   };
 };
@@ -39,7 +49,9 @@ const fundQuota = (f, channel) => {
   const available = direct ? isDirectBuyable(f) : isDistributionBuyable(f);
   if (!available) return '关闭';
   const value = direct ? f.direct_limit_amount : f.limit_amount;
-  return typeof value === 'number' ? fmtAmount(value) : '开放（额度未标明）';
+  return typeof value === 'number'
+    ? `${fmtAmount(value)}${f.limit_group ? '（同类份额合并）' : ''}`
+    : '开放（额度未标明）';
 };
 
 /** 生成每天固定发送的“纳指 + 标普”双渠道可申购清单。 */
