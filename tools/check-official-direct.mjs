@@ -63,6 +63,41 @@ assert.equal(wanjia.direct_amount, 100);
 assert.equal(wanjia.channel_ratio, 10);
 assert.equal(wanjia.combined_share_limit, true);
 
+const directOutside = parseSalesAnnouncement({
+  id: 'AN_TEST_DIRECT_OUTSIDE',
+  title: '关于某基金调整大额申购和定投业务金额限制的公告',
+  publishDate: '2026-09-24',
+  content: `
+    自2026年9月24日起，在本公司直销渠道以外限额2万元，
+    在本公司直销渠道限额5万元，各类基金份额的申请金额每类单独计算。
+  `,
+});
+assert.equal(directOutside.distribution_amount, 20000);
+assert.equal(directOutside.direct_amount, 50000);
+assert.equal(directOutside.combined_share_limit, false);
+
+const combinedAci = parseSalesAnnouncement({
+  id: 'AN_TEST_ACI_GROUP',
+  title: '某基金调整大额申购业务的公告',
+  publishDate: '2026-09-22',
+  content: '自2026年9月22日起，单日累计申购限额调整为5元（A、C、I份额合并计算）。',
+});
+assert.equal(combinedAci.direct_amount, 5);
+assert.equal(combinedAci.distribution_amount, 5);
+assert.equal(combinedAci.combined_share_limit, true);
+
+const generalWithDirectOverride = parseSalesAnnouncement({
+  id: 'AN_TEST_GENERAL_DIRECT_OVERRIDE',
+  title: '某基金暂停大额申购、定期定额投资公告',
+  publishDate: '2026-08-19',
+  content: `
+    自2026年8月20日起，人民币份额投资者单日单个基金账户单笔或多笔累计高于10元的申购业务进行限制；
+    针对在本公司直销渠道投资A类、C类人民币份额的情况，累计高于50元的部分有权拒绝。
+  `,
+});
+assert.equal(generalWithDirectOverride.distribution_amount, 10);
+assert.equal(generalWithDirectOverride.direct_amount, 50);
+
 const sharedQuotaFunds = ['019441', '019442'].map((code) => ({
   code,
   name: `万家纳斯达克100 ${code}`,

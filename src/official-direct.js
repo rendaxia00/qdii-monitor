@@ -12,6 +12,7 @@ const ANN_LIST = 'https://api.fund.eastmoney.com/f10/JJGG';
 const ANN_CONTENT = 'https://np-cnotice-stock.eastmoney.com/api/content/ann';
 const FUND_DIRECTORY = 'https://fund.eastmoney.com/js/fundcode_search.js';
 const FUND_REFERER = 'https://fundf10.eastmoney.com/';
+const PARSER_VERSION = 2;
 
 const htmlText = (value) =>
   String(value || '')
@@ -84,7 +85,7 @@ function amountNearChannel(text, channelRe, otherChannelRe) {
       let score = 4;
       if (/单\s*日|每日/.test(local)) score += 4;
       if (/累计/.test(local)) score += 4;
-      if (/不超过|不得超过|上限|限制金额|金额限制|限制(?:仍)?为|调整为|超过/.test(local)) score += 5;
+      if (/不超过|不得超过|上限|限额|限制金额|金额限制|限制(?:仍)?为|调整为|超过|高于/.test(local)) score += 5;
       if (/个人投资者/.test(local)) score += 2;
       if (/机构投资者/.test(local) && !/个人投资者/.test(local)) score -= 1;
       if (/单笔/.test(local) && !/累计/.test(local)) score -= 2;
@@ -105,6 +106,8 @@ function genericDailyAmount(text) {
     /单日[^。；]{0,100}?(?:累计[^。；]{0,80}?)?(?:不超过|不得超过|超过)\s*([\d,]+(?:\.\d+)?)\s*(亿|万)?\s*元/,
     /每一类基金份额单日[^。；]{0,100}?限制金额(?:调整为)?\s*([\d,]+(?:\.\d+)?)\s*(亿|万)?\s*元/,
     /限制申购金额[^\d]{0,40}([\d,]+(?:\.\d+)?)\s*(亿|万)?/,
+    /单日[^。；]{0,120}?累计[^。；]{0,60}?(?:高于|超过)\s*([\d,]+(?:\.\d+)?)\s*(亿|万)?\s*元/,
+    /单日[^。；]{0,100}?限额(?:调整为|为)?\s*([\d,]+(?:\.\d+)?)\s*(亿|万)?\s*元/,
   ];
   for (const re of patterns) {
     const m = text.match(re);
@@ -132,11 +135,15 @@ export function parseSalesAnnouncement({ title = '', content = '', publishDate =
   else if (isUnlimited && !/限制大额申购|同时限制|及限制/.test(title)) status = '开放申购';
   else if (isLimited) status = '限大额';
 
-  const direct = amountNearChannel(text, /直销/g, /代销|销售机构/g);
-  const distribution = amountNearChannel(text, /代销|销售机构/g, /直销/g);
+  // “直销渠道以外/非直销渠道”属于代销口径，不能因为包含“直销”二字
+  // 就被识别为直销额度。
+  const directChannel = /(?<!非)直销(?!渠道以外|以外)/g;
+  const distributionChannel = /代销|销售机构|直销渠道以外|非直销渠道/g;
+  const direct = amountNearChannel(text, directChannel, distributionChannel);
+  const distribution = amountNearChannel(text, distributionChannel, directChannel);
   const generic = genericDailyAmount(text);
   const hasDirectWording = /直销/.test(text);
-  const hasDistributionWording = /代销|销售机构/.test(text);
+  const directOnlyAnnouncement = /(?:仅|只|在)[^。]{0,20}直销|直销(?:机构|渠道)[^。]{0,30}(?:调整|暂停)/.test(title);
 
   let directAmount = direct;
   let distributionAmount = distribution;
@@ -153,7 +160,12 @@ export function parseSalesAnnouncement({ title = '', content = '', publishDate =
   } else if (generic !== null) {
     // 表格总限额可作为未明确渠道的一侧回退，但不能覆盖正文里的渠道专属值。
     if (!directSpecified && !hasDirectWording) { directAmount = generic; directSpecified = true; }
-    if (!distributionSpecified && !hasDistributionWording) { distributionAmount = generic; distributionSpecified = true; }
+    // 通用表格限额 + 直销特殊限额时，通用值就是非直销口径。公告若明确
+    // 仅调整直销，则不能把通用表格值外推到代销。
+    if (!distributionSpecified && !directOnlyAnnouncement) {
+      distributionAmount = generic;
+      distributionSpecified = true;
+    }
   }
 
   if (status === '限大额' && !directSpecified && !distributionSpecified) return null;
@@ -161,7 +173,11 @@ export function parseSalesAnnouncement({ title = '', content = '', publishDate =
 
   const effectiveDate = extractEffectiveDate(text, publishDate);
   const channelSplit = directSpecified && distributionSpecified && directAmount !== distributionAmount;
-  const combinedShareLimit = /(?:各类|A类[^。；]{0,30}C类|不同类别)[^。；]{0,40}(?:份额)?合并计算/.test(text);
+  const separateShareLimit = /不同份额分别计算|各类基金份额[^。；]{0,50}每类单独计算|申请金额各类别均/.test(text);
+  const combinedShareLimit = !separateShareLimit && (
+    /[A-Z](?:类)?(?:、[A-Z](?:类)?)+\s*份额合并计算/i.test(text) ||
+    /(?:各类|不同类别)[^。；]{0,40}(?:基金)?份额合并计算/.test(text)
+  );
   return {
     id,
     title,
@@ -377,12 +393,15 @@ export async function collectOfficialDirect(opts = {}) {
           .filter((a) => relevantTitle(a.TITLE))
           .filter((a) => {
             const date = String(a.PUBLISHDATEDesc || a.PUBLISHDATE || '').slice(0, 10);
-            return date >= baseline || (a.ID === baselineId && date >= baseline);
+            return date >= baseline || a.ID === baselineId;
           })
           .slice(0, 6);
 
         for (const ann of candidates) {
-          if (state.announcements[ann.ID]?.parsed_at) {
+          if (
+            state.announcements[ann.ID]?.parsed_at &&
+            state.announcements[ann.ID]?.parser_version === PARSER_VERSION
+          ) {
             state.announcements[ann.ID].fund_codes = [
               ...new Set([...(state.announcements[ann.ID].fund_codes || []), fund.code]),
             ];
@@ -403,6 +422,7 @@ export async function collectOfficialDirect(opts = {}) {
             });
             state.announcements[ann.ID] = {
               parsed_at: new Date().toISOString(),
+              parser_version: PARSER_VERSION,
               fund_codes: [...new Set([...(state.announcements[ann.ID]?.fund_codes || []), fund.code])],
               patch,
             };

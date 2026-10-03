@@ -1025,10 +1025,11 @@
       "direct_limit_amount": 5,
       "channel_split": false,
       "channel_ratio": null,
-      "channel_note": null,
+      "channel_note": "公告原文：A/C/I类份额合并计算，共享5元日限额",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019524,AN202609221829732369.html",
       "announcement_date": "2026-09-22",
-      "verified_by_announcement": true
+      "verified_by_announcement": true,
+      "limit_group": "AN202609221829732369"
     },
     {
       "code": "019525",
@@ -1041,10 +1042,11 @@
       "direct_limit_amount": 5,
       "channel_split": false,
       "channel_ratio": null,
-      "channel_note": null,
+      "channel_note": "公告原文：A/C/I类份额合并计算，共享5元日限额",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019525,AN202609221829732369.html",
       "announcement_date": "2026-09-22",
-      "verified_by_announcement": true
+      "verified_by_announcement": true,
+      "limit_group": "AN202609221829732369"
     },
     {
       "code": "019547",
@@ -1214,10 +1216,10 @@
       "on_exchange": false,
       "status": "限大额",
       "distribution_limit_amount": 20000,
-      "direct_limit_amount": 20000,
-      "channel_split": false,
-      "channel_ratio": null,
-      "channel_note": "代销（第三方平台）2万元",
+      "direct_limit_amount": 50000,
+      "channel_split": true,
+      "channel_ratio": 2.5,
+      "channel_note": "公告原文：代销 2万元；直销 5万元；各类份额分别计算",
       "announcement_url": "https://fund.eastmoney.com/gonggao/021189,AN202609241829829803.html",
       "announcement_date": "2026-09-24",
       "verified_by_announcement": true
@@ -1230,10 +1232,10 @@
       "on_exchange": false,
       "status": "限大额",
       "distribution_limit_amount": 20000,
-      "direct_limit_amount": 20000,
-      "channel_split": false,
-      "channel_ratio": null,
-      "channel_note": "代销（第三方平台）2万元",
+      "direct_limit_amount": 50000,
+      "channel_split": true,
+      "channel_ratio": 2.5,
+      "channel_note": "公告原文：代销 2万元；直销 5万元；各类份额分别计算",
       "announcement_url": "https://fund.eastmoney.com/gonggao/021190,AN202609241829829803.html",
       "announcement_date": "2026-09-24",
       "verified_by_announcement": true
@@ -1409,10 +1411,11 @@
       "direct_limit_amount": 5,
       "channel_split": false,
       "channel_ratio": null,
-      "channel_note": null,
+      "channel_note": "公告原文：A/C/I类份额合并计算，共享5元日限额",
       "announcement_url": "https://fund.eastmoney.com/gonggao/022664,AN202609221829732369.html",
       "announcement_date": "2026-09-22",
-      "verified_by_announcement": true
+      "verified_by_announcement": true,
+      "limit_group": "AN202609221829732369"
     },
     {
       "code": "022680",
