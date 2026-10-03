@@ -2,7 +2,8 @@
   "version": 1,
   "announcements": {
     "AN202609241829835607": {
-      "parsed_at": "2026-09-25T04:55:56.555Z",
+      "parsed_at": "2026-10-03T03:23:52.113Z",
+      "parser_version": 2,
       "fund_codes": [
         "018966",
         "018967",
@@ -21,11 +22,13 @@
         "generic_specified": false,
         "channel_split": false,
         "channel_ratio": null,
+        "combined_share_limit": false,
         "confidence": "high"
       }
     },
     "AN202609241829831132": {
-      "parsed_at": "2026-09-25T04:55:56.886Z",
+      "parsed_at": "2026-10-03T03:23:55.284Z",
+      "parser_version": 2,
       "fund_codes": [
         "019736",
         "019737"
@@ -43,11 +46,13 @@
         "generic_specified": true,
         "channel_split": false,
         "channel_ratio": null,
+        "combined_share_limit": false,
         "confidence": "high"
       }
     },
     "AN202609241829829803": {
-      "parsed_at": "2026-09-25T04:55:56.995Z",
+      "parsed_at": "2026-10-03T03:23:55.716Z",
+      "parser_version": 2,
       "fund_codes": [
         "021189",
         "021190"
@@ -58,18 +63,20 @@
         "publish_date": "2026-09-24",
         "effective_date": "2026-09-24",
         "status": "限大额",
-        "direct_amount": 20000,
+        "direct_amount": 50000,
         "distribution_amount": 20000,
         "direct_specified": true,
         "distribution_specified": true,
         "generic_specified": false,
-        "channel_split": false,
-        "channel_ratio": null,
+        "channel_split": true,
+        "channel_ratio": 2.5,
+        "combined_share_limit": false,
         "confidence": "high"
       }
     },
     "AN202609241829829746": {
-      "parsed_at": "2026-09-25T04:55:57.263Z",
+      "parsed_at": "2026-10-03T03:23:57.149Z",
+      "parser_version": 2,
       "fund_codes": [
         "022647"
       ],
@@ -86,18 +93,993 @@
         "generic_specified": true,
         "channel_split": false,
         "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202605081822057674": {
+      "parsed_at": "2026-10-03T03:23:42.711Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "006075",
+        "050025"
+      ],
+      "patch": {
+        "id": "AN202605081822057674",
+        "title": "博时标普500交易型开放式指数证券投资基金联接基金A、C两类份额暂停申购、转换转入、定期定额投资业务公告",
+        "publish_date": "2026-05-08",
+        "effective_date": "2026-05-08",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609031828944387": {
+      "parsed_at": "2026-10-03T03:23:43.093Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "000614",
+        "015016"
+      ],
+      "patch": {
+        "id": "AN202609031828944387",
+        "title": "关于华安国际龙头(DAX)交易型开放式指数证券投资基金联接基金暂停大额申购及大额定期定额投资的公告",
+        "publish_date": "2026-09-03",
+        "effective_date": "2026-09-04",
+        "status": "限大额",
+        "direct_amount": 1000,
+        "distribution_amount": 1000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609221829740305": {
+      "parsed_at": "2026-10-03T03:23:43.393Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "006105",
+        "026015"
+      ],
+      "patch": {
+        "id": "AN202609221829740305",
+        "title": "宏利印度机会股票型证券投资基金(QDII)恢复大额申购(含大额定期定额投资)业务的公告",
+        "publish_date": "2026-09-22",
+        "effective_date": "2026-09-23",
+        "status": "开放申购",
+        "direct_amount": 100000,
+        "distribution_amount": 100000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609021828933938": {
+      "parsed_at": "2026-10-03T03:23:43.473Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "004243",
+        "019710"
+      ],
+      "patch": {
+        "id": "AN202609021828933938",
+        "title": "关于广发道琼斯美国石油开发与生产指数证券投资基金(QDII-LOF)暂停申购(含转换转入、定期定额和不定额投资)及赎回(含转换转出)业务的公告",
+        "publish_date": "2026-09-03",
+        "effective_date": "2026-09-07",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609181829580336": {
+      "parsed_at": "2026-10-03T03:23:43.803Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "007721"
+      ],
+      "patch": {
+        "id": "AN202609181829580336",
+        "title": "天弘基金管理有限公司关于天弘标普500发起式证券投资基金(QDII-FOF)A类基金份额、C类基金份额暂停申购及定期定额投资业务的公告",
+        "publish_date": "2026-09-18",
+        "effective_date": "2026-09-21",
+        "status": "暂停申购",
+        "direct_amount": 100,
+        "distribution_amount": 100,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609181829580913": {
+      "parsed_at": "2026-10-03T03:23:43.898Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "006479",
+        "021778",
+        "270042"
+      ],
+      "patch": {
+        "id": "AN202609181829580913",
+        "title": "广发基金管理有限公司关于广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)人民币份额暂停申购(含转换转入、定期定额和不定额投资)业务的公告",
+        "publish_date": "2026-09-18",
+        "effective_date": "2026-09-21",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609011828844257": {
+      "parsed_at": "2026-10-03T03:23:44.309Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "007722",
+        "022523"
+      ],
+      "patch": {
+        "id": "AN202609011828844257",
+        "title": "天弘基金管理有限公司关于天弘标普500发起式证券投资基金(QDII-FOF)恢复申购、定期定额投资业务及限制大额申购、定期定额投资业务的公告",
+        "publish_date": "2026-09-01",
+        "effective_date": "2026-09-02",
+        "status": "限大额",
+        "direct_amount": 100,
+        "distribution_amount": 100,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609041828989147": {
+      "parsed_at": "2026-10-03T03:23:44.482Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "008706",
+        "023373",
+        "539003"
+      ],
+      "patch": {
+        "id": "AN202609041828989147",
+        "title": "建信富时100指数型证券投资基金(QDII)暂停大额申购、定期定额投资公告",
+        "publish_date": "2026-09-04",
+        "effective_date": "2026-09-07",
+        "status": "限大额",
+        "direct_amount": 10,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609181829580366": {
+      "parsed_at": "2026-10-03T03:23:44.604Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "008763",
+        "008764",
+        "022524"
+      ],
+      "patch": {
+        "id": "AN202609181829580366",
+        "title": "天弘基金管理有限公司关于天弘越南市场股票型发起式证券投资基金(QDII)调整大额申购及定期定额投资业务的公告",
+        "publish_date": "2026-09-18",
+        "effective_date": "2026-09-21",
+        "status": "限大额",
+        "direct_amount": 2000,
+        "distribution_amount": 1000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": true,
+        "channel_ratio": 2,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609081829112680": {
+      "parsed_at": "2026-10-03T03:23:44.732Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "008401",
+        "096001"
+      ],
+      "patch": {
+        "id": "AN202609081829112680",
+        "title": "关于大成标普500等权重指数证券投资基金调整大额申购(含定期定额申购)的公告",
+        "publish_date": "2026-09-08",
+        "effective_date": "2026-09-08",
+        "status": "限大额",
+        "direct_amount": 1000,
+        "distribution_amount": 100,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": true,
+        "channel_ratio": 10,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202606031823188725": {
+      "parsed_at": "2026-10-03T03:23:45.207Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "008971"
+      ],
+      "patch": {
+        "id": "AN202606031823188725",
+        "title": "关于大成纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)调整大额申购(含定期定额申购)的公告",
+        "publish_date": "2026-06-03",
+        "effective_date": "2026-06-04",
+        "status": "限大额",
+        "direct_amount": 100,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": true,
+        "channel_ratio": 10,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202605211822519561": {
+      "parsed_at": "2026-10-03T03:23:45.307Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "012348",
+        "012349"
+      ],
+      "patch": {
+        "id": "AN202605211822519561",
+        "title": "天弘基金管理有限公司关于天弘恒生科技交易型开放式指数证券投资基金联接基金(QDII)调整大额申购及定期定额投资业务的公告",
+        "publish_date": "2026-05-21",
+        "effective_date": "2026-05-22",
+        "status": "限大额",
+        "direct_amount": 1000,
+        "distribution_amount": 1000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202608191828132673": {
+      "parsed_at": "2026-10-03T03:23:46.032Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "012752",
+        "023422",
+        "539001"
+      ],
+      "patch": {
+        "id": "AN202608191828132673",
+        "title": "建信纳斯达克100指数型证券投资基金(QDII)暂停大额申购、定期定额投资公告",
+        "publish_date": "2026-08-19",
+        "effective_date": "2026-08-20",
+        "status": "限大额",
+        "direct_amount": 50,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": true,
+        "channel_ratio": 5,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202603181820618457": {
+      "parsed_at": "2026-10-03T03:23:46.408Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "012860",
+        "161125"
+      ],
+      "patch": {
+        "id": "AN202603181820618457",
+        "title": "易方达标普500指数证券投资基金(LOF)暂停申购及定期定额投资业务的公告",
+        "publish_date": "2026-03-19",
+        "effective_date": "2026-03-19",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202502241643425276": {
+      "parsed_at": "2026-10-03T03:23:46.472Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "012805",
+        "022005"
+      ],
+      "patch": {
+        "id": "AN202502241643425276",
+        "title": "关于广发恒生科技交易型开放式指数证券投资基金联接基金(QDII)恢复大额申购(含转换转入、定期定额和不定额投资)业务的公告",
+        "publish_date": "2025-02-24",
+        "effective_date": "2025-02-25",
+        "status": "开放申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202603181820618456": {
+      "parsed_at": "2026-10-03T03:23:46.889Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "012870",
+        "161130"
+      ],
+      "patch": {
+        "id": "AN202603181820618456",
+        "title": "易方达纳斯达克100交易型开放式指数证券投资基金联接基金(LOF)暂停申购及定期定额投资业务的公告",
+        "publish_date": "2026-03-19",
+        "effective_date": "2026-03-19",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202409061639769338": {
+      "parsed_at": "2026-10-03T03:23:46.941Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "012979",
+        "012980"
+      ],
+      "patch": {
+        "id": "AN202409061639769338",
+        "title": "大成恒生科技交易型开放式指数证券投资基金发起式联接基金暂停申购、赎回及定投业务的公告",
+        "publish_date": "2024-09-06",
+        "effective_date": "2024-09-06",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609191829639199": {
+      "parsed_at": "2026-10-03T03:23:47.257Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "013127",
+        "013128"
+      ],
+      "patch": {
+        "id": "AN202609191829639199",
+        "title": "关于汇添富恒生科技交易型开放式指数证券投资基金发起式联接基金(QDII)恢复大额申购、转换转入、定期定额投资业务的公告",
+        "publish_date": "2026-09-19",
+        "effective_date": "2026-09-21",
+        "status": "开放申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202601081816836784": {
+      "parsed_at": "2026-10-03T03:23:48.067Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "014439",
+        "014438"
+      ],
+      "patch": {
+        "id": "AN202601081816836784",
+        "title": "博时恒生科技交易型开放式指数证券投资基金发起式联接基金(QDII)恢复大额申购、转换转入、定期定额投资业务的公告",
+        "publish_date": "2026-01-08",
+        "effective_date": "2026-01-08",
+        "status": "开放申购",
+        "direct_amount": 500000,
+        "distribution_amount": 500000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202409271640066770": {
+      "parsed_at": "2026-10-03T03:23:48.078Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "013402",
+        "013403"
+      ],
+      "patch": null
+    },
+    "AN202606181823650569": {
+      "parsed_at": "2026-10-03T03:23:48.820Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "015283",
+        "015282"
+      ],
+      "patch": {
+        "id": "AN202606181823650569",
+        "title": "华安恒生科技交易型开放式指数证券投资基金发起式联接基金(QDII)基金暂停大额申购及大额定期定额投资公告",
+        "publish_date": "2026-06-18",
+        "effective_date": "2026-06-22",
+        "status": "限大额",
+        "direct_amount": 10000000,
+        "distribution_amount": 10000000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609231829773864": {
+      "parsed_at": "2026-10-03T03:23:48.864Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "014978",
+        "040046"
+      ],
+      "patch": {
+        "id": "AN202609231829773864",
+        "title": "关于华安纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)暂停大额申购、大额定期定额投资的公告",
+        "publish_date": "2026-09-23",
+        "effective_date": "2026-09-24",
+        "status": "限大额",
+        "direct_amount": 5,
+        "distribution_amount": 5,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202607081826816306": {
+      "parsed_at": "2026-10-03T03:23:49.791Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "016452",
+        "016453"
+      ],
+      "patch": {
+        "id": "AN202607081826816306",
+        "title": "关于调整南方纳斯达克100指数发起式证券投资基金(QDII)申购、定投及转换转入业务金额限制的公告",
+        "publish_date": "2026-07-08",
+        "effective_date": "2026-07-09",
+        "status": "限大额",
+        "direct_amount": 10,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202602031819507007": {
+      "parsed_at": "2026-10-03T03:23:50.061Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "016532",
+        "016533",
+        "021838"
+      ],
+      "patch": {
+        "id": "AN202602031819507007",
+        "title": "嘉实纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)暂停申购(含定期定额投资)业务的公告",
+        "publish_date": "2026-02-03",
+        "effective_date": "2026-02-03",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202510171763661096": {
+      "parsed_at": "2026-10-03T03:23:50.364Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "017030",
+        "017028"
+      ],
+      "patch": {
+        "id": "AN202510171763661096",
+        "title": "国泰标普500交易型开放式指数证券投资基金发起式联接基金(QDII)暂停申购、定期定额投资业务的公告",
+        "publish_date": "2025-10-17",
+        "effective_date": "2025-10-17",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202607241827315718": {
+      "parsed_at": "2026-10-03T03:23:50.742Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "017641",
+        "019305"
+      ],
+      "patch": {
+        "id": "AN202607241827315718",
+        "title": "摩根标普500指数型发起式证券投资基金(QDII)调整大额申购、定期定额投资及转换转入业务限制金额的公告",
+        "publish_date": "2026-07-27",
+        "effective_date": "2026-07-27",
+        "status": "限大额",
+        "direct_amount": 10,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609181829590491": {
+      "parsed_at": "2026-10-03T03:23:51.545Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "018043",
+        "022525"
+      ],
+      "patch": {
+        "id": "AN202609181829590491",
+        "title": "天弘基金管理有限公司关于天弘纳斯达克100指数型发起式证券投资基金(QDII)A类基金份额、C类基金份额暂停申购及定期定额投资业务的公告",
+        "publish_date": "2026-09-18",
+        "effective_date": "2026-09-21",
+        "status": "暂停申购",
+        "direct_amount": 100,
+        "distribution_amount": 100,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609011828848127": {
+      "parsed_at": "2026-10-03T03:23:51.595Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "018044"
+      ],
+      "patch": {
+        "id": "AN202609011828848127",
+        "title": "天弘基金管理有限公司关于天弘纳斯达克100指数型发起式证券投资基金(QDII)恢复申购、定期定额投资业务及限制大额申购、定期定额投资业务的公告",
+        "publish_date": "2026-09-01",
+        "effective_date": "2026-09-02",
+        "status": "限大额",
+        "direct_amount": 100,
+        "distribution_amount": 100,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202608191828129205": {
+      "parsed_at": "2026-10-03T03:23:52.474Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "018738"
+      ],
+      "patch": {
+        "id": "AN202608191828129205",
+        "title": "博时标普500交易型开放式指数证券投资基金联接基金E类份额暂停申购、转换转入、定期定额投资业务公告",
+        "publish_date": "2026-08-19",
+        "effective_date": "2026-08-19",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202607241827315717": {
+      "parsed_at": "2026-10-03T03:23:52.883Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "019172",
+        "019173"
+      ],
+      "patch": {
+        "id": "AN202607241827315717",
+        "title": "摩根纳斯达克100指数型发起式证券投资基金(QDII)调整大额申购、定期定额投资及转换转入业务限制金额的公告",
+        "publish_date": "2026-07-27",
+        "effective_date": "2026-07-27",
+        "status": "限大额",
+        "direct_amount": 10,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609231829774454": {
+      "parsed_at": "2026-10-03T03:23:53.118Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "019441",
+        "019442"
+      ],
+      "patch": {
+        "id": "AN202609231829774454",
+        "title": "关于万家纳斯达克100指数型发起式证券投资基金(QDII)调整大额申购(含定期定额投资)业务金额限制并调整总规模上限的公告",
+        "publish_date": "2026-09-23",
+        "effective_date": "2026-09-23",
+        "status": "限大额",
+        "direct_amount": 100,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": true,
+        "channel_ratio": 10,
+        "combined_share_limit": true,
+        "confidence": "high"
+      }
+    },
+    "AN202609221829732369": {
+      "parsed_at": "2026-10-03T03:23:53.651Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "019524",
+        "019525",
+        "022664"
+      ],
+      "patch": {
+        "id": "AN202609221829732369",
+        "title": "华泰柏瑞纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)调整大额申购(含定期定额投资)业务的公告",
+        "publish_date": "2026-09-22",
+        "effective_date": "2026-09-22",
+        "status": "限大额",
+        "direct_amount": 5,
+        "distribution_amount": 5,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": true,
+        "confidence": "high"
+      }
+    },
+    "AN202609011828847866": {
+      "parsed_at": "2026-10-03T03:23:53.754Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "019548",
+        "019547"
+      ],
+      "patch": {
+        "id": "AN202609011828847866",
+        "title": "关于调整招商纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)在直销机构大额申购(含定期定额投资)业务的公告",
+        "publish_date": "2026-09-01",
+        "effective_date": "2026-09-02",
+        "status": "限大额",
+        "direct_amount": 10,
+        "distribution_amount": null,
+        "direct_specified": true,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202511181783447769": {
+      "parsed_at": "2026-10-03T03:23:54.605Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "020712",
+        "020713"
+      ],
+      "patch": {
+        "id": "AN202511181783447769",
+        "title": "关于华安三菱日联日经225交易型开放式指数证券投资基金发起式联接基金(QDII)暂停大额申购及大额定期定额投资的公告",
+        "publish_date": "2025-11-18",
+        "effective_date": "2025-11-19",
+        "status": "限大额",
+        "direct_amount": 10,
+        "distribution_amount": 10,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609031828943964": {
+      "parsed_at": "2026-10-03T03:23:55.931Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "021539",
+        "021540"
+      ],
+      "patch": {
+        "id": "AN202609031828943964",
+        "title": "关于华安法国CAC40交易型开放式指数证券投资基金发起式联接基金(QDII)暂停大额申购及大额定期定额投资的公告",
+        "publish_date": "2026-09-03",
+        "effective_date": "2026-09-03",
+        "status": "限大额",
+        "direct_amount": 100000,
+        "distribution_amount": 100000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202607201827139668": {
+      "parsed_at": "2026-10-03T03:23:55.986Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "021000"
+      ],
+      "patch": {
+        "id": "AN202607201827139668",
+        "title": "关于调整南方纳斯达克100指数发起式证券投资基金(QDII)I类基金份额申购、定投及转换转入业务金额限制的公告",
+        "publish_date": "2026-07-20",
+        "effective_date": "2026-07-21",
+        "status": "限大额",
+        "direct_amount": 200,
+        "distribution_amount": 200,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202503281648482339": {
+      "parsed_at": "2026-10-03T03:23:58.057Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "023763"
+      ],
+      "patch": null
+    },
+    "AN202511211785379194": {
+      "parsed_at": "2026-10-03T03:23:58.221Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "024237"
+      ],
+      "patch": {
+        "id": "AN202511211785379194",
+        "title": "博时纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)I类份额暂停申购、转换转入、定期定额投资业务的公告",
+        "publish_date": "2025-11-21",
+        "effective_date": "2025-11-21",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202608051827647020": {
+      "parsed_at": "2026-10-03T03:23:58.600Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "026206",
+        "026207"
+      ],
+      "patch": {
+        "id": "AN202608051827647020",
+        "title": "宝盈恒生科技指数型证券投资基金(QDII)调整大额申购、定期定额投资业务限制金额的公告",
+        "publish_date": "2026-08-05",
+        "effective_date": "2026-08-06",
+        "status": "限大额",
+        "direct_amount": 1000000,
+        "distribution_amount": 1000000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202602061819810738": {
+      "parsed_at": "2026-10-03T03:23:59.952Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "162719"
+      ],
+      "patch": {
+        "id": "AN202602061819810738",
+        "title": "关于广发道琼斯美国石油开发与生产指数证券投资基金(QDII-LOF)暂停申购(含转换转入、定期定额和不定额投资)业务的公告",
+        "publish_date": "2026-02-07",
+        "effective_date": "2026-02-10",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202609221829740223": {
+      "parsed_at": "2026-10-03T03:23:59.999Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "160213"
+      ],
+      "patch": {
+        "id": "AN202609221829740223",
+        "title": "国泰纳斯达克100指数证券投资基金暂停申购、定期定额投资业务的公告",
+        "publish_date": "2026-09-22",
+        "effective_date": "2026-09-22",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202605201822493904": {
+      "parsed_at": "2026-10-03T03:24:00.230Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "164824"
+      ],
+      "patch": {
+        "id": "AN202605201822493904",
+        "title": "关于调整工银瑞信印度市场证券投资基金(LOF)大额申购、定期定额投资业务限制金额的公告",
+        "publish_date": "2026-05-21",
+        "effective_date": "2026-05-22",
+        "status": "限大额",
+        "direct_amount": 500000,
+        "distribution_amount": 500000,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
         "confidence": "high"
       }
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-03T03:16:20.768Z",
+  "updated_at": "2026-10-03T03:24:00.618Z",
   "last_scan": {
     "as_of": "2026-10-03",
-    "scanned": 122,
-    "parsed": 0,
+    "scanned": 121,
+    "parsed": 42,
     "discovered": 0,
-    "errors": 0
+    "errors": 1
   },
   "discovered_funds": [
     {
