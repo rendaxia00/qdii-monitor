@@ -2,13 +2,13 @@
   "code": "016453",
   "name": "南方纳斯达克100指数发起",
   "performance": {
-    "one_month": 2.35,
-    "three_months": 0.64,
-    "six_months": 26.09,
-    "one_year": 15.37,
-    "three_years": 79.16,
-    "since_inception": 132.87,
-    "as_of": "2026-09-29",
+    "one_month": 3.27,
+    "three_months": 3.79,
+    "six_months": 19.72,
+    "one_year": 16.46,
+    "three_years": 81.23,
+    "since_inception": 135.56,
+    "as_of": "2026-10-08",
     "scale_billion": 48.33,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.1,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:16",
-  "fetched_at_ms": 1790926336319,
+  "fetched_at": "2026-10-10 11:16:54",
+  "fetched_at_ms": 1791602214980,
   "sources": {
     "performance": "https://fund.eastmoney.com/016453.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_016453.html"

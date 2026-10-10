@@ -2,13 +2,13 @@
   "code": "520830",
   "name": "沙特ETF华泰柏瑞",
   "performance": {
-    "one_month": -7.31,
-    "three_months": -2.91,
-    "six_months": -6.93,
-    "one_year": -11.71,
+    "one_month": -5.93,
+    "three_months": -4.08,
+    "six_months": -9.07,
+    "one_year": -13.1,
     "three_years": null,
-    "since_inception": -13.92,
-    "as_of": "2026-09-29",
+    "since_inception": -14.63,
+    "as_of": "2026-10-08",
     "scale_billion": 10.5,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:59",
-  "fetched_at_ms": 1790926379464,
+  "fetched_at": "2026-10-10 11:17:08",
+  "fetched_at_ms": 1791602228187,
   "sources": {
     "performance": "https://fund.eastmoney.com/520830.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_520830.html"

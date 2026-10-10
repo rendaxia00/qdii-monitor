@@ -2,13 +2,13 @@
   "code": "159740",
   "name": "恒生科技ETF大成",
   "performance": {
-    "one_month": -8.7,
-    "three_months": -6.06,
-    "six_months": -10.93,
-    "one_year": -38.1,
-    "three_years": 4.35,
-    "since_inception": -47.01,
-    "as_of": "2026-09-30",
+    "one_month": -5.79,
+    "three_months": -12.36,
+    "six_months": -14.83,
+    "one_year": -39.05,
+    "three_years": 1.77,
+    "since_inception": -47.75,
+    "as_of": "2026-10-09",
     "scale_billion": 162.48,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:47",
-  "fetched_at_ms": 1790926367023,
+  "fetched_at": "2026-10-10 11:17:04",
+  "fetched_at_ms": 1791602224282,
   "sources": {
     "performance": "https://fund.eastmoney.com/159740.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159740.html"

@@ -2,13 +2,13 @@
   "code": "019441",
   "name": "万家纳斯达克100指数发起式",
   "performance": {
-    "one_month": 2.73,
-    "three_months": 1.13,
-    "six_months": 26.87,
-    "one_year": 16.36,
-    "three_years": 72.54,
-    "since_inception": 72.52,
-    "as_of": "2026-09-29",
+    "one_month": 3.62,
+    "three_months": 4.11,
+    "six_months": 20.49,
+    "one_year": 17.42,
+    "three_years": 74.5,
+    "since_inception": 74.48,
+    "as_of": "2026-10-08",
     "scale_billion": 9.68,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:23",
-  "fetched_at_ms": 1790926343003,
+  "fetched_at": "2026-10-10 11:16:56",
+  "fetched_at_ms": 1791602216700,
   "sources": {
     "performance": "https://fund.eastmoney.com/019441.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019441.html"

@@ -2,13 +2,13 @@
   "code": "015311",
   "name": "华泰柏瑞恒生科技ETF联接",
   "performance": {
-    "one_month": -8.3,
-    "three_months": -5.83,
-    "six_months": -11,
-    "one_year": -37.08,
-    "three_years": 1.45,
-    "since_inception": -5.84,
-    "as_of": "2026-09-30",
+    "one_month": -5.71,
+    "three_months": -12.08,
+    "six_months": -14.72,
+    "one_year": -37.99,
+    "three_years": -1.01,
+    "since_inception": -7.34,
+    "as_of": "2026-10-09",
     "scale_billion": 26.53,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.25,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:14",
-  "fetched_at_ms": 1790926334837,
+  "fetched_at": "2026-10-10 11:16:54",
+  "fetched_at_ms": 1791602214591,
   "sources": {
     "performance": "https://fund.eastmoney.com/015311.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_015311.html"

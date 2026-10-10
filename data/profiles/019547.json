@@ -2,13 +2,13 @@
   "code": "019547",
   "name": "招商纳斯达克100ETF发起式联接",
   "performance": {
-    "one_month": 2.31,
-    "three_months": 0.78,
-    "six_months": 26.23,
-    "one_year": 15.82,
+    "one_month": 3.18,
+    "three_months": 3.72,
+    "six_months": 19.85,
+    "one_year": 16.85,
     "three_years": null,
-    "since_inception": 60.75,
-    "as_of": "2026-09-29",
+    "since_inception": 62.49,
+    "as_of": "2026-10-08",
     "scale_billion": 21.78,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:24",
-  "fetched_at_ms": 1790926344527,
+  "fetched_at": "2026-10-10 11:16:57",
+  "fetched_at_ms": 1791602217251,
   "sources": {
     "performance": "https://fund.eastmoney.com/019547.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019547.html"

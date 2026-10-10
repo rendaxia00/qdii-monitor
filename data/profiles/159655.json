@@ -2,13 +2,13 @@
   "code": "159655",
   "name": "标普500ETF华夏",
   "performance": {
-    "one_month": -0.72,
-    "three_months": 1.78,
-    "six_months": 17.16,
-    "one_year": 8.77,
-    "three_years": 64.69,
-    "since_inception": 87.32,
-    "as_of": "2026-09-29",
+    "one_month": 1.1,
+    "three_months": 2.41,
+    "six_months": 12.75,
+    "one_year": 9.6,
+    "three_years": 66.7,
+    "since_inception": 89.61,
+    "as_of": "2026-10-08",
     "scale_billion": 39.37,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:45",
-  "fetched_at_ms": 1790926365231,
+  "fetched_at": "2026-10-10 11:17:03",
+  "fetched_at_ms": 1791602223535,
   "sources": {
     "performance": "https://fund.eastmoney.com/159655.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159655.html"

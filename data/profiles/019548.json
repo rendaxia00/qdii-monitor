@@ -2,13 +2,13 @@
   "code": "019548",
   "name": "招商纳斯达克100ETF发起式联接",
   "performance": {
-    "one_month": 2.27,
-    "three_months": 0.68,
-    "six_months": 25.97,
-    "one_year": 15.36,
+    "one_month": 3.14,
+    "three_months": 3.61,
+    "six_months": 19.6,
+    "one_year": 16.37,
     "three_years": null,
-    "since_inception": 58.96,
-    "as_of": "2026-09-29",
+    "since_inception": 60.66,
+    "as_of": "2026-10-08",
     "scale_billion": 15.17,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.4,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:24",
-  "fetched_at_ms": 1790926344873,
+  "fetched_at": "2026-10-10 11:16:57",
+  "fetched_at_ms": 1791602217299,
   "sources": {
     "performance": "https://fund.eastmoney.com/019548.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019548.html"

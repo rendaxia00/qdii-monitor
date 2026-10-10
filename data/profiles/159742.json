@@ -2,13 +2,13 @@
   "code": "159742",
   "name": "恒生科技ETF博时",
   "performance": {
-    "one_month": -8.66,
-    "three_months": -5.96,
-    "six_months": -10.72,
-    "one_year": -38.05,
-    "three_years": 4.3,
-    "since_inception": -45.61,
-    "as_of": "2026-09-30",
+    "one_month": -5.75,
+    "three_months": -12.25,
+    "six_months": -14.61,
+    "one_year": -39,
+    "three_years": 1.75,
+    "since_inception": -46.36,
+    "as_of": "2026-10-09",
     "scale_billion": 40.71,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:47",
-  "fetched_at_ms": 1790926367903,
+  "fetched_at": "2026-10-10 11:17:04",
+  "fetched_at_ms": 1791602224604,
   "sources": {
     "performance": "https://fund.eastmoney.com/159742.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159742.html"

@@ -2,13 +2,13 @@
   "code": "016055",
   "name": "博时纳斯达克100ETF发起式联接",
   "performance": {
-    "one_month": 2.4,
-    "three_months": 0.92,
-    "six_months": 26.9,
-    "one_year": 16.87,
-    "three_years": 82.65,
-    "since_inception": 116.59,
-    "as_of": "2026-09-29",
+    "one_month": 3.34,
+    "three_months": 3.91,
+    "six_months": 20.43,
+    "one_year": 17.98,
+    "three_years": 84.8,
+    "since_inception": 119.13,
+    "as_of": "2026-10-08",
     "scale_billion": 15.04,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:15",
-  "fetched_at_ms": 1790926335167,
+  "fetched_at": "2026-10-10 11:16:54",
+  "fetched_at_ms": 1791602214668,
   "sources": {
     "performance": "https://fund.eastmoney.com/016055.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_016055.html"

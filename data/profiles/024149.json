@@ -2,13 +2,13 @@
   "code": "024149",
   "name": "长城恒生科技指数",
   "performance": {
-    "one_month": -7.97,
-    "three_months": -4.13,
-    "six_months": -12.39,
-    "one_year": -34.82,
+    "one_month": -8.79,
+    "three_months": -14.1,
+    "six_months": -17.83,
+    "one_year": -38.68,
     "three_years": null,
-    "since_inception": -25.25,
-    "as_of": "2026-09-29",
+    "since_inception": -28.26,
+    "as_of": "2026-10-08",
     "scale_billion": 1.02,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.25,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:35",
-  "fetched_at_ms": 1790926355165,
+  "fetched_at": "2026-10-10 11:17:00",
+  "fetched_at_ms": 1791602220508,
   "sources": {
     "performance": "https://fund.eastmoney.com/024149.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_024149.html"

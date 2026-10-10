@@ -2,13 +2,13 @@
   "code": "004243",
   "name": "广发道琼斯石油指数人民币C",
   "performance": {
-    "one_month": -2.49,
-    "three_months": 16.47,
-    "six_months": -1.81,
-    "one_year": 27.92,
-    "three_years": 20.25,
-    "since_inception": 191.01,
-    "as_of": "2026-09-29",
+    "one_month": 2.24,
+    "three_months": 21.95,
+    "six_months": 17.27,
+    "one_year": 40.96,
+    "three_years": 31.18,
+    "since_inception": 217.47,
+    "as_of": "2026-10-08",
     "scale_billion": 1.87,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:09",
-  "fetched_at_ms": 1790926329728,
+  "fetched_at": "2026-10-10 11:16:51",
+  "fetched_at_ms": 1791602211343,
   "sources": {
     "performance": "https://fund.eastmoney.com/004243.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_004243.html"

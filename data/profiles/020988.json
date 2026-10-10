@@ -2,13 +2,13 @@
   "code": "020988",
   "name": "南方恒生科技ETF发起联接",
   "performance": {
-    "one_month": -8.36,
-    "three_months": -5.71,
-    "six_months": -10.34,
-    "one_year": -36.53,
+    "one_month": -5.46,
+    "three_months": -11.81,
+    "six_months": -14.07,
+    "one_year": -37.46,
     "three_years": null,
-    "since_inception": 3.14,
-    "as_of": "2026-09-30",
+    "since_inception": 1.79,
+    "as_of": "2026-10-09",
     "scale_billion": 6.26,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:27",
-  "fetched_at_ms": 1790926347226,
+  "fetched_at": "2026-10-10 11:16:57",
+  "fetched_at_ms": 1791602217985,
   "sources": {
     "performance": "https://fund.eastmoney.com/020988.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_020988.html"

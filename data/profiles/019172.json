@@ -2,13 +2,13 @@
   "code": "019172",
   "name": "摩根纳斯达克100指数",
   "performance": {
-    "one_month": 2.32,
-    "three_months": 0.91,
-    "six_months": 26.15,
-    "one_year": 16.09,
-    "three_years": 80.87,
-    "since_inception": 78.99,
-    "as_of": "2026-09-29",
+    "one_month": 3.22,
+    "three_months": 3.83,
+    "six_months": 19.77,
+    "one_year": 17.17,
+    "three_years": 82.92,
+    "since_inception": 81.02,
+    "as_of": "2026-10-08",
     "scale_billion": 29.69,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:21",
-  "fetched_at_ms": 1790926341889,
+  "fetched_at": "2026-10-10 11:16:56",
+  "fetched_at_ms": 1791602216386,
   "sources": {
     "performance": "https://fund.eastmoney.com/019172.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019172.html"

@@ -2,13 +2,13 @@
   "code": "513650",
   "name": "标普500ETF南方",
   "performance": {
-    "one_month": -1.1,
-    "three_months": 1.96,
-    "six_months": 17.41,
-    "one_year": 9.31,
-    "three_years": 67.34,
-    "since_inception": 86.3,
-    "as_of": "2026-09-29",
+    "one_month": 0.55,
+    "three_months": 2.72,
+    "six_months": 12.3,
+    "one_year": 10.19,
+    "three_years": 69.31,
+    "since_inception": 88.49,
+    "as_of": "2026-10-08",
     "scale_billion": 76.94,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:56",
-  "fetched_at_ms": 1790926376610,
+  "fetched_at": "2026-10-10 11:17:07",
+  "fetched_at_ms": 1791602227508,
   "sources": {
     "performance": "https://fund.eastmoney.com/513650.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513650.html"

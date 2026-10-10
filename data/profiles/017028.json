@@ -2,13 +2,13 @@
   "code": "017028",
   "name": "国泰标普500ETF发起联接",
   "performance": {
-    "one_month": -0.98,
-    "three_months": 2.05,
-    "six_months": 17.31,
-    "one_year": 8.76,
-    "three_years": 57.78,
-    "since_inception": 71.63,
-    "as_of": "2026-09-29",
+    "one_month": 0.61,
+    "three_months": 2.79,
+    "six_months": 12.38,
+    "one_year": 9.61,
+    "three_years": 59.56,
+    "since_inception": 73.57,
+    "as_of": "2026-10-08",
     "scale_billion": 1.32,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:17",
-  "fetched_at_ms": 1790926337425,
+  "fetched_at": "2026-10-10 11:16:55",
+  "fetched_at_ms": 1791602215103,
   "sources": {
     "performance": "https://fund.eastmoney.com/017028.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_017028.html"

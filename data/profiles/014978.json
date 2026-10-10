@@ -2,13 +2,13 @@
   "code": "014978",
   "name": "华安纳斯达克100ETF联接",
   "performance": {
-    "one_month": 2.32,
-    "three_months": 0.04,
-    "six_months": 26.72,
-    "one_year": 15.18,
-    "three_years": 80.51,
-    "since_inception": 107.29,
-    "as_of": "2026-09-29",
+    "one_month": 3.38,
+    "three_months": 3.15,
+    "six_months": 19.91,
+    "one_year": 16.28,
+    "three_years": 82.64,
+    "since_inception": 109.74,
+    "as_of": "2026-10-08",
     "scale_billion": 13.48,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:12",
-  "fetched_at_ms": 1790926332110,
+  "fetched_at": "2026-10-10 11:16:54",
+  "fetched_at_ms": 1791602214050,
   "sources": {
     "performance": "https://fund.eastmoney.com/014978.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_014978.html"

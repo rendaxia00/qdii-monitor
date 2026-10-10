@@ -2,13 +2,13 @@
   "code": "023034",
   "name": "中欧恒生科技指数发起",
   "performance": {
-    "one_month": -8.07,
-    "three_months": -5.81,
-    "six_months": -10.64,
-    "one_year": -36.35,
+    "one_month": -5.37,
+    "three_months": -11.63,
+    "six_months": -14.28,
+    "one_year": -37.28,
     "three_years": null,
-    "since_inception": -15.92,
-    "as_of": "2026-09-30",
+    "since_inception": -17.02,
+    "as_of": "2026-10-09",
     "scale_billion": 1.03,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:32",
-  "fetched_at_ms": 1790926352810,
+  "fetched_at": "2026-10-10 11:16:59",
+  "fetched_at_ms": 1791602219828,
   "sources": {
     "performance": "https://fund.eastmoney.com/023034.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_023034.html"

@@ -2,13 +2,13 @@
   "code": "513390",
   "name": "纳指100ETF博时",
   "performance": {
-    "one_month": 2.46,
-    "three_months": 0.74,
-    "six_months": 27.72,
-    "one_year": 16.6,
-    "three_years": 93.41,
-    "since_inception": 128.79,
-    "as_of": "2026-09-29",
+    "one_month": 3.43,
+    "three_months": 3.86,
+    "six_months": 20.89,
+    "one_year": 17.74,
+    "three_years": 95.74,
+    "since_inception": 131.54,
+    "as_of": "2026-10-08",
     "scale_billion": 42.5,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:54",
-  "fetched_at_ms": 1790926374747,
+  "fetched_at": "2026-10-10 11:17:07",
+  "fetched_at_ms": 1791602227060,
   "sources": {
     "performance": "https://fund.eastmoney.com/513390.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513390.html"

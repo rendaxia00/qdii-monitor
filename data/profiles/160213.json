@@ -2,13 +2,13 @@
   "code": "160213",
   "name": "国泰纳斯达克100指数",
   "performance": {
-    "one_month": 2.44,
-    "three_months": 0.88,
-    "six_months": 28.08,
-    "one_year": 16.74,
-    "three_years": 90.23,
-    "since_inception": 1326.56,
-    "as_of": "2026-09-29",
+    "one_month": 3.39,
+    "three_months": 3.97,
+    "six_months": 21.09,
+    "one_year": 17.84,
+    "three_years": 92.48,
+    "since_inception": 1343.39,
+    "as_of": "2026-10-08",
     "scale_billion": 21.77,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-02 15:32:49",
-  "fetched_at_ms": 1790926369081,
+  "fetched_at": "2026-10-10 11:17:05",
+  "fetched_at_ms": 1791602225117,
   "sources": {
     "performance": "https://fund.eastmoney.com/160213.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_160213.html"
