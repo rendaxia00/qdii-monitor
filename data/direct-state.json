@@ -1084,11 +1084,11 @@
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-13T03:16:14.790Z",
+  "updated_at": "2026-10-13T07:31:17.488Z",
   "last_scan": {
     "as_of": "2026-10-13",
     "scanned": 122,
-    "parsed": 1,
+    "parsed": 0,
     "discovered": 0,
     "errors": 0
   },
