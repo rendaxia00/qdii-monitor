@@ -1081,14 +1081,64 @@
         "270042"
       ],
       "patch": null
+    },
+    "AN202610141830429076": {
+      "parsed_at": "2026-10-14T03:16:31.353Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "006479",
+        "021778",
+        "270042"
+      ],
+      "patch": {
+        "id": "AN202610141830429076",
+        "title": "关于广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)人民币份额暂停申购(含转换转入、定期定额和不定额投资)业务的公告",
+        "publish_date": "2026-10-14",
+        "effective_date": "2026-10-15",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202610141830426514": {
+      "parsed_at": "2026-10-14T03:16:31.862Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "006479",
+        "021778",
+        "270042"
+      ],
+      "patch": {
+        "id": "AN202610141830426514",
+        "title": "广发基金管理有限公司关于广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)人民币份额暂停申购(含转换转入、定期定额和不定额投资)业务的公告",
+        "publish_date": "2026-10-14",
+        "effective_date": "2026-10-15",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-13T07:31:17.488Z",
+  "updated_at": "2026-10-14T03:16:39.227Z",
   "last_scan": {
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-14",
     "scanned": 122,
-    "parsed": 0,
+    "parsed": 2,
     "discovered": 0,
     "errors": 0
   },
