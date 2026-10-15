@@ -1131,14 +1131,87 @@
         "combined_share_limit": false,
         "confidence": "high"
       }
+    },
+    "AN202610151830479604": {
+      "parsed_at": "2026-10-15T03:16:31.382Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "008401",
+        "096001"
+      ],
+      "patch": {
+        "id": "AN202610151830479604",
+        "title": "关于大成标普500等权重指数证券投资基金调整大额申购(含定期定额申购)的公告",
+        "publish_date": "2026-10-15",
+        "effective_date": "2026-10-15",
+        "status": "限大额",
+        "direct_amount": 500,
+        "distribution_amount": 50,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": true,
+        "channel_ratio": 10,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202610151830480284": {
+      "parsed_at": "2026-10-15T03:16:32.150Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "012805",
+        "012804",
+        "022005"
+      ],
+      "patch": {
+        "id": "AN202610151830480284",
+        "title": "广发基金管理有限公司关于旗下部分基金2026年10月19日暂停申购赎回等业务的公告",
+        "publish_date": "2026-10-15",
+        "effective_date": "2026-10-15",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
+    },
+    "AN202610151830480985": {
+      "parsed_at": "2026-10-15T03:16:39.656Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "027765",
+        "027766"
+      ],
+      "patch": {
+        "id": "AN202610151830480985",
+        "title": "关于嘉实恒生科技交易型开放式指数证券投资基金发起式联接基金(QDII)2026年10月19日暂停申购、赎回及定期定额投资业务的公告",
+        "publish_date": "2026-10-15",
+        "effective_date": "2026-10-19",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-14T07:31:41.568Z",
+  "updated_at": "2026-10-15T03:16:40.785Z",
   "last_scan": {
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-15",
     "scanned": 122,
-    "parsed": 0,
+    "parsed": 3,
     "discovered": 0,
     "errors": 0
   },
