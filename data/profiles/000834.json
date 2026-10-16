@@ -2,13 +2,13 @@
   "code": "000834",
   "name": "大成纳斯达克100ETF联接",
   "performance": {
-    "one_month": 2.12,
-    "three_months": -1.21,
-    "six_months": 22.6,
-    "one_year": 14.75,
-    "three_years": 79.51,
-    "since_inception": 543.56,
-    "as_of": "2026-09-30",
+    "one_month": 1.79,
+    "three_months": -0.53,
+    "six_months": 11.68,
+    "one_year": 13.37,
+    "three_years": 73.24,
+    "since_inception": 532.49,
+    "as_of": "2026-10-14",
     "scale_billion": 48.87,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-09 15:31:58",
-  "fetched_at_ms": 1791531118871,
+  "fetched_at": "2026-10-16 15:32:21",
+  "fetched_at_ms": 1792135941153,
   "sources": {
     "performance": "https://fund.eastmoney.com/000834.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_000834.html"
