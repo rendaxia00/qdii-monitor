@@ -2,13 +2,13 @@
   "code": "027765",
   "name": "嘉实恒生科技ETF发起联接",
   "performance": {
-    "one_month": -5.37,
-    "three_months": -12.04,
+    "one_month": -5.36,
+    "three_months": -15.26,
     "six_months": null,
-    "one_year": 83.02,
+    "one_year": 59.36,
     "three_years": null,
-    "since_inception": -10.38,
-    "as_of": "2026-10-09",
+    "since_inception": -12.33,
+    "as_of": "2026-10-16",
     "scale_billion": 0.1,
     "scale_as_of": "2026-06-12"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-10 11:17:01",
-  "fetched_at_ms": 1791602221985,
+  "fetched_at": "2026-10-17 11:17:20",
+  "fetched_at_ms": 1792207040989,
   "sources": {
     "performance": "https://fund.eastmoney.com/027765.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_027765.html"

@@ -2,13 +2,13 @@
   "code": "008763",
   "name": "天弘越南市场股票发起",
   "performance": {
-    "one_month": -4.94,
-    "three_months": -6.07,
-    "six_months": -5.41,
-    "one_year": -11.18,
-    "three_years": 13.28,
-    "since_inception": 54.67,
-    "as_of": "2026-10-08",
+    "one_month": -5.04,
+    "three_months": -3.26,
+    "six_months": -6.94,
+    "one_year": -16.6,
+    "three_years": 11.29,
+    "since_inception": 52.7,
+    "as_of": "2026-10-15",
     "scale_billion": 24.88,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "QDII-普通股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-10 11:16:52",
-  "fetched_at_ms": 1791602212208,
+  "fetched_at": "2026-10-17 11:17:09",
+  "fetched_at_ms": 1792207029490,
   "sources": {
     "performance": "https://fund.eastmoney.com/008763.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_008763.html"

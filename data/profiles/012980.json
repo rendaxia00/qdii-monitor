@@ -2,13 +2,13 @@
   "code": "012980",
   "name": "大成恒生科技ETF发起式联接C",
   "performance": {
-    "one_month": -5.59,
-    "three_months": -12.12,
-    "six_months": -14.71,
-    "one_year": -37.93,
-    "three_years": -1.93,
-    "since_inception": -34.84,
-    "as_of": "2026-10-09",
+    "one_month": -5.41,
+    "three_months": -15.53,
+    "six_months": -20.64,
+    "one_year": -34.98,
+    "three_years": -3.67,
+    "since_inception": -36.2,
+    "as_of": "2026-10-16",
     "scale_billion": 18.14,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.4,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-10 11:16:53",
-  "fetched_at_ms": 1791602213297,
+  "fetched_at": "2026-10-17 11:17:11",
+  "fetched_at_ms": 1792207031126,
   "sources": {
     "performance": "https://fund.eastmoney.com/012980.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012980.html"

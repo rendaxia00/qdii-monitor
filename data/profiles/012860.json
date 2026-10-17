@@ -2,13 +2,13 @@
   "code": "012860",
   "name": "易方达标普500指数人民币C",
   "performance": {
-    "one_month": 0.5,
-    "three_months": 2.47,
-    "six_months": 11.45,
-    "one_year": 9.45,
-    "three_years": 62.44,
-    "since_inception": 81.79,
-    "as_of": "2026-10-08",
+    "one_month": 1.36,
+    "three_months": 1.13,
+    "six_months": 7.52,
+    "one_year": 9.36,
+    "three_years": 60.82,
+    "since_inception": 81.04,
+    "as_of": "2026-10-15",
     "scale_billion": 1.23,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.35,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-10 11:16:53",
-  "fetched_at_ms": 1791602213080,
+  "fetched_at": "2026-10-17 11:17:10",
+  "fetched_at_ms": 1792207030772,
   "sources": {
     "performance": "https://fund.eastmoney.com/012860.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012860.html"

@@ -2,13 +2,13 @@
   "code": "018044",
   "name": "天弘纳斯达克100指数发起",
   "performance": {
-    "one_month": 3.26,
-    "three_months": 3.62,
-    "six_months": 19.73,
-    "one_year": 16.61,
-    "three_years": 79.54,
-    "since_inception": 108.48,
-    "as_of": "2026-10-08",
+    "one_month": 2.57,
+    "three_months": 0.33,
+    "six_months": 11.23,
+    "one_year": 13.37,
+    "three_years": 71.64,
+    "since_inception": 102.97,
+    "as_of": "2026-10-15",
     "scale_billion": 29.34,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-10 11:16:55",
-  "fetched_at_ms": 1791602215429,
+  "fetched_at": "2026-10-17 11:17:14",
+  "fetched_at_ms": 1792207034379,
   "sources": {
     "performance": "https://fund.eastmoney.com/018044.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_018044.html"

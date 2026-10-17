@@ -2,13 +2,13 @@
   "code": "012870",
   "name": "易方达纳斯达克100ETF联接",
   "performance": {
-    "one_month": 3.33,
-    "three_months": 3.85,
-    "six_months": 20.13,
-    "one_year": 16.4,
-    "three_years": 85.92,
-    "since_inception": 97.38,
-    "as_of": "2026-10-08",
+    "one_month": 2.71,
+    "three_months": 0.57,
+    "six_months": 11.66,
+    "one_year": 13.23,
+    "three_years": 77.82,
+    "since_inception": 92.26,
+    "as_of": "2026-10-15",
     "scale_billion": 1.8,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-10 11:16:53",
-  "fetched_at_ms": 1791602213027,
+  "fetched_at": "2026-10-17 11:17:10",
+  "fetched_at_ms": 1792207030874,
   "sources": {
     "performance": "https://fund.eastmoney.com/012870.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012870.html"
