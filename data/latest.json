@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-17 11:17:05",
-  "as_of": "2026-10-17",
+  "generated_at": "2026-10-18 11:16:36",
+  "as_of": "2026-10-18",
   "sources": {
     "direct": {
       "name": "东方财富基金公告 + 本地基金目录",
       "url": "https://fund.eastmoney.com/gonggao/",
-      "as_of": "2026-10-17"
+      "as_of": "2026-10-18"
     },
     "distribution": {
       "name": "天天基金 基金档案页",
       "url": "https://fund.eastmoney.com/",
-      "as_of": "2026-10-17"
+      "as_of": "2026-10-18"
     }
   },
   "declared": {
