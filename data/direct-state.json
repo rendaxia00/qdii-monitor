@@ -1204,14 +1204,39 @@
         "combined_share_limit": false,
         "confidence": "high"
       }
+    },
+    "AN202610191830668302": {
+      "parsed_at": "2026-10-19T03:16:46.476Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "008706",
+        "023373",
+        "539003"
+      ],
+      "patch": {
+        "id": "AN202610191830668302",
+        "title": "建信富时100指数型证券投资基金(QDII)暂停大额申购、定期定额投资公告",
+        "publish_date": "2026-10-19",
+        "effective_date": "2026-10-20",
+        "status": "限大额",
+        "direct_amount": 100,
+        "distribution_amount": 100,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": true,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-18T03:16:02.098Z",
+  "updated_at": "2026-10-19T03:16:54.961Z",
   "last_scan": {
-    "as_of": "2026-10-18",
+    "as_of": "2026-10-19",
     "scanned": 122,
-    "parsed": 0,
+    "parsed": 1,
     "discovered": 0,
     "errors": 0
   },
