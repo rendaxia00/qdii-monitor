@@ -1229,16 +1229,40 @@
         "combined_share_limit": false,
         "confidence": "high"
       }
+    },
+    "AN202610201830698096": {
+      "parsed_at": "2026-10-20T03:16:16.869Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "014978",
+        "040046"
+      ],
+      "patch": {
+        "id": "AN202610201830698096",
+        "title": "关于华安纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)暂停申购及定期定额投资的公告",
+        "publish_date": "2026-10-20",
+        "effective_date": "2026-10-21",
+        "status": "暂停申购",
+        "direct_amount": null,
+        "distribution_amount": null,
+        "direct_specified": false,
+        "distribution_specified": false,
+        "generic_specified": false,
+        "channel_split": false,
+        "channel_ratio": null,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-10-19T07:31:20.278Z",
+  "updated_at": "2026-10-20T03:16:24.218Z",
   "last_scan": {
-    "as_of": "2026-10-19",
-    "scanned": 121,
-    "parsed": 0,
+    "as_of": "2026-10-20",
+    "scanned": 122,
+    "parsed": 1,
     "discovered": 0,
-    "errors": 1
+    "errors": 0
   },
   "discovered_funds": [
     {
