@@ -2,13 +2,13 @@
   "code": "159687",
   "name": "亚太精选ETF南方",
   "performance": {
-    "one_month": -5.2,
-    "three_months": -5.16,
-    "six_months": 2.5,
-    "one_year": 12.62,
-    "three_years": 66.92,
-    "since_inception": 73.96,
-    "as_of": "2026-10-15",
+    "one_month": -6.74,
+    "three_months": -3.91,
+    "six_months": 0.63,
+    "one_year": 10.13,
+    "three_years": 70.18,
+    "since_inception": 72.58,
+    "as_of": "2026-10-22",
     "scale_billion": 30.8,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:22",
-  "fetched_at_ms": 1792207042431,
+  "fetched_at": "2026-10-24 11:17:41",
+  "fetched_at_ms": 1792811861644,
   "sources": {
     "performance": "https://fund.eastmoney.com/159687.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159687.html"

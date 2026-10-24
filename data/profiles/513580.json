@@ -2,13 +2,13 @@
   "code": "513580",
   "name": "恒生科技ETF华安",
   "performance": {
-    "one_month": -5.68,
-    "three_months": -15.93,
-    "six_months": -21,
-    "one_year": -35.73,
-    "three_years": -0.77,
-    "since_inception": -48.54,
-    "as_of": "2026-10-16",
+    "one_month": -11.96,
+    "three_months": -18.43,
+    "six_months": -22.06,
+    "one_year": -38.84,
+    "three_years": -2.55,
+    "since_inception": -51.48,
+    "as_of": "2026-10-23",
     "scale_billion": 38.21,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:24",
-  "fetched_at_ms": 1792207044958,
+  "fetched_at": "2026-10-24 11:17:44",
+  "fetched_at_ms": 1792811864289,
   "sources": {
     "performance": "https://fund.eastmoney.com/513580.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513580.html"

@@ -2,13 +2,13 @@
   "code": "008971",
   "name": "大成纳斯达克100ETF联接",
   "performance": {
-    "one_month": 2.38,
-    "three_months": -0.3,
-    "six_months": 9.89,
-    "one_year": 12.21,
-    "three_years": 71.53,
-    "since_inception": 71.06,
-    "as_of": "2026-10-15",
+    "one_month": -6.3,
+    "three_months": -1.98,
+    "six_months": 3.36,
+    "one_year": 7.97,
+    "three_years": 70.47,
+    "since_inception": 65.34,
+    "as_of": "2026-10-22",
     "scale_billion": 11.1,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:09",
-  "fetched_at_ms": 1792207029641,
+  "fetched_at": "2026-10-24 11:17:31",
+  "fetched_at_ms": 1792811851105,
   "sources": {
     "performance": "https://fund.eastmoney.com/008971.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_008971.html"

@@ -2,13 +2,13 @@
   "code": "008706",
   "name": "建信富时100指数",
   "performance": {
-    "one_month": -0.75,
-    "three_months": 1.17,
-    "six_months": -1.17,
-    "one_year": 8.95,
-    "three_years": 45.06,
-    "since_inception": 61.55,
-    "as_of": "2026-10-15",
+    "one_month": 0.14,
+    "three_months": -0.48,
+    "six_months": 0.02,
+    "one_year": 7.66,
+    "three_years": 49.66,
+    "since_inception": 61.58,
+    "as_of": "2026-10-22",
     "scale_billion": 3.78,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.4,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:09",
-  "fetched_at_ms": 1792207029174,
+  "fetched_at": "2026-10-24 11:17:30",
+  "fetched_at_ms": 1792811850717,
   "sources": {
     "performance": "https://fund.eastmoney.com/008706.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_008706.html"

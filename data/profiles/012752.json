@@ -2,13 +2,13 @@
   "code": "012752",
   "name": "建信纳斯达克100指数",
   "performance": {
-    "one_month": 2.6,
-    "three_months": 0.38,
-    "six_months": 10.96,
-    "one_year": 12.45,
-    "three_years": 79.81,
-    "since_inception": 94.07,
-    "as_of": "2026-10-15",
+    "one_month": -5.71,
+    "three_months": -1.41,
+    "six_months": 4.8,
+    "one_year": 8.66,
+    "three_years": 79.5,
+    "since_inception": 88.08,
+    "as_of": "2026-10-22",
     "scale_billion": 12.88,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:10",
-  "fetched_at_ms": 1792207030504,
+  "fetched_at": "2026-10-24 11:17:31",
+  "fetched_at_ms": 1792811851678,
   "sources": {
     "performance": "https://fund.eastmoney.com/012752.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012752.html"

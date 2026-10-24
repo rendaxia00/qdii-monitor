@@ -2,13 +2,13 @@
   "code": "019736",
   "name": "宝盈纳斯达克100指数发起",
   "performance": {
-    "one_month": 2.52,
-    "three_months": 0.45,
-    "six_months": 11.52,
-    "one_year": 13.15,
+    "one_month": -5.74,
+    "three_months": -1.17,
+    "six_months": 5.13,
+    "one_year": 9.08,
     "three_years": null,
-    "since_inception": 49.96,
-    "as_of": "2026-10-15",
+    "since_inception": 45.2,
+    "as_of": "2026-10-22",
     "scale_billion": 10.63,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:16",
-  "fetched_at_ms": 1792207036625,
+  "fetched_at": "2026-10-24 11:17:36",
+  "fetched_at_ms": 1792811856504,
   "sources": {
     "performance": "https://fund.eastmoney.com/019736.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019736.html"

@@ -2,13 +2,13 @@
   "code": "159659",
   "name": "纳斯达克100ETF招商",
   "performance": {
-    "one_month": 2.8,
-    "three_months": 0.47,
-    "six_months": 12.22,
-    "one_year": 14.7,
-    "three_years": 82.87,
-    "since_inception": 116.77,
-    "as_of": "2026-10-15",
+    "one_month": -6.14,
+    "three_months": -1.22,
+    "six_months": 5.46,
+    "one_year": 10.36,
+    "three_years": 81.92,
+    "since_inception": 109.52,
+    "as_of": "2026-10-22",
     "scale_billion": 99.36,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:22",
-  "fetched_at_ms": 1792207042231,
+  "fetched_at": "2026-10-24 11:17:41",
+  "fetched_at_ms": 1792811861481,
   "sources": {
     "performance": "https://fund.eastmoney.com/159659.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159659.html"

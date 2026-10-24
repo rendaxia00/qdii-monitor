@@ -2,13 +2,13 @@
   "code": "159866",
   "name": "日经ETF工银",
   "performance": {
-    "one_month": 0.45,
-    "three_months": -0.38,
-    "six_months": 8.67,
-    "one_year": 23.3,
-    "three_years": 85.67,
-    "since_inception": 63.13,
-    "as_of": "2026-10-16",
+    "one_month": -2.92,
+    "three_months": -1.92,
+    "six_months": 6.29,
+    "one_year": 19.52,
+    "three_years": 83.95,
+    "since_inception": 58.14,
+    "as_of": "2026-10-23",
     "scale_billion": 13.9,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:22",
-  "fetched_at_ms": 1792207042835,
+  "fetched_at": "2026-10-24 11:17:42",
+  "fetched_at_ms": 1792811862184,
   "sources": {
     "performance": "https://fund.eastmoney.com/159866.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159866.html"

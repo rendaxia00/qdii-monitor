@@ -2,13 +2,13 @@
   "code": "018738",
   "name": "博时标普500ETF联接E",
   "performance": {
-    "one_month": 1.54,
-    "three_months": 1.42,
-    "six_months": 8.03,
-    "one_year": 10.13,
-    "three_years": 62.47,
-    "since_inception": 58.9,
-    "as_of": "2026-10-15",
+    "one_month": -1.58,
+    "three_months": 1.19,
+    "six_months": 5.03,
+    "one_year": 8.56,
+    "three_years": 64.35,
+    "since_inception": 57.1,
+    "as_of": "2026-10-22",
     "scale_billion": 23.04,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.01,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:15",
-  "fetched_at_ms": 1792207035048,
+  "fetched_at": "2026-10-24 11:17:35",
+  "fetched_at_ms": 1792811855366,
   "sources": {
     "performance": "https://fund.eastmoney.com/018738.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_018738.html"

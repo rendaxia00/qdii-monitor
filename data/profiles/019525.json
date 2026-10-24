@@ -2,13 +2,13 @@
   "code": "019525",
   "name": "华泰柏瑞纳斯达克100ETF发起式联接",
   "performance": {
-    "one_month": 2.58,
-    "three_months": 0.27,
-    "six_months": 11.37,
-    "one_year": 12.52,
-    "three_years": null,
-    "since_inception": 64.42,
-    "as_of": "2026-10-15",
+    "one_month": -5.85,
+    "three_months": -1.28,
+    "six_months": 5.09,
+    "one_year": 8.63,
+    "three_years": 59.32,
+    "since_inception": 59.29,
+    "as_of": "2026-10-22",
     "scale_billion": 6.39,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.25,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:16",
-  "fetched_at_ms": 1792207036251,
+  "fetched_at": "2026-10-24 11:17:36",
+  "fetched_at_ms": 1792811856154,
   "sources": {
     "performance": "https://fund.eastmoney.com/019525.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019525.html"

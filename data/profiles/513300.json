@@ -2,13 +2,13 @@
   "code": "513300",
   "name": "纳斯达克ETF华夏",
   "performance": {
-    "one_month": 3.07,
-    "three_months": 0.2,
-    "six_months": 11.93,
-    "one_year": 13.23,
-    "three_years": 81.13,
-    "since_inception": 149.27,
-    "as_of": "2026-10-15",
+    "one_month": -6.19,
+    "three_months": -1.71,
+    "six_months": 5,
+    "one_year": 8.67,
+    "three_years": 79.71,
+    "since_inception": 140.45,
+    "as_of": "2026-10-22",
     "scale_billion": 132.88,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:24",
-  "fetched_at_ms": 1792207044399,
+  "fetched_at": "2026-10-24 11:17:43",
+  "fetched_at_ms": 1792811863713,
   "sources": {
     "performance": "https://fund.eastmoney.com/513300.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513300.html"

@@ -2,13 +2,13 @@
   "code": "013127",
   "name": "汇添富恒生科技ETF联接发起式",
   "performance": {
-    "one_month": -5.33,
-    "three_months": -15.15,
-    "six_months": -20,
-    "one_year": -34.08,
-    "three_years": 0.03,
-    "since_inception": -35.36,
-    "as_of": "2026-10-16",
+    "one_month": -11.27,
+    "three_months": -17.5,
+    "six_months": -21,
+    "one_year": -37.09,
+    "three_years": -1.74,
+    "since_inception": -38.84,
+    "as_of": "2026-10-23",
     "scale_billion": 11.25,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:11",
-  "fetched_at_ms": 1792207031260,
+  "fetched_at": "2026-10-24 11:17:32",
+  "fetched_at_ms": 1792811852203,
   "sources": {
     "performance": "https://fund.eastmoney.com/013127.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_013127.html"

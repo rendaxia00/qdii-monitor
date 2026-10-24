@@ -2,13 +2,13 @@
   "code": "013402",
   "name": "华夏恒生科技ETF发起式联接",
   "performance": {
-    "one_month": -5.39,
-    "three_months": -15.25,
-    "six_months": -20.25,
-    "one_year": -34.66,
-    "three_years": -0.8,
-    "since_inception": -32.2,
-    "as_of": "2026-10-16",
+    "one_month": -11.39,
+    "three_months": -17.62,
+    "six_months": -21.3,
+    "one_year": -37.63,
+    "three_years": -2.46,
+    "since_inception": -35.89,
+    "as_of": "2026-10-23",
     "scale_billion": 43.72,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:11",
-  "fetched_at_ms": 1792207031680,
+  "fetched_at": "2026-10-24 11:17:32",
+  "fetched_at_ms": 1792811852644,
   "sources": {
     "performance": "https://fund.eastmoney.com/013402.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_013402.html"

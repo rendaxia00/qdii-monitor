@@ -2,13 +2,13 @@
   "code": "012570",
   "name": "建信恒生科技指数发起",
   "performance": {
-    "one_month": -5.43,
-    "three_months": -15.37,
-    "six_months": -20.51,
-    "one_year": -34.65,
-    "three_years": -2.87,
-    "since_inception": 11.75,
-    "as_of": "2026-10-16",
+    "one_month": -11.42,
+    "three_months": -17.76,
+    "six_months": -21.53,
+    "one_year": -37.65,
+    "three_years": -4.62,
+    "since_inception": 5.65,
+    "as_of": "2026-10-23",
     "scale_billion": 10.27,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:10",
-  "fetched_at_ms": 1792207030022,
+  "fetched_at": "2026-10-24 11:17:31",
+  "fetched_at_ms": 1792811851347,
   "sources": {
     "performance": "https://fund.eastmoney.com/012570.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012570.html"

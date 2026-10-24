@@ -2,13 +2,13 @@
   "code": "023422",
   "name": "建信纳斯达克100指数",
   "performance": {
-    "one_month": 2.61,
-    "three_months": 0.38,
-    "six_months": 10.97,
-    "one_year": 12.46,
+    "one_month": -5.7,
+    "three_months": -1.41,
+    "six_months": 4.81,
+    "one_year": 8.67,
     "three_years": null,
-    "since_inception": 25.51,
-    "as_of": "2026-10-15",
+    "since_inception": 21.64,
+    "as_of": "2026-10-22",
     "scale_billion": 0.52,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:19",
-  "fetched_at_ms": 1792207039560,
+  "fetched_at": "2026-10-24 11:17:38",
+  "fetched_at_ms": 1792811858694,
   "sources": {
     "performance": "https://fund.eastmoney.com/023422.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_023422.html"

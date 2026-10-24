@@ -2,13 +2,13 @@
   "code": "539001",
   "name": "建信纳斯达克100指数",
   "performance": {
-    "one_month": 2.62,
-    "three_months": 0.45,
-    "six_months": 11.12,
-    "one_year": 12.78,
-    "three_years": 81.47,
-    "since_inception": 247,
-    "as_of": "2026-10-15",
+    "one_month": -5.69,
+    "three_months": -1.35,
+    "six_months": 4.95,
+    "one_year": 8.97,
+    "three_years": 81.16,
+    "since_inception": 236.3,
+    "as_of": "2026-10-22",
     "scale_billion": 21.76,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:25",
-  "fetched_at_ms": 1792207045823,
+  "fetched_at": "2026-10-24 11:17:45",
+  "fetched_at_ms": 1792811865154,
   "sources": {
     "performance": "https://fund.eastmoney.com/539001.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_539001.html"

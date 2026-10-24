@@ -2,13 +2,13 @@
   "code": "513380",
   "name": "恒生科技ETF广发",
   "performance": {
-    "one_month": -5.68,
-    "three_months": -16.14,
-    "six_months": -21.28,
-    "one_year": -36.12,
-    "three_years": -0.91,
-    "since_inception": -6.4,
-    "as_of": "2026-10-16",
+    "one_month": -11.95,
+    "three_months": -18.64,
+    "six_months": -22.31,
+    "one_year": -39.2,
+    "three_years": -2.74,
+    "since_inception": -11.76,
+    "as_of": "2026-10-23",
     "scale_billion": 99.13,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:24",
-  "fetched_at_ms": 1792207044424,
+  "fetched_at": "2026-10-24 11:17:43",
+  "fetched_at_ms": 1792811863785,
   "sources": {
     "performance": "https://fund.eastmoney.com/513380.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513380.html"

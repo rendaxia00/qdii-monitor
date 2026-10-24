@@ -2,13 +2,13 @@
   "code": "026535",
   "name": "兴业恒生科技指数",
   "performance": {
-    "one_month": -5.42,
-    "three_months": -14.1,
-    "six_months": -18.57,
-    "one_year": 59.36,
+    "one_month": -13.46,
+    "three_months": -18.09,
+    "six_months": -23.64,
+    "one_year": 59.27,
     "three_years": null,
-    "since_inception": -18.7,
-    "as_of": "2026-10-15",
+    "since_inception": -23.63,
+    "as_of": "2026-10-22",
     "scale_billion": 0.65,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:20",
-  "fetched_at_ms": 1792207040614,
+  "fetched_at": "2026-10-24 11:17:39",
+  "fetched_at_ms": 1792811859718,
   "sources": {
     "performance": "https://fund.eastmoney.com/026535.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_026535.html"

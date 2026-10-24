@@ -2,13 +2,13 @@
   "code": "016532",
   "name": "嘉实纳斯达克100ETF发起联接",
   "performance": {
-    "one_month": 2.76,
-    "three_months": 0.78,
-    "six_months": 12.27,
-    "one_year": 13.96,
-    "three_years": 72.62,
-    "since_inception": 119.09,
-    "as_of": "2026-10-15",
+    "one_month": -5.81,
+    "three_months": -0.89,
+    "six_months": 5.78,
+    "one_year": 9.98,
+    "three_years": 71.84,
+    "since_inception": 112.1,
+    "as_of": "2026-10-22",
     "scale_billion": 20.77,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:13",
-  "fetched_at_ms": 1792207033638,
+  "fetched_at": "2026-10-24 11:17:34",
+  "fetched_at_ms": 1792811854272,
   "sources": {
     "performance": "https://fund.eastmoney.com/016532.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_016532.html"

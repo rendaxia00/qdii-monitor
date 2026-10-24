@@ -2,13 +2,13 @@
   "code": "159941",
   "name": "纳指ETF广发",
   "performance": {
-    "one_month": 2.68,
-    "three_months": 0.21,
-    "six_months": 11.3,
-    "one_year": 13.73,
-    "three_years": 82.59,
-    "since_inception": 500.2,
-    "as_of": "2026-10-15",
+    "one_month": -6.29,
+    "three_months": -1.5,
+    "six_months": 4.6,
+    "one_year": 9.39,
+    "three_years": 81.83,
+    "since_inception": 479.96,
+    "as_of": "2026-10-22",
     "scale_billion": 346.82,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:22",
-  "fetched_at_ms": 1792207042906,
+  "fetched_at": "2026-10-24 11:17:42",
+  "fetched_at_ms": 1792811862245,
   "sources": {
     "performance": "https://fund.eastmoney.com/159941.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159941.html"

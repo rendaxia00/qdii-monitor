@@ -2,13 +2,13 @@
   "code": "050015",
   "name": "博时大中华亚太精选",
   "performance": {
-    "one_month": -2.56,
-    "three_months": -9.13,
-    "six_months": -3.83,
-    "one_year": 23.67,
-    "three_years": 46.15,
-    "since_inception": 34.39,
-    "as_of": "2026-10-15",
+    "one_month": -9.1,
+    "three_months": -8.97,
+    "six_months": -9.91,
+    "one_year": 21.56,
+    "three_years": 47.46,
+    "since_inception": 30.53,
+    "as_of": "2026-10-22",
     "scale_billion": 1.68,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "QDII-普通股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:21",
-  "fetched_at_ms": 1792207041142,
+  "fetched_at": "2026-10-24 11:17:40",
+  "fetched_at_ms": 1792811860524,
   "sources": {
     "performance": "https://fund.eastmoney.com/050015.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_050015.html"

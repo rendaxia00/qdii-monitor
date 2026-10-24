@@ -2,13 +2,13 @@
   "code": "513400",
   "name": "道琼斯ETF鹏华",
   "performance": {
-    "one_month": -0.48,
-    "three_months": -1.74,
-    "six_months": 5.91,
-    "one_year": 7.58,
+    "one_month": 1.49,
+    "three_months": 0.26,
+    "six_months": 4.93,
+    "one_year": 8.16,
     "three_years": null,
-    "since_inception": 27.68,
-    "as_of": "2026-10-15",
+    "since_inception": 29.23,
+    "as_of": "2026-10-22",
     "scale_billion": 29.55,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:24",
-  "fetched_at_ms": 1792207044631,
+  "fetched_at": "2026-10-24 11:17:44",
+  "fetched_at_ms": 1792811864060,
   "sources": {
     "performance": "https://fund.eastmoney.com/513400.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513400.html"

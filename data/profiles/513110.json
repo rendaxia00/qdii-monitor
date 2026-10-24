@@ -2,13 +2,13 @@
   "code": "513110",
   "name": "纳指ETF华泰柏瑞",
   "performance": {
-    "one_month": 2.74,
-    "three_months": 0.34,
-    "six_months": 11.64,
-    "one_year": 13.8,
-    "three_years": 84.29,
-    "since_inception": 130.27,
-    "as_of": "2026-10-15",
+    "one_month": -6.2,
+    "three_months": -1.36,
+    "six_months": 4.91,
+    "one_year": 9.49,
+    "three_years": 82.92,
+    "since_inception": 122.56,
+    "as_of": "2026-10-22",
     "scale_billion": 50.98,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:23",
-  "fetched_at_ms": 1792207043976,
+  "fetched_at": "2026-10-24 11:17:43",
+  "fetched_at_ms": 1792811863307,
   "sources": {
     "performance": "https://fund.eastmoney.com/513110.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513110.html"

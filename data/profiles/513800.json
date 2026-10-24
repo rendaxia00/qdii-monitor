@@ -2,13 +2,13 @@
   "code": "513800",
   "name": "日本东证指数ETF南方",
   "performance": {
-    "one_month": -1.99,
-    "three_months": 3.38,
-    "six_months": 5.65,
-    "one_year": 15.96,
-    "three_years": 62.1,
-    "since_inception": 92.38,
-    "as_of": "2026-10-16",
+    "one_month": -2.04,
+    "three_months": 1.47,
+    "six_months": 6.71,
+    "one_year": 12.95,
+    "three_years": 61.34,
+    "since_inception": 89.11,
+    "as_of": "2026-10-23",
     "scale_billion": 19.29,
     "scale_as_of": "2026-06-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-10-17 11:17:25",
-  "fetched_at_ms": 1792207045105,
+  "fetched_at": "2026-10-24 11:17:44",
+  "fetched_at_ms": 1792811864424,
   "sources": {
     "performance": "https://fund.eastmoney.com/513800.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513800.html"
