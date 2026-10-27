@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27 11:17:32",
+  "generated_at": "2026-10-27 15:32:17",
   "as_of": "2026-10-27",
   "sources": {
     "direct": {
@@ -96,11 +96,11 @@
         "three_years": 51.27,
         "since_inception": 88.78,
         "as_of": "2026-10-23",
-        "scale_billion": 3.81,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 4.09,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 3.81,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 4.09,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/000614,AN202609031828944387.html",
       "announcement_date": "2026-09-03",
       "verified_by_announcement": true,
@@ -210,11 +210,11 @@
         "three_years": 62.13,
         "since_inception": 164.52,
         "as_of": "2026-10-23",
-        "scale_billion": 12.86,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 12.43,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 12.86,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 12.43,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/006075,AN202605081822057674.html",
       "announcement_date": "2026-05-08",
       "verified_by_announcement": true,
@@ -248,11 +248,11 @@
         "three_years": 2.49,
         "since_inception": 29.18,
         "as_of": "2026-10-23",
-        "scale_billion": 17.44,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 16.7,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 17.44,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 16.7,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/006105,AN202609221829740305.html",
       "announcement_date": "2026-09-22",
       "verified_by_announcement": true,
@@ -1008,11 +1008,11 @@
         "three_years": -3.32,
         "since_inception": -39.08,
         "as_of": "2026-10-26",
-        "scale_billion": 11.25,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 11.4,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 11.25,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 11.4,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/013127,AN202609191829639199.html",
       "announcement_date": "2026-09-19",
       "verified_by_announcement": true,
@@ -1046,11 +1046,11 @@
         "three_years": -3.88,
         "since_inception": -39.73,
         "as_of": "2026-10-26",
-        "scale_billion": 18.65,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 18.16,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 18.65,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 18.16,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/013128,AN202609191829639199.html",
       "announcement_date": "2026-09-19",
       "verified_by_announcement": true,
@@ -1920,11 +1920,11 @@
         "three_years": 61.41,
         "since_inception": 68.11,
         "as_of": "2026-10-23",
-        "scale_billion": 53.03,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 59.31,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 53.03,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 59.31,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/017641,AN202607241827315718.html",
       "announcement_date": "2026-07-27",
       "verified_by_announcement": true,
@@ -2034,11 +2034,11 @@
         "three_years": 57.95,
         "since_inception": 68.2,
         "as_of": "2026-10-23",
-        "scale_billion": 3.19,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 3.27,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 3.19,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 3.27,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/018064,AN202608071827737353.html",
       "announcement_date": "2026-08-07",
       "verified_by_announcement": true,
@@ -2186,11 +2186,11 @@
         "three_years": 63.79,
         "since_inception": 56.29,
         "as_of": "2026-10-23",
-        "scale_billion": 23.04,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 24.43,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 23.04,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 24.43,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/018738,AN202608191828129205.html",
       "announcement_date": "2026-08-19",
       "verified_by_announcement": true,
@@ -2224,11 +2224,11 @@
         "three_years": 64.18,
         "since_inception": 57.86,
         "as_of": "2026-10-23",
-        "scale_billion": 16.33,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 20.35,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 16.33,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 20.35,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/018966,AN202609241829835607.html",
       "announcement_date": "2026-09-24",
       "verified_by_announcement": true,
@@ -2262,11 +2262,11 @@
         "three_years": 62.25,
         "since_inception": 55.87,
         "as_of": "2026-10-23",
-        "scale_billion": 11.09,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 11.58,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 11.09,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 11.58,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/018967,AN202609241829835607.html",
       "announcement_date": "2026-09-24",
       "verified_by_announcement": true,
@@ -2338,11 +2338,11 @@
         "three_years": 72.59,
         "since_inception": 69.09,
         "as_of": "2026-10-23",
-        "scale_billion": 10.8,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 11.09,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 10.8,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 11.09,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019173,AN202607241827315717.html",
       "announcement_date": "2026-07-27",
       "verified_by_announcement": true,
@@ -2376,11 +2376,11 @@
         "three_years": 59.89,
         "since_inception": 49.98,
         "as_of": "2026-10-23",
-        "scale_billion": 18.52,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 19.88,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 18.52,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 19.88,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019305,AN202607241827315718.html",
       "announcement_date": "2026-07-27",
       "verified_by_announcement": true,
@@ -2414,11 +2414,11 @@
         "three_years": 68.26,
         "since_inception": 64.51,
         "as_of": "2026-10-23",
-        "scale_billion": 9.68,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 14.86,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 9.68,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 14.86,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019441,AN202610211830733237.html",
       "announcement_date": "2026-10-21",
       "verified_by_announcement": true,
@@ -2452,11 +2452,11 @@
         "three_years": 67.14,
         "since_inception": 63.4,
         "as_of": "2026-10-23",
-        "scale_billion": 4.29,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 6.97,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 4.29,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 6.97,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019442,AN202610211830733237.html",
       "announcement_date": "2026-10-21",
       "verified_by_announcement": true,
@@ -2566,11 +2566,11 @@
         "three_years": null,
         "since_inception": 53.54,
         "as_of": "2026-10-23",
-        "scale_billion": 21.78,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 23.23,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 21.78,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 23.23,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019547,AN202609011828847866.html",
       "announcement_date": "2026-09-01",
       "verified_by_announcement": true,
@@ -2604,11 +2604,11 @@
         "three_years": null,
         "since_inception": 51.79,
         "as_of": "2026-10-23",
-        "scale_billion": 15.17,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 14.46,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 15.17,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 14.46,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/019548,AN202609011828847866.html",
       "announcement_date": "2026-09-01",
       "verified_by_announcement": true,
@@ -3098,11 +3098,11 @@
         "three_years": null,
         "since_inception": 57.51,
         "as_of": "2026-10-23",
-        "scale_billion": 3.64,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 4.66,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 3.64,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 4.66,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/021773,AN202609241829835607.html",
       "announcement_date": "2026-09-24",
       "verified_by_announcement": true,
@@ -3250,11 +3250,11 @@
         "three_years": null,
         "since_inception": 22.93,
         "as_of": "2026-10-23",
-        "scale_billion": 1.84,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 1.83,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 1.84,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 1.83,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/022523,AN202609011828844257.html",
       "announcement_date": "2026-09-01",
       "verified_by_announcement": true,
@@ -3326,11 +3326,11 @@
         "three_years": null,
         "since_inception": 33.76,
         "as_of": "2026-10-23",
-        "scale_billion": 1.71,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 1.62,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 1.71,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 1.62,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/022525,AN202609181829590491.html",
       "announcement_date": "2026-09-18",
       "verified_by_announcement": true,
@@ -3364,11 +3364,11 @@
         "three_years": null,
         "since_inception": -18.32,
         "as_of": "2026-10-26",
-        "scale_billion": 0.4,
-        "scale_as_of": "2026-06-30"
+        "scale_billion": 0.41,
+        "scale_as_of": "2026-09-30"
       },
-      "scale_billion": 0.4,
-      "scale_as_of": "2026-06-30",
+      "scale_billion": 0.41,
+      "scale_as_of": "2026-09-30",
       "announcement_url": "https://fund.eastmoney.com/gonggao/022647,AN202609241829829746.html",
       "announcement_date": "2026-09-24",
       "verified_by_announcement": true,
@@ -4839,13 +4839,13 @@
       "tracking_error": 1,
       "track_target": "纳斯达克100指数",
       "performance": {
-        "one_month": -5.4,
-        "three_months": 0.64,
-        "six_months": 5.67,
-        "one_year": 9.21,
-        "three_years": 85.14,
-        "since_inception": 80.46,
-        "as_of": "2026-10-23",
+        "one_month": -4.45,
+        "three_months": 2.83,
+        "six_months": 4.73,
+        "one_year": 9.22,
+        "three_years": 93.39,
+        "since_inception": 82.37,
+        "as_of": "2026-10-26",
         "scale_billion": 57.05,
         "scale_as_of": "2026-09-30"
       },
@@ -5143,13 +5143,13 @@
       "tracking_error": 1.45,
       "track_target": "纳斯达克100指数",
       "performance": {
-        "one_month": -5.09,
-        "three_months": 0.83,
-        "six_months": 5.93,
-        "one_year": 8.6,
-        "three_years": 78.01,
-        "since_inception": 333.44,
-        "as_of": "2026-10-23",
+        "one_month": -4.18,
+        "three_months": 2.91,
+        "six_months": 5.03,
+        "one_year": 8.64,
+        "three_years": 85.8,
+        "since_inception": 337.8,
+        "as_of": "2026-10-26",
         "scale_billion": 17.41,
         "scale_as_of": "2026-09-30"
       },
@@ -6301,5 +6301,11 @@
       "fund_url": "https://fund.eastmoney.com/539003.html"
     }
   ],
-  "collect_errors": []
+  "collect_errors": [
+    {
+      "stage": "announcement-list",
+      "code": "004243",
+      "error": "fetch failed"
+    }
+  ]
 }
