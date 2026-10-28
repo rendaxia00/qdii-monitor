@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28 11:17:36",
+  "generated_at": "2026-10-28 15:32:14",
   "as_of": "2026-10-28",
   "sources": {
     "direct": {
@@ -1457,13 +1457,13 @@
       "tracking_error": 2.43,
       "track_target": "纳斯达克100指数",
       "performance": {
-        "one_month": -4.32,
-        "three_months": 2.29,
-        "six_months": 4.87,
-        "one_year": 8.55,
-        "three_years": 79.46,
-        "since_inception": 100.01,
-        "as_of": "2026-10-26",
+        "one_month": -3.15,
+        "three_months": 3.96,
+        "six_months": 6.28,
+        "one_year": 8.19,
+        "three_years": 80.83,
+        "since_inception": 102.46,
+        "as_of": "2026-10-27",
         "scale_billion": 3.26,
         "scale_as_of": "2026-09-30"
       },
@@ -1495,13 +1495,13 @@
       "tracking_error": 2.43,
       "track_target": "纳斯达克100指数",
       "performance": {
-        "one_month": -4.35,
-        "three_months": 2.21,
-        "six_months": 4.71,
-        "one_year": 8.23,
-        "three_years": 77.85,
-        "since_inception": 97.31,
-        "as_of": "2026-10-26",
+        "one_month": -3.18,
+        "three_months": 3.89,
+        "six_months": 6.13,
+        "one_year": 7.86,
+        "three_years": 79.2,
+        "since_inception": 99.72,
+        "as_of": "2026-10-27",
         "scale_billion": 1.64,
         "scale_as_of": "2026-09-30"
       },
