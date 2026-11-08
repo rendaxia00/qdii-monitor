@@ -2,13 +2,13 @@
   "code": "021539",
   "name": "华安法国CAC40ETF发起式联接",
   "performance": {
-    "one_month": -3.31,
-    "three_months": -8.53,
-    "six_months": -7.18,
-    "one_year": -12.52,
+    "one_month": 1.27,
+    "three_months": -8.9,
+    "six_months": -4.23,
+    "one_year": -7.07,
     "three_years": null,
-    "since_inception": -1.1,
-    "as_of": "2026-10-29",
+    "since_inception": 2.44,
+    "as_of": "2026-11-05",
     "scale_billion": 1.08,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:03",
-  "fetched_at_ms": 1793503023596,
+  "fetched_at": "2026-11-08 11:18:22",
+  "fetched_at_ms": 1794107902903,
   "sources": {
     "performance": "https://fund.eastmoney.com/021539.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_021539.html"

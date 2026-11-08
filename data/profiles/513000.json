@@ -2,13 +2,13 @@
   "code": "513000",
   "name": "日经225ETF易方达",
   "performance": {
-    "one_month": -6.16,
-    "three_months": 5.01,
-    "six_months": 6.11,
-    "one_year": 13.87,
-    "three_years": 85.27,
-    "since_inception": 111.38,
-    "as_of": "2026-10-30",
+    "one_month": -14.49,
+    "three_months": -12.86,
+    "six_months": -4.79,
+    "one_year": 5.49,
+    "three_years": 58.57,
+    "since_inception": 92.61,
+    "as_of": "2026-11-06",
     "scale_billion": 24.22,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:09",
-  "fetched_at_ms": 1793503029460,
+  "fetched_at": "2026-11-08 11:18:30",
+  "fetched_at_ms": 1794107910339,
   "sources": {
     "performance": "https://fund.eastmoney.com/513000.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513000.html"

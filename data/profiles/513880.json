@@ -2,13 +2,13 @@
   "code": "513880",
   "name": "日经225ETF华安",
   "performance": {
-    "one_month": -5.83,
-    "three_months": 5.3,
-    "six_months": 6.4,
-    "one_year": 14.06,
-    "three_years": 81.51,
-    "since_inception": 96.47,
-    "as_of": "2026-10-30",
+    "one_month": -14.22,
+    "three_months": -12.67,
+    "six_months": -4.9,
+    "one_year": 5.47,
+    "three_years": 55.36,
+    "since_inception": 78.98,
+    "as_of": "2026-11-06",
     "scale_billion": 27.77,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:11",
-  "fetched_at_ms": 1793503031162,
+  "fetched_at": "2026-11-08 11:18:32",
+  "fetched_at_ms": 1794107912657,
   "sources": {
     "performance": "https://fund.eastmoney.com/513880.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513880.html"

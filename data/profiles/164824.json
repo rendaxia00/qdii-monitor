@@ -2,13 +2,13 @@
   "code": "164824",
   "name": "工银印度基金人民币",
   "performance": {
-    "one_month": -0.06,
-    "three_months": -5.18,
-    "six_months": -6.01,
-    "one_year": -17.97,
-    "three_years": -2.89,
-    "since_inception": 23.66,
-    "as_of": "2026-10-29",
+    "one_month": 5.81,
+    "three_months": -2.33,
+    "six_months": -1.42,
+    "one_year": -13.08,
+    "three_years": -0.07,
+    "since_inception": 30.18,
+    "as_of": "2026-11-05",
     "scale_billion": 18.9,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "QDII-混合偏股",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:09",
-  "fetched_at_ms": 1793503029339,
+  "fetched_at": "2026-11-08 11:18:30",
+  "fetched_at_ms": 1794107910213,
   "sources": {
     "performance": "https://fund.eastmoney.com/164824.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_164824.html"

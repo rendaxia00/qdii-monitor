@@ -2,13 +2,13 @@
   "code": "513520",
   "name": "日经ETF华夏",
   "performance": {
-    "one_month": -6.66,
-    "three_months": 4.81,
-    "six_months": 6.15,
-    "one_year": 13.3,
-    "three_years": 83.85,
-    "since_inception": 109.68,
-    "as_of": "2026-10-30",
+    "one_month": -14.46,
+    "three_months": -12.51,
+    "six_months": -5.37,
+    "one_year": 5.1,
+    "three_years": 59.02,
+    "since_inception": 92.14,
+    "as_of": "2026-11-06",
     "scale_billion": 24.39,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:10",
-  "fetched_at_ms": 1793503030709,
+  "fetched_at": "2026-11-08 11:18:32",
+  "fetched_at_ms": 1794107912037,
   "sources": {
     "performance": "https://fund.eastmoney.com/513520.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513520.html"

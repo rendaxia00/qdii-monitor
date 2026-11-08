@@ -2,13 +2,13 @@
   "code": "022523",
   "name": "天弘标普500发起",
   "performance": {
-    "one_month": 0.18,
-    "three_months": 3.83,
-    "six_months": 5.28,
-    "one_year": 5.46,
+    "one_month": -3.84,
+    "three_months": -5.22,
+    "six_months": 0,
+    "one_year": 2.35,
     "three_years": null,
-    "since_inception": 24.21,
-    "as_of": "2026-10-29",
+    "since_inception": 19.02,
+    "as_of": "2026-11-05",
     "scale_billion": 1.83,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.25,
   "fund_type": "QDII-FOF",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:04",
-  "fetched_at_ms": 1793503024259,
+  "fetched_at": "2026-11-08 11:18:24",
+  "fetched_at_ms": 1794107904100,
   "sources": {
     "performance": "https://fund.eastmoney.com/022523.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_022523.html"

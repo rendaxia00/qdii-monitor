@@ -2,13 +2,13 @@
   "code": "022647",
   "name": "华安恒生科技ETF发起式联接",
   "performance": {
-    "one_month": -11.55,
-    "three_months": -21.9,
-    "six_months": -23.85,
-    "one_year": -40.75,
+    "one_month": -4.24,
+    "three_months": -15.76,
+    "six_months": -19.05,
+    "one_year": -34.66,
     "three_years": null,
-    "since_inception": -20.5,
-    "as_of": "2026-10-30",
+    "since_inception": -13.92,
+    "as_of": "2026-11-06",
     "scale_billion": 0.41,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.01,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:04",
-  "fetched_at_ms": 1793503024327,
+  "fetched_at": "2026-11-08 11:18:24",
+  "fetched_at_ms": 1794107904620,
   "sources": {
     "performance": "https://fund.eastmoney.com/022647.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_022647.html"

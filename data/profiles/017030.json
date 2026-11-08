@@ -2,13 +2,13 @@
   "code": "017030",
   "name": "国泰标普500ETF发起联接",
   "performance": {
-    "one_month": 0.22,
-    "three_months": 4.25,
-    "six_months": 5.89,
-    "one_year": 7.67,
-    "three_years": 63.31,
-    "since_inception": 70.02,
-    "as_of": "2026-10-29",
+    "one_month": -3.96,
+    "three_months": -5.36,
+    "six_months": 0.17,
+    "one_year": 4.09,
+    "three_years": 48.13,
+    "since_inception": 62.44,
+    "as_of": "2026-11-05",
     "scale_billion": 0.58,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:00",
-  "fetched_at_ms": 1793503020078,
+  "fetched_at": "2026-11-08 11:18:17",
+  "fetched_at_ms": 1794107897436,
   "sources": {
     "performance": "https://fund.eastmoney.com/017030.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_017030.html"

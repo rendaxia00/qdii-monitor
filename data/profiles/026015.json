@@ -2,13 +2,13 @@
   "code": "026015",
   "name": "宏利印度股票",
   "performance": {
-    "one_month": -0.09,
-    "three_months": -2.46,
-    "six_months": -1.07,
-    "one_year": 48.59,
+    "one_month": 5.05,
+    "three_months": 0.11,
+    "six_months": 4.33,
+    "one_year": 34.05,
     "three_years": null,
-    "since_inception": -12.89,
-    "as_of": "2026-10-29",
+    "since_inception": -8.36,
+    "as_of": "2026-11-05",
     "scale_billion": 0.06,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "QDII-普通股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:05",
-  "fetched_at_ms": 1793503025755,
+  "fetched_at": "2026-11-08 11:18:26",
+  "fetched_at_ms": 1794107906594,
   "sources": {
     "performance": "https://fund.eastmoney.com/026015.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_026015.html"

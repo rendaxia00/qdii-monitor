@@ -2,13 +2,13 @@
   "code": "159696",
   "name": "纳指ETF易方达",
   "performance": {
-    "one_month": -3.49,
-    "three_months": 6.87,
-    "six_months": 5.71,
-    "one_year": 6.62,
-    "three_years": 93.2,
-    "since_inception": 83.13,
-    "as_of": "2026-10-29",
+    "one_month": -12.7,
+    "three_months": -10.69,
+    "six_months": -5.18,
+    "one_year": -1.61,
+    "three_years": 64.26,
+    "since_inception": 65.89,
+    "as_of": "2026-11-05",
     "scale_billion": 57.05,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:08",
-  "fetched_at_ms": 1793503028475,
+  "fetched_at": "2026-11-08 11:18:29",
+  "fetched_at_ms": 1794107909173,
   "sources": {
     "performance": "https://fund.eastmoney.com/159696.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159696.html"

@@ -2,13 +2,13 @@
   "code": "159501",
   "name": "纳指ETF嘉实",
   "performance": {
-    "one_month": -3.53,
-    "three_months": 6.83,
-    "six_months": 5.66,
-    "one_year": 6.51,
-    "three_years": 88.92,
-    "since_inception": 84.71,
-    "as_of": "2026-10-29",
+    "one_month": -12.72,
+    "three_months": -10.73,
+    "six_months": -5.23,
+    "one_year": -1.72,
+    "three_years": 60.7,
+    "since_inception": 67.32,
+    "as_of": "2026-11-05",
     "scale_billion": 133.68,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:07",
-  "fetched_at_ms": 1793503027760,
+  "fetched_at": "2026-11-08 11:18:28",
+  "fetched_at_ms": 1794107908310,
   "sources": {
     "performance": "https://fund.eastmoney.com/159501.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159501.html"

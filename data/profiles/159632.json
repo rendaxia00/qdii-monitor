@@ -2,13 +2,13 @@
   "code": "159632",
   "name": "纳斯达克ETF华安",
   "performance": {
-    "one_month": -3.54,
-    "three_months": 6.84,
-    "six_months": 5.75,
-    "one_year": 6.4,
-    "three_years": 90.14,
-    "since_inception": 123.41,
-    "as_of": "2026-10-29",
+    "one_month": -12.75,
+    "three_months": -10.72,
+    "six_months": -5.16,
+    "one_year": -1.82,
+    "three_years": 61.65,
+    "since_inception": 102.37,
+    "as_of": "2026-11-05",
     "scale_billion": 118.08,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:08",
-  "fetched_at_ms": 1793503028102,
+  "fetched_at": "2026-11-08 11:18:28",
+  "fetched_at_ms": 1794107908776,
   "sources": {
     "performance": "https://fund.eastmoney.com/159632.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159632.html"

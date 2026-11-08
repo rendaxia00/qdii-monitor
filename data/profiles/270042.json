@@ -2,13 +2,13 @@
   "code": "270042",
   "name": "广发纳斯达克100ETF联接人民币",
   "performance": {
-    "one_month": -3.67,
-    "three_months": 6.46,
-    "six_months": 4.76,
-    "one_year": 5.26,
-    "three_years": 84.22,
-    "since_inception": 875.39,
-    "as_of": "2026-10-29",
+    "one_month": -12.95,
+    "three_months": -11.09,
+    "six_months": -6.11,
+    "one_year": -2.82,
+    "three_years": 56.5,
+    "since_inception": 782.81,
+    "as_of": "2026-11-05",
     "scale_billion": 122.81,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:09",
-  "fetched_at_ms": 1793503029486,
+  "fetched_at": "2026-11-08 11:18:30",
+  "fetched_at_ms": 1794107910265,
   "sources": {
     "performance": "https://fund.eastmoney.com/270042.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_270042.html"

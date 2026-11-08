@@ -2,13 +2,13 @@
   "code": "520590",
   "name": "恒生科技ETF鹏华",
   "performance": {
-    "one_month": -12.05,
-    "three_months": -22.63,
-    "six_months": -24.65,
-    "one_year": 56.94,
+    "one_month": -4.44,
+    "three_months": -16.27,
+    "six_months": -19.64,
+    "one_year": 39.93,
     "three_years": null,
-    "since_inception": -36.19,
-    "as_of": "2026-10-30",
+    "since_inception": -30.67,
+    "as_of": "2026-11-06",
     "scale_billion": 1.61,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:12",
-  "fetched_at_ms": 1793503032037,
+  "fetched_at": "2026-11-08 11:18:32",
+  "fetched_at_ms": 1794107912938,
   "sources": {
     "performance": "https://fund.eastmoney.com/520590.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_520590.html"

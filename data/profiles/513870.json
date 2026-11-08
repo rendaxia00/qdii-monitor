@@ -2,13 +2,13 @@
   "code": "513870",
   "name": "纳指ETF富国",
   "performance": {
-    "one_month": -3.51,
-    "three_months": 6.85,
-    "six_months": 5.66,
-    "one_year": 6.53,
-    "three_years": 88.11,
-    "since_inception": 87.3,
-    "as_of": "2026-10-29",
+    "one_month": -12.73,
+    "three_months": -10.73,
+    "six_months": -5.25,
+    "one_year": -1.7,
+    "three_years": 64.26,
+    "since_inception": 69.65,
+    "as_of": "2026-11-05",
     "scale_billion": 28.9,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:11",
-  "fetched_at_ms": 1793503031071,
+  "fetched_at": "2026-11-08 11:18:32",
+  "fetched_at_ms": 1794107912658,
   "sources": {
     "performance": "https://fund.eastmoney.com/513870.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513870.html"

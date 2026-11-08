@@ -2,13 +2,13 @@
   "code": "513890",
   "name": "恒生科技ETF摩根",
   "performance": {
-    "one_month": -12.01,
-    "three_months": -22.85,
-    "six_months": -24.24,
-    "one_year": -41.2,
-    "three_years": -5.47,
-    "since_inception": -27.84,
-    "as_of": "2026-10-30",
+    "one_month": -4.39,
+    "three_months": -16.51,
+    "six_months": -19.19,
+    "one_year": -34.9,
+    "three_years": -3.32,
+    "since_inception": -21.59,
+    "as_of": "2026-11-06",
     "scale_billion": 7.32,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:11",
-  "fetched_at_ms": 1793503031256,
+  "fetched_at": "2026-11-08 11:18:32",
+  "fetched_at_ms": 1794107912954,
   "sources": {
     "performance": "https://fund.eastmoney.com/513890.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513890.html"

@@ -2,13 +2,13 @@
   "code": "513010",
   "name": "恒生科技ETF易方达",
   "performance": {
-    "one_month": -12.01,
-    "three_months": -22.63,
-    "six_months": -24.34,
-    "one_year": -41.53,
-    "three_years": -8.47,
-    "since_inception": -51.26,
-    "as_of": "2026-10-30",
+    "one_month": -4.31,
+    "three_months": -16.23,
+    "six_months": -19.28,
+    "one_year": -35.21,
+    "three_years": -6.38,
+    "since_inception": -47,
+    "as_of": "2026-11-06",
     "scale_billion": 249.43,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:09",
-  "fetched_at_ms": 1793503029518,
+  "fetched_at": "2026-11-08 11:18:30",
+  "fetched_at_ms": 1794107910488,
   "sources": {
     "performance": "https://fund.eastmoney.com/513010.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513010.html"

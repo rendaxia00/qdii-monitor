@@ -2,13 +2,13 @@
   "code": "024166",
   "name": "西部利得恒生科技指数",
   "performance": {
-    "one_month": -11.32,
-    "three_months": -21.21,
-    "six_months": -23.59,
-    "one_year": -39.51,
+    "one_month": -3.91,
+    "three_months": -14.99,
+    "six_months": -18.53,
+    "one_year": -33.27,
     "three_years": null,
-    "since_inception": -36.95,
-    "as_of": "2026-10-30",
+    "since_inception": -31.68,
+    "as_of": "2026-11-06",
     "scale_billion": 0.89,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:06",
-  "fetched_at_ms": 1793503026953,
+  "fetched_at": "2026-11-08 11:18:26",
+  "fetched_at_ms": 1794107906686,
   "sources": {
     "performance": "https://fund.eastmoney.com/024166.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_024166.html"

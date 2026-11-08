@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-07 11:16:59",
-  "as_of": "2026-11-07",
+  "generated_at": "2026-11-08 11:17:41",
+  "as_of": "2026-11-08",
   "sources": {
     "direct": {
       "name": "东方财富基金公告 + 本地基金目录",
       "url": "https://fund.eastmoney.com/gonggao/",
-      "as_of": "2026-11-07"
+      "as_of": "2026-11-08"
     },
     "distribution": {
       "name": "天天基金 基金档案页",
       "url": "https://fund.eastmoney.com/",
-      "as_of": "2026-11-07"
+      "as_of": "2026-11-08"
     }
   },
   "declared": {
@@ -6301,21 +6301,5 @@
       "fund_url": "https://fund.eastmoney.com/539003.html"
     }
   ],
-  "collect_errors": [
-    {
-      "stage": "announcement-list",
-      "code": "006075",
-      "error": "fetch failed"
-    },
-    {
-      "stage": "announcement-list",
-      "code": "000834",
-      "error": "fetch failed"
-    },
-    {
-      "stage": "announcement-list",
-      "code": "007721",
-      "error": "fetch failed"
-    }
-  ]
+  "collect_errors": []
 }

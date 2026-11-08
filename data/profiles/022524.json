@@ -2,13 +2,13 @@
   "code": "022524",
   "name": "天弘越南市场股票发起",
   "performance": {
-    "one_month": -1.42,
-    "three_months": 2.46,
-    "six_months": -7.07,
-    "one_year": -11.21,
+    "one_month": -1.1,
+    "three_months": -1.74,
+    "six_months": -7.14,
+    "one_year": -8.88,
     "three_years": null,
-    "since_inception": 4.46,
-    "as_of": "2026-10-29",
+    "since_inception": 4.41,
+    "as_of": "2026-11-05",
     "scale_billion": 0.01,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.25,
   "fund_type": "QDII-普通股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:04",
-  "fetched_at_ms": 1793503024274,
+  "fetched_at": "2026-11-08 11:18:24",
+  "fetched_at_ms": 1794107904338,
   "sources": {
     "performance": "https://fund.eastmoney.com/022524.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_022524.html"

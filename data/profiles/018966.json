@@ -2,13 +2,13 @@
   "code": "018966",
   "name": "汇添富纳斯达克100ETF发起式联接",
   "performance": {
-    "one_month": -3.29,
-    "three_months": 5.02,
-    "six_months": 4,
-    "one_year": 3.67,
-    "three_years": 71.35,
-    "since_inception": 60.13,
-    "as_of": "2026-10-29",
+    "one_month": -12.04,
+    "three_months": -11.41,
+    "six_months": -6.18,
+    "one_year": -3.78,
+    "three_years": 47.25,
+    "since_inception": 45.84,
+    "as_of": "2026-11-05",
     "scale_billion": 20.35,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:00",
-  "fetched_at_ms": 1793503020834,
+  "fetched_at": "2026-11-08 11:18:19",
+  "fetched_at_ms": 1794107899995,
   "sources": {
     "performance": "https://fund.eastmoney.com/018966.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_018966.html"

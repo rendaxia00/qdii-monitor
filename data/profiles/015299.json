@@ -2,13 +2,13 @@
   "code": "015299",
   "name": "华夏纳斯达克100ETF发起式联接",
   "performance": {
-    "one_month": -3.48,
-    "three_months": 6.11,
-    "six_months": 5.69,
-    "one_year": 6.23,
-    "three_years": 79.23,
-    "since_inception": 100.67,
-    "as_of": "2026-10-29",
+    "one_month": -12.21,
+    "three_months": -10.19,
+    "six_months": -4.59,
+    "one_year": -1.73,
+    "three_years": 53.98,
+    "since_inception": 82.94,
+    "as_of": "2026-11-05",
     "scale_billion": 3.26,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:16:58",
-  "fetched_at_ms": 1793503018973,
+  "fetched_at": "2026-11-08 11:18:14",
+  "fetched_at_ms": 1794107894824,
   "sources": {
     "performance": "https://fund.eastmoney.com/015299.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_015299.html"

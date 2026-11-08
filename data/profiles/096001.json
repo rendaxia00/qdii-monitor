@@ -2,13 +2,13 @@
   "code": "096001",
   "name": "大成标普500等权重指数",
   "performance": {
-    "one_month": 4.23,
-    "three_months": 1.07,
-    "six_months": 7.53,
-    "one_year": 10.77,
-    "three_years": 50.6,
-    "since_inception": 304.13,
-    "as_of": "2026-10-29",
+    "one_month": 3.69,
+    "three_months": -1.89,
+    "six_months": 4.71,
+    "one_year": 9.84,
+    "three_years": 40.88,
+    "since_inception": 299.03,
+    "as_of": "2026-11-05",
     "scale_billion": 8.83,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:07",
-  "fetched_at_ms": 1793503027457,
+  "fetched_at": "2026-11-08 11:18:27",
+  "fetched_at_ms": 1794107907991,
   "sources": {
     "performance": "https://fund.eastmoney.com/096001.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_096001.html"

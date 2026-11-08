@@ -2,13 +2,13 @@
   "code": "162719",
   "name": "广发道琼斯石油指数人民币A",
   "performance": {
-    "one_month": 10.71,
-    "three_months": 17.27,
-    "six_months": 15.88,
-    "one_year": 48.78,
-    "three_years": 39.87,
-    "since_inception": 227.96,
-    "as_of": "2026-10-29",
+    "one_month": -1.48,
+    "three_months": 7.95,
+    "six_months": 2.49,
+    "one_year": 32.53,
+    "three_years": 21.64,
+    "since_inception": 191.61,
+    "as_of": "2026-11-05",
     "scale_billion": 5.17,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:09",
-  "fetched_at_ms": 1793503029194,
+  "fetched_at": "2026-11-08 11:18:30",
+  "fetched_at_ms": 1794107910056,
   "sources": {
     "performance": "https://fund.eastmoney.com/162719.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_162719.html"

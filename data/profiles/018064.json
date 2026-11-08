@@ -2,13 +2,13 @@
   "code": "018064",
   "name": "华夏标普500ETF发起式联接",
   "performance": {
-    "one_month": -0.01,
-    "three_months": 3.87,
-    "six_months": 5.57,
-    "one_year": 5.74,
-    "three_years": 63.32,
-    "since_inception": 69.98,
-    "as_of": "2026-10-29",
+    "one_month": -4.14,
+    "three_months": -5.38,
+    "six_months": -0.03,
+    "one_year": 2.15,
+    "three_years": 48.06,
+    "since_inception": 62.61,
+    "as_of": "2026-11-05",
     "scale_billion": 3.27,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-01 11:17:00",
-  "fetched_at_ms": 1793503020436,
+  "fetched_at": "2026-11-08 11:18:18",
+  "fetched_at_ms": 1794107898600,
   "sources": {
     "performance": "https://fund.eastmoney.com/018064.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_018064.html"
