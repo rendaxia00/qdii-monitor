@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-08 11:17:41",
-  "as_of": "2026-11-08",
+  "generated_at": "2026-11-09 11:16:48",
+  "as_of": "2026-11-09",
   "sources": {
     "direct": {
       "name": "东方财富基金公告 + 本地基金目录",
       "url": "https://fund.eastmoney.com/gonggao/",
-      "as_of": "2026-11-08"
+      "as_of": "2026-11-09"
     },
     "distribution": {
       "name": "天天基金 基金档案页",
       "url": "https://fund.eastmoney.com/",
-      "as_of": "2026-11-08"
+      "as_of": "2026-11-09"
     }
   },
   "declared": {
@@ -29,8 +29,8 @@
     "total": 164,
     "open": 35,
     "limited": 47,
-    "suspended": 44,
-    "closed": 38,
+    "suspended": 45,
+    "closed": 37,
     "on_exchange": 42,
     "sum_distribution_limit": 93706060,
     "sum_direct_limit": 83715315,
@@ -4785,9 +4785,9 @@
       "name": "亚太精选ETF南方",
       "topic": "亚太精选",
       "index_key": "apac",
-      "status": "场内交易",
+      "status": "暂停申购",
       "direct_status": "场内交易",
-      "redeem": null,
+      "redeem": "暂停赎回",
       "limit_amount": null,
       "limit_source": null,
       "purchasable": false,
@@ -6301,5 +6301,11 @@
       "fund_url": "https://fund.eastmoney.com/539003.html"
     }
   ],
-  "collect_errors": []
+  "collect_errors": [
+    {
+      "stage": "announcement-list",
+      "code": "000614",
+      "error": "fetch failed"
+    }
+  ]
 }
