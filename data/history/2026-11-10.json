@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10 11:16:18",
+  "generated_at": "2026-11-10 15:31:57",
   "as_of": "2026-11-10",
   "sources": {
     "direct": {
@@ -27,9 +27,9 @@
   },
   "stats": {
     "total": 164,
-    "open": 34,
+    "open": 35,
     "limited": 49,
-    "suspended": 43,
+    "suspended": 42,
     "closed": 38,
     "on_exchange": 42,
     "sum_distribution_limit": 93746060,
@@ -225,9 +225,9 @@
       "name": "宏利印度股票(QDII)A",
       "topic": "印度",
       "index_key": "india",
-      "status": "暂停申购",
+      "status": "开放申购",
       "direct_status": "开放申购",
-      "redeem": "暂停赎回",
+      "redeem": "开放赎回",
       "limit_amount": null,
       "limit_source": null,
       "purchasable": true,
@@ -3837,7 +3837,7 @@
       "index_key": "india",
       "status": "暂停申购",
       "direct_status": "开放申购",
-      "redeem": "暂停赎回",
+      "redeem": "开放赎回",
       "limit_amount": 0,
       "limit_source": "eastmoney",
       "purchasable": true,
