@@ -2,13 +2,13 @@
   "code": "021838",
   "name": "嘉实纳斯达克100ETF发起联接",
   "performance": {
-    "one_month": -12,
-    "three_months": -9.94,
-    "six_months": -4.1,
-    "one_year": -0.74,
+    "one_month": -7.48,
+    "three_months": -5.35,
+    "six_months": -3.55,
+    "one_year": 5.65,
     "three_years": null,
-    "since_inception": 22.89,
-    "as_of": "2026-11-05",
+    "since_inception": 30.18,
+    "as_of": "2026-11-12",
     "scale_billion": 0.24,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.1,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:23",
-  "fetched_at_ms": 1794107903826,
+  "fetched_at": "2026-11-16 11:17:32",
+  "fetched_at_ms": 1794799052718,
   "sources": {
     "performance": "https://fund.eastmoney.com/021838.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_021838.html"

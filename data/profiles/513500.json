@@ -2,13 +2,13 @@
   "code": "513500",
   "name": "标普500ETF博时",
   "performance": {
-    "one_month": -4.25,
-    "three_months": -5.76,
-    "six_months": -0.19,
-    "one_year": 2.53,
-    "three_years": 58.35,
-    "since_inception": 367.06,
-    "as_of": "2026-11-05",
+    "one_month": -3.05,
+    "three_months": -2.98,
+    "six_months": 0.68,
+    "one_year": 5.13,
+    "three_years": 61.43,
+    "since_inception": 382.32,
+    "as_of": "2026-11-12",
     "scale_billion": 251.81,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:32",
-  "fetched_at_ms": 1794107912011,
+  "fetched_at": "2026-11-16 11:17:41",
+  "fetched_at_ms": 1794799061784,
   "sources": {
     "performance": "https://fund.eastmoney.com/513500.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513500.html"

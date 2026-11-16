@@ -2,13 +2,13 @@
   "code": "019305",
   "name": "摩根标普500指数",
   "performance": {
-    "one_month": -4.03,
-    "three_months": -5.38,
-    "six_months": 0.12,
-    "one_year": 3.02,
-    "three_years": 50.19,
-    "since_inception": 44.93,
-    "as_of": "2026-11-05",
+    "one_month": -2.93,
+    "three_months": -2.79,
+    "six_months": 0.73,
+    "one_year": 5.47,
+    "three_years": 52.62,
+    "since_inception": 49.29,
+    "as_of": "2026-11-12",
     "scale_billion": 19.88,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:20",
-  "fetched_at_ms": 1794107900286,
+  "fetched_at": "2026-11-16 11:17:30",
+  "fetched_at_ms": 1794799050092,
   "sources": {
     "performance": "https://fund.eastmoney.com/019305.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_019305.html"

@@ -2,13 +2,13 @@
   "code": "027164",
   "name": "富国恒生科技ETF联接",
   "performance": {
-    "one_month": -4.23,
-    "three_months": -15.84,
+    "one_month": -7.84,
+    "three_months": -20.67,
     "six_months": null,
-    "one_year": 39.93,
+    "one_year": 45.43,
     "three_years": null,
-    "since_inception": -13,
-    "as_of": "2026-11-06",
+    "since_inception": -18.54,
+    "as_of": "2026-11-13",
     "scale_billion": 0.51,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:27",
-  "fetched_at_ms": 1794107907232,
+  "fetched_at": "2026-11-16 11:17:35",
+  "fetched_at_ms": 1794799055810,
   "sources": {
     "performance": "https://fund.eastmoney.com/027164.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_027164.html"

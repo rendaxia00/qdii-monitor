@@ -2,13 +2,13 @@
   "code": "013309",
   "name": "易方达恒生科技ETF联接",
   "performance": {
-    "one_month": -4.13,
-    "three_months": -15.52,
-    "six_months": -18.55,
-    "one_year": -33.89,
-    "three_years": -8.36,
-    "since_inception": -4.57,
-    "as_of": "2026-11-06",
+    "one_month": -7.64,
+    "three_months": -20.37,
+    "six_months": -25.38,
+    "one_year": -38.43,
+    "three_years": -11.84,
+    "since_inception": -10.58,
+    "as_of": "2026-11-13",
     "scale_billion": 94.58,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.3,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:12",
-  "fetched_at_ms": 1794107892112,
+  "fetched_at": "2026-11-16 11:17:23",
+  "fetched_at_ms": 1794799043376,
   "sources": {
     "performance": "https://fund.eastmoney.com/013309.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_013309.html"

@@ -2,13 +2,13 @@
   "code": "006075",
   "name": "博时标普500ETF联接C",
   "performance": {
-    "one_month": -3.99,
-    "three_months": -5.39,
-    "six_months": -0.17,
-    "one_year": 2.63,
-    "three_years": 51.84,
-    "since_inception": 155.57,
-    "as_of": "2026-11-05",
+    "one_month": -2.89,
+    "three_months": -2.74,
+    "six_months": 0.66,
+    "one_year": 5.09,
+    "three_years": 54.66,
+    "since_inception": 163.49,
+    "as_of": "2026-11-12",
     "scale_billion": 12.43,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.35,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:05",
-  "fetched_at_ms": 1794107885458,
+  "fetched_at": "2026-11-16 11:17:27",
+  "fetched_at_ms": 1794799047179,
   "sources": {
     "performance": "https://fund.eastmoney.com/006075.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_006075.html"

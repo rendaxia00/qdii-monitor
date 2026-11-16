@@ -2,13 +2,13 @@
   "code": "024237",
   "name": "博时纳斯达克100ETF发起式联接",
   "performance": {
-    "one_month": -12,
-    "three_months": -9.98,
-    "six_months": -4.35,
-    "one_year": -0.71,
+    "one_month": -7.46,
+    "three_months": -5.42,
+    "six_months": -3.8,
+    "one_year": 5.69,
     "three_years": null,
-    "since_inception": 18.21,
-    "as_of": "2026-11-05",
+    "since_inception": 25.21,
+    "as_of": "2026-11-12",
     "scale_billion": 1.63,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.15,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:26",
-  "fetched_at_ms": 1794107906362,
+  "fetched_at": "2026-11-16 11:17:34",
+  "fetched_at_ms": 1794799054944,
   "sources": {
     "performance": "https://fund.eastmoney.com/024237.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_024237.html"

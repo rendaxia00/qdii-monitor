@@ -2,13 +2,13 @@
   "code": "159660",
   "name": "纳指ETF汇添富",
   "performance": {
-    "one_month": -12.73,
-    "three_months": -10.75,
-    "six_months": -5.24,
-    "one_year": -1.78,
-    "three_years": 64,
-    "since_inception": 94.62,
-    "as_of": "2026-11-05",
+    "one_month": -7.98,
+    "three_months": -5.97,
+    "six_months": -4.62,
+    "one_year": 4.88,
+    "three_years": 69.32,
+    "since_inception": 106.79,
+    "as_of": "2026-11-12",
     "scale_billion": 57.74,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-08 11:18:29",
-  "fetched_at_ms": 1794107909028,
+  "fetched_at": "2026-11-16 11:17:38",
+  "fetched_at_ms": 1794799058395,
   "sources": {
     "performance": "https://fund.eastmoney.com/159660.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159660.html"
