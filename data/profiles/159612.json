@@ -2,13 +2,13 @@
   "code": "159612",
   "name": "标普500ETF国泰",
   "performance": {
-    "one_month": -3.05,
-    "three_months": -3.01,
-    "six_months": 0.6,
-    "one_year": 5.13,
-    "three_years": 59.33,
-    "since_inception": 89.16,
-    "as_of": "2026-11-12",
+    "one_month": -6.84,
+    "three_months": -7.87,
+    "six_months": -4.29,
+    "one_year": 2.39,
+    "three_years": 47.23,
+    "since_inception": 78.72,
+    "as_of": "2026-11-19",
     "scale_billion": 9.78,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:37",
-  "fetched_at_ms": 1794799057704,
+  "fetched_at": "2026-11-23 15:31:39",
+  "fetched_at_ms": 1795419099167,
   "sources": {
     "performance": "https://fund.eastmoney.com/159612.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159612.html"

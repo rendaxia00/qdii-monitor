@@ -2,13 +2,13 @@
   "code": "012805",
   "name": "广发恒生科技ETF联接",
   "performance": {
-    "one_month": -7.79,
-    "three_months": -20.72,
-    "six_months": -25.99,
-    "one_year": -39.18,
-    "three_years": -12.65,
-    "since_inception": -39.29,
-    "as_of": "2026-11-13",
+    "one_month": -12.73,
+    "three_months": -25.3,
+    "six_months": -28.48,
+    "one_year": -39.74,
+    "three_years": -20.92,
+    "since_inception": -43.83,
+    "as_of": "2026-11-20",
     "scale_billion": 52.29,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:21",
-  "fetched_at_ms": 1794799041803,
+  "fetched_at": "2026-11-23 15:31:22",
+  "fetched_at_ms": 1795419082529,
   "sources": {
     "performance": "https://fund.eastmoney.com/012805.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012805.html"

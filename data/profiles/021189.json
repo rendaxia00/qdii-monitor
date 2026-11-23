@@ -2,13 +2,13 @@
   "code": "021189",
   "name": "南方亚太精选ETF联接",
   "performance": {
-    "one_month": -8.89,
-    "three_months": -8.6,
-    "six_months": -6.23,
-    "one_year": 7.78,
+    "one_month": -9.37,
+    "three_months": -11.73,
+    "six_months": -8.95,
+    "one_year": 6.69,
     "three_years": null,
-    "since_inception": 35,
-    "as_of": "2026-11-12",
+    "since_inception": 27.83,
+    "as_of": "2026-11-19",
     "scale_billion": 1.9,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:31",
-  "fetched_at_ms": 1794799051973,
+  "fetched_at": "2026-11-23 15:31:32",
+  "fetched_at_ms": 1795419092699,
   "sources": {
     "performance": "https://fund.eastmoney.com/021189.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_021189.html"

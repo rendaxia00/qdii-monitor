@@ -2,13 +2,13 @@
   "code": "023373",
   "name": "建信富时100指数",
   "performance": {
-    "one_month": 1.85,
-    "three_months": -1.75,
-    "six_months": 1.83,
-    "one_year": 5.6,
+    "one_month": -4.05,
+    "three_months": -5.89,
+    "six_months": -2.21,
+    "one_year": 4.56,
     "three_years": null,
-    "since_inception": 23.58,
-    "as_of": "2026-11-12",
+    "since_inception": 18.05,
+    "as_of": "2026-11-19",
     "scale_billion": 0.3,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.4,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:34",
-  "fetched_at_ms": 1794799054126,
+  "fetched_at": "2026-11-23 15:31:35",
+  "fetched_at_ms": 1795419095384,
   "sources": {
     "performance": "https://fund.eastmoney.com/023373.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_023373.html"

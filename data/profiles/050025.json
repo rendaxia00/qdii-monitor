@@ -2,13 +2,13 @@
   "code": "050025",
   "name": "博时标普500ETF联接A",
   "performance": {
-    "one_month": -2.86,
-    "three_months": -2.65,
-    "six_months": 0.84,
-    "one_year": 5.46,
-    "three_years": 56.29,
-    "since_inception": 476.78,
-    "as_of": "2026-11-12",
+    "one_month": -6.46,
+    "three_months": -7.29,
+    "six_months": -3.83,
+    "one_year": 2.81,
+    "three_years": 45.01,
+    "since_inception": 446.43,
+    "as_of": "2026-11-19",
     "scale_billion": 63.48,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:36",
-  "fetched_at_ms": 1794799056708,
+  "fetched_at": "2026-11-23 15:31:37",
+  "fetched_at_ms": 1795419097654,
   "sources": {
     "performance": "https://fund.eastmoney.com/050025.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_050025.html"

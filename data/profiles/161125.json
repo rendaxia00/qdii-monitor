@@ -2,13 +2,13 @@
   "code": "161125",
   "name": "易方达标普500指数人民币A",
   "performance": {
-    "one_month": -2.82,
-    "three_months": -2.88,
-    "six_months": 0.64,
-    "one_year": 5.18,
-    "three_years": 56.16,
-    "since_inception": 209.19,
-    "as_of": "2026-11-12",
+    "one_month": -6.46,
+    "three_months": -7.5,
+    "six_months": -4,
+    "one_year": 2.52,
+    "three_years": 44.86,
+    "since_inception": 192.96,
+    "as_of": "2026-11-19",
     "scale_billion": 15.26,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:39",
-  "fetched_at_ms": 1794799059704,
+  "fetched_at": "2026-11-23 15:31:39",
+  "fetched_at_ms": 1795419099767,
   "sources": {
     "performance": "https://fund.eastmoney.com/161125.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_161125.html"

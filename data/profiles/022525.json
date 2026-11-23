@@ -2,13 +2,13 @@
   "code": "022525",
   "name": "天弘纳斯达克100指数发起",
   "performance": {
-    "one_month": -7.6,
-    "three_months": -5.71,
-    "six_months": -4.38,
-    "one_year": 4.5,
+    "one_month": -9.84,
+    "three_months": -10.43,
+    "six_months": -9.37,
+    "one_year": 1.49,
     "three_years": null,
-    "since_inception": 30.79,
-    "as_of": "2026-11-12",
+    "since_inception": 22.93,
+    "as_of": "2026-11-19",
     "scale_billion": 1.62,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.2,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:33",
-  "fetched_at_ms": 1794799053186,
+  "fetched_at": "2026-11-23 15:31:33",
+  "fetched_at_ms": 1795419093994,
   "sources": {
     "performance": "https://fund.eastmoney.com/022525.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_022525.html"

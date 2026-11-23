@@ -2,13 +2,13 @@
   "code": "021000",
   "name": "南方纳斯达克100指数发起",
   "performance": {
-    "one_month": -7.61,
-    "three_months": -5.64,
-    "six_months": -4.39,
-    "one_year": 4.6,
+    "one_month": -9.85,
+    "three_months": -10.41,
+    "six_months": -9.43,
+    "one_year": 1.52,
     "three_years": null,
-    "since_inception": 40.22,
-    "as_of": "2026-11-12",
+    "since_inception": 31.74,
+    "as_of": "2026-11-19",
     "scale_billion": 40.79,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0.01,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:31",
-  "fetched_at_ms": 1794799051922,
+  "fetched_at": "2026-11-23 15:31:32",
+  "fetched_at_ms": 1795419092614,
   "sources": {
     "performance": "https://fund.eastmoney.com/021000.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_021000.html"

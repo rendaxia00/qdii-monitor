@@ -2,13 +2,13 @@
   "code": "040046",
   "name": "华安纳斯达克100ETF联接",
   "performance": {
-    "one_month": -8,
-    "three_months": -6.28,
-    "six_months": -5.25,
-    "one_year": 4.06,
-    "three_years": 59.81,
-    "since_inception": 677.18,
-    "as_of": "2026-11-12",
+    "one_month": -10.35,
+    "three_months": -11.13,
+    "six_months": -10.43,
+    "one_year": 0.94,
+    "three_years": 46.84,
+    "since_inception": 628.19,
+    "as_of": "2026-11-19",
     "scale_billion": 63.39,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:36",
-  "fetched_at_ms": 1794799056481,
+  "fetched_at": "2026-11-23 15:31:37",
+  "fetched_at_ms": 1795419097571,
   "sources": {
     "performance": "https://fund.eastmoney.com/040046.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_040046.html"

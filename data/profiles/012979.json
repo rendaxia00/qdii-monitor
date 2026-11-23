@@ -2,13 +2,13 @@
   "code": "012979",
   "name": "大成恒生科技ETF发起式联接A",
   "performance": {
-    "one_month": -7.93,
-    "three_months": -20.79,
-    "six_months": -26.01,
-    "one_year": -39.01,
-    "three_years": -13.38,
-    "since_inception": -39.75,
-    "as_of": "2026-11-13",
+    "one_month": -12.81,
+    "three_months": -25.35,
+    "six_months": -28.55,
+    "one_year": -39.58,
+    "three_years": -21.53,
+    "since_inception": -44.26,
+    "as_of": "2026-11-20",
     "scale_billion": 21.19,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:22",
-  "fetched_at_ms": 1794799042337,
+  "fetched_at": "2026-11-23 15:31:23",
+  "fetched_at_ms": 1795419083680,
   "sources": {
     "performance": "https://fund.eastmoney.com/012979.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_012979.html"

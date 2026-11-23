@@ -2,13 +2,13 @@
   "code": "513030",
   "name": "德国ETF华安",
   "performance": {
-    "one_month": 4.55,
-    "three_months": -3.4,
-    "six_months": 2.89,
-    "one_year": -2.09,
-    "three_years": 58.09,
-    "since_inception": 81.33,
-    "as_of": "2026-11-12",
+    "one_month": -1.8,
+    "three_months": -8.6,
+    "six_months": -3.94,
+    "one_year": -3.11,
+    "three_years": 40.2,
+    "since_inception": 70.48,
+    "as_of": "2026-11-19",
     "scale_billion": 18.18,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:40",
-  "fetched_at_ms": 1794799060487,
+  "fetched_at": "2026-11-23 15:31:40",
+  "fetched_at_ms": 1795419100553,
   "sources": {
     "performance": "https://fund.eastmoney.com/513030.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513030.html"

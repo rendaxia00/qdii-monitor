@@ -2,13 +2,13 @@
   "code": "159561",
   "name": "德国ETF嘉实",
   "performance": {
-    "one_month": 4.56,
-    "three_months": -3.35,
-    "six_months": 2.97,
-    "one_year": -1.86,
+    "one_month": -1.83,
+    "three_months": -8.58,
+    "six_months": -3.86,
+    "one_year": -2.92,
     "three_years": null,
-    "since_inception": 32.79,
-    "as_of": "2026-11-12",
+    "since_inception": 24.82,
+    "as_of": "2026-11-19",
     "scale_billion": 17.25,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:37",
-  "fetched_at_ms": 1794799057542,
+  "fetched_at": "2026-11-23 15:31:38",
+  "fetched_at_ms": 1795419098387,
   "sources": {
     "performance": "https://fund.eastmoney.com/159561.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159561.html"

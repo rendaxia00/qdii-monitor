@@ -2,13 +2,13 @@
   "code": "159329",
   "name": "沙特ETF南方",
   "performance": {
-    "one_month": 0.63,
-    "three_months": -5.32,
-    "six_months": -6.99,
-    "one_year": -10.97,
+    "one_month": 0.73,
+    "three_months": -7.44,
+    "six_months": -7.84,
+    "one_year": -10.44,
     "three_years": null,
-    "since_inception": -14.05,
-    "as_of": "2026-11-12",
+    "since_inception": -15.41,
+    "as_of": "2026-11-19",
     "scale_billion": 10.12,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:37",
-  "fetched_at_ms": 1794799057059,
+  "fetched_at": "2026-11-23 15:31:38",
+  "fetched_at_ms": 1795419098011,
   "sources": {
     "performance": "https://fund.eastmoney.com/159329.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_159329.html"

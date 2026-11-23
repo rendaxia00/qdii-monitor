@@ -2,13 +2,13 @@
   "code": "520570",
   "name": "恒生科技ETF南方",
   "performance": {
-    "one_month": -7.83,
-    "three_months": -21.15,
-    "six_months": -26.53,
-    "one_year": -38.74,
+    "one_month": -13.07,
+    "three_months": -25.95,
+    "six_months": -29.23,
+    "one_year": -40.57,
     "three_years": null,
-    "since_inception": -39.36,
-    "as_of": "2026-11-13",
+    "since_inception": -44.15,
+    "as_of": "2026-11-20",
     "scale_billion": 24.73,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:42",
-  "fetched_at_ms": 1794799062497,
+  "fetched_at": "2026-11-23 15:31:42",
+  "fetched_at_ms": 1795419102324,
   "sources": {
     "performance": "https://fund.eastmoney.com/520570.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_520570.html"

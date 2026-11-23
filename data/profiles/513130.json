@@ -2,13 +2,13 @@
   "code": "513130",
   "name": "恒生科技ETF华泰柏瑞",
   "performance": {
-    "one_month": -8.12,
-    "three_months": -21.45,
-    "six_months": -26.69,
-    "one_year": -40.24,
-    "three_years": -12.02,
-    "since_inception": -52.81,
-    "as_of": "2026-11-13",
+    "one_month": -13.51,
+    "three_months": -25.98,
+    "six_months": -29.22,
+    "one_year": -40.9,
+    "three_years": -20.65,
+    "since_inception": -56.47,
+    "as_of": "2026-11-20",
     "scale_billion": 321.51,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:40",
-  "fetched_at_ms": 1794799060854,
+  "fetched_at": "2026-11-23 15:31:40",
+  "fetched_at_ms": 1795419100902,
   "sources": {
     "performance": "https://fund.eastmoney.com/513130.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_513130.html"

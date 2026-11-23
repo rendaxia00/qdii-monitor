@@ -2,13 +2,13 @@
   "code": "158042",
   "name": "恒生科技ETF富国",
   "performance": {
-    "one_month": -8.04,
+    "one_month": -13.26,
     "three_months": null,
     "six_months": null,
-    "one_year": 45.43,
+    "one_year": 41.84,
     "three_years": null,
-    "since_inception": -13.26,
-    "as_of": "2026-11-13",
+    "since_inception": -20.11,
+    "as_of": "2026-11-20",
     "scale_billion": 2.17,
     "scale_as_of": "2026-09-17"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": null,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:36",
-  "fetched_at_ms": 1794799056860,
+  "fetched_at": "2026-11-23 15:31:38",
+  "fetched_at_ms": 1795419098047,
   "sources": {
     "performance": "https://fund.eastmoney.com/158042.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_158042.html"

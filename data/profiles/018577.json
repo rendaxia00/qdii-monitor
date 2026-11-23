@@ -2,13 +2,13 @@
   "code": "018577",
   "name": "摩根恒生科技ETF发起式联接",
   "performance": {
-    "one_month": -7.67,
-    "three_months": -20.44,
-    "six_months": -24.96,
-    "one_year": -37.87,
-    "three_years": -9.81,
-    "since_inception": -14.39,
-    "as_of": "2026-11-13",
+    "one_month": -12.6,
+    "three_months": -25,
+    "six_months": -27.58,
+    "one_year": -38.61,
+    "three_years": -18.31,
+    "since_inception": -20.75,
+    "as_of": "2026-11-20",
     "scale_billion": 1.29,
     "scale_as_of": "2026-09-30"
   },
@@ -21,8 +21,8 @@
   "sales_service_fee": 0,
   "fund_type": "指数型-海外股票",
   "purchase_fee": null,
-  "fetched_at": "2026-11-16 11:17:27",
-  "fetched_at_ms": 1794799047921,
+  "fetched_at": "2026-11-23 15:31:30",
+  "fetched_at_ms": 1795419090187,
   "sources": {
     "performance": "https://fund.eastmoney.com/018577.html",
     "overview": "https://fundf10.eastmoney.com/jbgk_018577.html"
