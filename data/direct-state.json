@@ -1351,14 +1351,38 @@
         "combined_share_limit": false,
         "confidence": "high"
       }
+    },
+    "AN202611271832088827": {
+      "parsed_at": "2026-11-27T03:15:54.050Z",
+      "parser_version": 2,
+      "fund_codes": [
+        "000834",
+        "008971"
+      ],
+      "patch": {
+        "id": "AN202611271832088827",
+        "title": "关于大成纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)调整大额申购(含定期定额申购)的公告",
+        "publish_date": "2026-11-27",
+        "effective_date": "2026-11-30",
+        "status": "限大额",
+        "direct_amount": 50,
+        "distribution_amount": 5,
+        "direct_specified": true,
+        "distribution_specified": true,
+        "generic_specified": false,
+        "channel_split": true,
+        "channel_ratio": 10,
+        "combined_share_limit": false,
+        "confidence": "high"
+      }
     }
   },
   "baseline_as_of": "2026-09-24",
-  "updated_at": "2026-11-26T07:30:55.988Z",
+  "updated_at": "2026-11-27T03:16:01.670Z",
   "last_scan": {
-    "as_of": "2026-11-26",
+    "as_of": "2026-11-27",
     "scanned": 122,
-    "parsed": 0,
+    "parsed": 1,
     "discovered": 0,
     "errors": 0
   },
